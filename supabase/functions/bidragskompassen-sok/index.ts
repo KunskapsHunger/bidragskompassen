@@ -67,10 +67,31 @@ async function db(path: string, data: unknown) {
   return r.json();
 }
 
-const sha256 = async (text: string) => Array.from(
-  new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))),
-  (x) => x.toString(16).padStart(2, '0'),
-).join('');
+// Quota keys identify callers by a keyed HMAC of their IP, never the IP itself. The key derives from
+// the project's secret service key, so a stored tag cannot be reversed by trying all IPv4 addresses.
+let ipKey: CryptoKey | undefined;
+async function ipTag(ip: string) {
+  ipKey ??= await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(`bidragskompassen-sok:${service}`),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'],
+  );
+  const sig = await crypto.subtle.sign('HMAC', ipKey, new TextEncoder().encode(ip));
+  return Array.from(new Uint8Array(sig), (x) => x.toString(16).padStart(2, '0')).join('').slice(0, 32);
+}
+
+// The shared quota table is never swept, so this function removes its own expired rows (bk-sok:* only)
+// now and then. That keeps the promise on the site: caller tags disappear shortly after their window.
+const SWEEP_CHANCE = 0.1;
+function sweepExpired() {
+  if (Math.random() > SWEEP_CHANCE) return;
+  const now = encodeURIComponent(new Date().toISOString());
+  const sweep = fetch(`${SB}/rest/v1/reading_usage?key=like.bk-sok%3A*&expires_at=lt.${now}`, {
+    method: 'DELETE',
+    headers: { ...serviceHeaders, Prefer: 'return=minimal' },
+  }).catch((e) => console.error('bidragskompassen-sok sweep', e));
+  // Let the sweep finish after the response has been sent.
+  (globalThis as { EdgeRuntime?: { waitUntil(p: Promise<unknown>): void } }).EdgeRuntime?.waitUntil(sweep);
+}
 
 async function quota(key: string, limit: number, seconds: number) {
   const window = Math.floor(Date.now() / 1000 / seconds);
@@ -161,8 +182,9 @@ Deno.serve(async (req) => {
     const key = `${organiser}|${q.toLowerCase()}`;
     if (cache.has(key)) return json(cache.get(key));
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
-    await quota(`bk-sok:ip:${await sha256(ip)}`, IP_LIMIT, 3600);
+    await quota(`bk-sok:ip:${await ipTag(ip)}`, IP_LIMIT, 3600);
     await quota('bk-sok:global', GLOBAL_LIMIT, 86400);
+    sweepExpired();
     const result = await rank(q, organiser);
     if (cache.size >= CACHE_MAX) cache.delete(cache.keys().next().value!);
     cache.set(key, result);

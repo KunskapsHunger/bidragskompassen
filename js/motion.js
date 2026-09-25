@@ -84,19 +84,39 @@
     }, REVEAL_FAILSAFE_MS);
   }
 
-  /** Count from 0 to `to` (visual only – callers provide the final value for screen readers). */
-  function countUp(el, to, duration) {
-    if (isReduced() || to === 0) { el.textContent = String(to); return; }
+  var counting = typeof WeakMap !== 'undefined' ? new WeakMap() : null; // el -> { raf, token }
+  var countToken = 0;
+
+  function stopCount(el) {
+    var run = counting && counting.get(el);
+    if (run) { window.cancelAnimationFrame(run.raf); counting.delete(el); }
+  }
+
+  /** Count from `from` (default 0) to `to`; a new count on the same element replaces the old one.
+   *  Visual only – callers provide the final value for screen readers. */
+  function countUp(el, to, duration, from) {
+    stopCount(el);
+    var origin = typeof from === 'number' ? from : 0;
+    // Hidden tabs never run requestAnimationFrame – show the final value straight away.
+    if (isReduced() || to === origin || document.hidden || !counting) { el.textContent = String(to); return; }
     var start = null;
     var dur = duration || 1400;
+    var run = { raf: 0, token: ++countToken };
     function frame(ts) {
       if (start === null) start = ts;
       var p = Math.min(1, (ts - start) / dur);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = String(Math.round(eased * to));
-      if (p < 1) window.requestAnimationFrame(frame);
+      el.textContent = String(Math.round(origin + (to - origin) * eased));
+      if (p < 1) run.raf = window.requestAnimationFrame(frame);
+      else counting.delete(el);
     }
-    window.requestAnimationFrame(frame);
+    run.raf = window.requestAnimationFrame(frame);
+    counting.set(el, run);
+    // Safety net: throttled rAF (background tab, embedded preview) must still end on the right number.
+    window.setTimeout(function () {
+      var cur = counting.get(el);
+      if (cur && cur.token === run.token) { stopCount(el); el.textContent = String(to); }
+    }, dur + 150);
   }
 
   /** FLIP helper: call `first()` before DOM change, then `play()` after. */

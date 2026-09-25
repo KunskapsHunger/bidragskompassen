@@ -395,7 +395,7 @@ window.SB_GRANTS.push(
     omraden: ["internationellt"],
     skolformer: ["grundskola", "anpassad-grundskola", "gymnasieskola", "anpassad-gymnasieskola"],
     sokande: { fristaende: "ja", kommun: "ja", region: "nej", stat: "ja", ovriga: "nej" },
-    sokandeNot: "Kommunala, fristående och statliga huvudmän som har utlandssvenska elever i årskurs 7–9, i gymnasieskolan (även IB) eller i fjärde tekniskt år kan söka. Fristående skolor söker på samma villkor som kommunala. Undantag: IB-utbildningen i Stockholms kommun, Göteborgs kommun och Sigtunaskolan humanistiska läroverket får i stället bidraget för IB-utbildning vid vissa skolor.",
+    sokandeNot: "Kommunala, fristående och statliga huvudmän som har utlandssvenska elever i årskurs 7–9, i gymnasieskolan (även IB) eller i fjärde tekniskt år kan söka. Fristående skolor söker på samma villkor som kommunala. Undantag: IB-utbildning som anordnas av Stockholms kommun, Göteborgs kommun och Sigtunaskolan humanistiska läroverket omfattas inte av bidraget.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-02-15", till: "2026-03-02", text: "Ansökan 1 för vårterminen 2026 (stängd).", ungefar: false },
@@ -428,10 +428,10 @@ window.SB_GRANTS.push(
     nyckelord: ["utlandssvensk", "utlandssvenska elever", "bor utomlands", "ej folkbokförd", "internatskola", "riksinternat", "Sigtuna", "svenska familjer utomlands", "expat"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för utlandssvenska elever 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-utlandssvenska-elever-2026" },
-      { titel: "Förordning (2015:736) om statsbidrag till kostnader för utbildning i Sverige för utlandssvenska elever", url: "https://www.riksdagen.se/sv/Dokument-Lagar/Lagar/Svenskforfattningssamling/Forordning-2015736-om-stats_sfs-2015-736/?bet=2015:736" }
+      { titel: "Förordning (2015:736) om statsbidrag till kostnader för utbildning i Sverige för utlandssvenska elever", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2015736-om-statsbidrag-till_sfs-2015-736/" }
     ],
     senastKontrollerad: "2026-09-25",
-    osakerhet: "Datumen för 2027 är uppskattade utifrån 2026. Sidan nämner inte regionala huvudmän; vi har därför satt region till nej. Beloppen för 2026 var inte publicerade på sidan när vi kontrollerade."
+    osakerhet: "Datumen för 2027 är uppskattade utifrån 2026. Sidan nämner inte regionala huvudmän; vi har därför satt region till nej (förordningen talar bara allmänt om huvudmän för skolformerna). Beloppen för 2026 var inte publicerade på sidan när vi kontrollerade."
   },
   {
     id: "distansundervisning-utlandssvenska",

@@ -32,28 +32,55 @@
     listeners.forEach(function (fn) { try { fn(); } catch (e) { /* a listener must not break the others */ } });
   }
 
-  /** One request with timeout; resolves to a parsed answer or null. Never rejects. */
-  function request(q, organiser, outer) {
-    var key = core.smartKey(q, organiser);
-    if (cache[key]) return Promise.resolve(cache[key]);
-    if (isPaused() || typeof fetch !== 'function' || typeof AbortController === 'undefined') return Promise.resolve(null);
+  var inflight = {};  // smartKey -> { promise, ctrl, waiters } – hero and catalog share one request
+  var failed = {};    // smartKey -> true: answered with an error or timed out; never asked again
+
+  function isKnown(key) { return !!cache[key] || !!failed[key]; }
+
+  function start(q, organiser, key) {
     var req = core.buildSmartRequest(q, organiser, window.SB_CONFIG);
-    if (!req) return Promise.resolve(null);
     var ctrl = new AbortController();
-    var timer = window.setTimeout(function () { ctrl.abort(); }, S.TIMEOUT_MS);
-    if (outer) outer.addEventListener('abort', function () { ctrl.abort(); });
-    return fetch(req.url, Object.assign({}, req.init, { signal: ctrl.signal, credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store' }))
+    var timedOut = false;
+    var timer = window.setTimeout(function () { timedOut = true; ctrl.abort(); }, S.TIMEOUT_MS);
+    var entry = { ctrl: ctrl, waiters: 0 };
+    entry.promise = fetch(req.url, Object.assign({}, req.init, { signal: ctrl.signal, credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store' }))
       .then(function (res) {
         if (res.status === 429) { pausedUntil = Date.now() + S.PAUSE_MS; bump(); return null; }
-        if (!res.ok) return null;
+        if (!res.ok) { failed[key] = true; return null; }
         return res.json().then(function (data) {
           var parsed = core.parseSmartResponse(data, knownIds);
-          if (parsed) cache[key] = parsed;
+          if (parsed) cache[key] = parsed; else failed[key] = true;
           return parsed;
         });
       })
-      .catch(function () { return null; })
-      .then(function (result) { window.clearTimeout(timer); return result; });
+      .catch(function () {
+        if (timedOut || !ctrl.signal.aborted) failed[key] = true; // a user-cancelled request may be retried
+        return null;
+      })
+      .then(function (result) {
+        window.clearTimeout(timer);
+        if (inflight[key] === entry) delete inflight[key];
+        return result;
+      });
+    inflight[key] = entry;
+    return entry;
+  }
+
+  /** Resolves to a parsed answer or null; never rejects. Same key → same request (ref-counted abort). */
+  function request(q, organiser, outer) {
+    var key = core.smartKey(q, organiser);
+    if (cache[key]) return Promise.resolve(cache[key]);
+    if (failed[key] || isPaused() || typeof fetch !== 'function' || typeof AbortController === 'undefined') return Promise.resolve(null);
+    if (!core.buildSmartRequest(q, organiser, window.SB_CONFIG)) return Promise.resolve(null);
+    var entry = inflight[key] || start(q, organiser, key);
+    entry.waiters += 1;
+    if (outer) {
+      outer.addEventListener('abort', function () {
+        entry.waiters -= 1;
+        if (entry.waiters <= 0) entry.ctrl.abort();
+      });
+    }
+    return entry.promise;
   }
 
   /* ---------- Catalog ---------- */
@@ -73,7 +100,7 @@
     var q = catalogQuery(st);
     var key = q ? core.smartKey(q, st.organiser) : null;
     if (!active() || !q) { abortCatalog(); cat.loading = null; bump(); return; }
-    if (cache[key] || cat.key === key) { bump(); return; }
+    if (isKnown(key) || cat.key === key) { bump(); return; }
     abortCatalog();
     cat.loading = isPaused() ? null : key;
     bump();
@@ -174,34 +201,48 @@
   }
 
   /* ---------- Hero combobox ---------- */
-  function heroAllowedIds(st) {
-    return app.grants.filter(function (g) {
-      return !core.isEnded(g) && (st.organiser === 'alla' || core.canApply(g, st.organiser));
-    }).map(function (g) { return g.id; });
+  var HERO_PAUSE_MS = 550;
+
+  /** Cached answer for the hero query (current organiser) or null. */
+  function peek(q) {
+    if (!active() || !core.isSmartQuery(q)) return null;
+    return cache[core.smartKey(q, app.get().organiser)] || null;
   }
 
-  /** Extra grants for the hero list (sync from cache); schedules a fetch and calls `onReady` later. */
-  function heroExtras(q, localIds, onReady) {
+  /**
+   * Ask for a settled hero query: after a typing pause, or at once when `immediate`.
+   * Returns "off" | "ready" | "done" (answered or failed before) | "paused" | "loading".
+   * `onDone(q, answer|null)` fires once when a request started here settles.
+   */
+  function heroRequest(q, immediate, onDone) {
     var st = app.get();
-    if (!active() || !core.wantsHeroSmart(q, localIds.length)) return [];
+    if (!active() || !core.isSmartQuery(q)) { cancelHero(); return 'off'; }
     var key = core.smartKey(q, st.organiser);
-    if (cache[key]) {
-      return core.heroSmartIds(cache[key], heroAllowedIds(st), localIds, S.HERO_MAX).map(function (id) { return app.byId[id]; });
-    }
-    if (hero.key === key || isPaused()) return [];
-    window.clearTimeout(hero.timer);
-    if (hero.ctrl) hero.ctrl.abort();
+    if (cache[key]) { cancelHero(); return 'ready'; }
+    if (failed[key]) { cancelHero(); return 'done'; }
+    if (isPaused()) { cancelHero(); return 'paused'; }
+    if (hero.key === key && !immediate) return 'loading';
+    if (hero.key !== key) cancelHero();
     hero.key = key;
+    window.clearTimeout(hero.timer);
     hero.timer = window.setTimeout(function () {
       var ctrl = new AbortController();
       hero.ctrl = ctrl;
       request(q, st.organiser, ctrl.signal).then(function (data) {
-        if (hero.ctrl === ctrl) hero.ctrl = null;
-        if (hero.key === key) hero.key = null;
-        if (data) onReady(q);
+        if (hero.ctrl !== ctrl) return; // superseded by a newer query
+        hero.ctrl = null;
+        hero.key = null;
+        onDone(q, data);
       });
-    }, S.DEBOUNCE_MS);
-    return [];
+    }, immediate ? 0 : HERO_PAUSE_MS);
+    return 'loading';
+  }
+
+  /** Is a smart answer for this hero query still on its way? (counters wait for it before announcing) */
+  function isPending(q) {
+    if (!active() || !core.isSmartQuery(q)) return false;
+    var key = core.smartKey(q, app.get().organiser);
+    return hero.key === key || !!inflight[key];
   }
 
   function cancelHero() {
@@ -238,7 +279,7 @@
   }
 
   SB.smart = {
-    init: init, apply: apply, renderBar: renderBar, heroExtras: heroExtras, cancelHero: cancelHero,
+    init: init, apply: apply, renderBar: renderBar, peek: peek, heroRequest: heroRequest, isPending: isPending, cancelHero: cancelHero,
     now: function () { scheduleCatalog(0); },
     version: function () { return version; },
     onUpdate: function (fn) { listeners.push(fn); },

@@ -56,7 +56,7 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Skolverket – Statsbidrag för gymnasial lärlingsutbildning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-gymnasial-larlingsutbildning-2026" },
       { titel: "Skolverket – Statsbidrag för gymnasial lärlingsutbildning 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-gymnasial-larlingsutbildning-2027" },
-      { titel: "Förordning (2011:947) om statsbidrag för gymnasial lärlingsutbildning", url: "http://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-2011947-om-statsbidrag-for_sfs-2011-947" }
+      { titel: "Förordning (2011:947) om statsbidrag för gymnasial lärlingsutbildning", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2011947-om-statsbidrag-for-gymnasial_sfs-2011-947/" }
     ],
     senastKontrollerad: "2026-09-25",
     osakerhet: "Skolverkets sida för 2027 anger ännu inte hur mycket pengar som finns för 2027 (den visar samma text som för 2026). Datum för beslut om höstens ansökan 2026 är inte publicerat. Skolverket nämner bara kommunala och fristående huvudmän – en region som driver gymnasieskola (t.ex. naturbruk) bör fråga Skolverket."
@@ -99,7 +99,7 @@ window.SB_GRANTS.push(
       "Kontrollera er kommuns bidragsram för 2028 och 2029 i Skolverkets beslutsbilaga.",
       "Begär ut grundbidraget gemensamt när Skolverket öppnar begäran om utbetalning, och sök tilläggsbidrag om ni behöver fler platser.",
       "Registrera elevernas kurser, poäng och utbildningsform löpande – det behövs i redovisningen.",
-      "Spara avtal med upphandlade eller auktoriserade anordnare i minst fem år."
+      "Spara avtal med upphandlade eller auktoriserade anordnare – Skolverket skriver att sådant underlag kan behöva sparas upp till fem år efter slutbetalningen."
     ],
     redovisning: "Den kommun som ansökt redovisar för hela samverkan, i två Excel-blanketter i e-tjänsten: personnummer för varje elev, kurs- eller ämneskoder, poäng, utbildningsform, ersättning till arbetsplatser och handledning samt medfinansiering. Bidragsår 2026 redovisas 15 januari–15 februari 2027. Pengar som inte använts enligt reglerna kan krävas tillbaka.",
     fallgropar: [
@@ -228,7 +228,7 @@ window.SB_GRANTS.push(
     kortnamn: "Yrkesvux vid nya eller nedlagda företag",
     myndighet: "Skolverket",
     giltighet: "aktiv",
-    sammanfattning: "Pengar till kommuner som ordnar yrkesutbildning för vuxna inom komvux när ett stort företag etablerar sig, växer, drar ner eller lägger ner i eller nära kommunen.",
+    sammanfattning: "Pengar till kommuner som ordnar yrkesutbildning för vuxna inom komvux när ett stort företag etablerar sig, växer, drar ner eller lägger ner i eller nära kommunen. Från 2027 gäller det bara etableringar och expansioner.",
     syfte: "Att vuxna snabbt ska kunna utbilda sig till de jobb som behövs när ett stort företag kommer till orten, eller byta yrke när ett stort företag försvinner.",
     omraden: ["yrke"],
     skolformer: ["komvux"],
@@ -237,7 +237,7 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: null, till: null, text: "Extra ansökan för 2026 pågår: det finns pengar kvar och ansökningar hanteras i turordning tills pengarna tar slut. Mejla statsbidrag.foretagsetableringar@skolverket.se.", ungefar: false },
-      { typ: "ansokan", fran: "2026-11-01", till: "2026-12-01", text: "Ordinarie ansökan för 2027 väntas i november, som förra året (1 november–1 december 2025). Ingen sida för 2027 fanns publicerad ännu.", ungefar: true },
+      { typ: "ansokan", fran: "2026-11-01", till: "2026-12-01", text: "Ordinarie ansökan för 2027 väntas i november, som förra året (1 november–1 december 2025). Ingen sida för 2027 fanns publicerad ännu. Från 2027 ges bidrag bara vid företagsetableringar och expansioner.", ungefar: true },
       { typ: "redovisning", fran: "2027-01-15", till: "2027-02-15", text: "Redovisning av bidragsåret 2026: vilka utbildningar pengarna gått till och elevunderlaget.", ungefar: false }
     ],
     belopp: "Inga fasta belopp per plats – kommunen söker för kostnader som är direkt kopplade till utbildningen och nödvändiga för att genomföra den. Anslaget 2026 är 125 miljoner kr; i januari 2026 beviljades cirka 107 miljoner kr. Ingen medfinansiering krävs.",
@@ -246,6 +246,7 @@ window.SB_GRANTS.push(
       "Utbildningen ska ge kompetens som efterfrågas på grund av förändringen, men behöver inte bara gälla det specifika företaget.",
       "Utbildningen ska planeras tillsammans med arbetslivet och i samråd med berörd kommun/län och Arbetsförmedlingen.",
       "Sökande från hela landet ska kunna antas.",
+      "Från 1 januari 2027 ändras förordningen: då kan bidrag bara ges vid företagsetableringar och företagsexpansioner, inte vid nedläggningar eller neddragningar. Bidrag som beviljats före dess följer de äldre reglerna.",
       "Inte för utbildning som redan får annat statsbidrag (t.ex. regionalt yrkesvux), uppdragsutbildning eller utbildning som kommunen får interkommunal ersättning för."
     ],
     hurDuGor: [
@@ -259,15 +260,16 @@ window.SB_GRANTS.push(
     fallgropar: [
       "Samma utbildningsplats finansieras också med regionalt yrkesvux – dubbelfinansiering är inte tillåten.",
       "Kostnader som inte tydligt hör till utbildningen.",
-      "Utbildningen stängs för sökande från andra delar av landet."
+      "Utbildningen stängs för sökande från andra delar av landet.",
+      "Söka för 2027 på grund av en nedläggning eller neddragning – det ger inte längre bidrag från 1 januari 2027."
     ],
     nyckelord: ["företagsetablering", "nyetablering", "varsel", "nedläggning", "omställning", "batterifabrik", "yrkesvux", "komvux", "vuxenutbildning", "omskolning", "industrisatsning"],
     kallor: [
       { titel: "Skolverket – Statsbidrag för företagsetableringar och nedläggningar 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-foretagsetableringar-och-nedlaggningar-2026" },
-      { titel: "Förordning (2023:603) om statsbidrag för yrkesinriktad vuxenutbildning vid företagsetableringar m.m.", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/rubriken-upphor-att-galla-u2025-08-01_sfs-2023-603/" }
+      { titel: "Förordning (2023:603) om statsbidrag för yrkesinriktad vuxenutbildning vid företagsetableringar m.m.", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/rubriken-upphor-att-galla-u2027-01-01_sfs-2023-603/" }
     ],
     senastKontrollerad: "2026-09-25",
-    osakerhet: "Ingen sida för bidragsåret 2027 var publicerad. Ansökningstiden för 2027 är en uppskattning utifrån förra årets mönster, och det är inte bekräftat att det blir en omgång 2027."
+    osakerhet: "Ingen sida för bidragsåret 2027 var publicerad. Ansökningstiden för 2027 är en uppskattning utifrån förra årets mönster, och det är inte bekräftat att det blir en omgång 2027. Enligt förordning (2025:630) gäller bidraget från 1 januari 2027 bara företagsetableringar och företagsexpansioner; Skolverkets sida för 2026 nämner ännu inte ändringen."
   },
 
   /* ------------------------------------------------------------------ */
@@ -367,7 +369,7 @@ window.SB_GRANTS.push(
     nyckelord: ["lovskola", "sommarskola", "sommarlovsskola", "läxläsning på lov", "betyg E", "höja betyg", "prövning", "introduktionsprogram", "IM", "läslov", "påsklovsskola"],
     kallor: [
       { titel: "Skolverket – Statsbidrag för lovskola 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lovskola-2026" },
-      { titel: "Förordning (2014:47) om statsbidrag för undervisning under skollov", url: "http://www.riksdagen.se/sv/Dokument-Lagar/Lagar/Svenskforfattningssamling/Forordning-201447-om-statsb_sfs-2014-47/" }
+      { titel: "Förordning (2014:47) om statsbidrag för undervisning under skollov", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-201447-om-statsbidrag-for_sfs-2014-47/" }
     ],
     senastKontrollerad: "2026-09-25",
     osakerhet: "Ingen sida för lovskola 2027 var publicerad; ansökningstiden för 2027 är uppskattad utifrån 2026. Bidraget gäller även grundskolan – samma bidrag kan finnas i andra datafiler."
@@ -590,7 +592,7 @@ window.SB_GRANTS.push(
       "Beräkna kostnaderna för utbildningen och antalet deltagare.",
       "Låt en behörig företrädare skriva under och bifoga t.ex. delegationsordning.",
       "Mejla ansökan till spsm@spsm.se 1 november–15 december.",
-      "Skicka slutredovisning med faktiska kostnader och antal elever senast 30 november efter bidragsåret."
+      "Skicka slutredovisning med faktiska kostnader och antal elever senast 30 november under bidragsåret."
     ],
     redovisning: "Slutredovisning på SPSM:s blankett senast 30 november bidragsåret, med faktiska kostnader och antal elever för hela året.",
     fallgropar: [

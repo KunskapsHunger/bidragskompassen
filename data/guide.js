@@ -19,7 +19,7 @@ window.SB_GUIDE = {
         "Ombudet ska ha mandat att skriva under ansökningar och avtal, till exempel vd, förvaltningschef eller ordförande.",
         "Vill ni utse någon annan måste det styrkas med en delegationsordning, ett protokollsutdrag eller en fullmakt.",
         "Man loggar in med e-legitimation (BankID eller Freja).",
-        "Var ute i god tid. Kommuner och fristående skolor bör vara klara fem arbetsdagar innan bidraget stänger. Fristående förskolor och andra organisationer behöver tio arbetsdagar, eftersom de först måste registrera organisationen hos Skolverket."
+        "Var ute i god tid med ombudet. Kommuner och fristående skolor bör vara klara fem arbetsdagar innan bidraget stänger. Samma sak gäller fristående förskolor och andra organisationer som är aktiebolag, ekonomisk förening, enskild firma, handelsbolag eller kommanditbolag. Övriga organisationer, till exempel ideella föreningar och stiftelser, behöver tio arbetsdagar. Fristående förskolor och andra organisationer måste dessutom först registrera organisationen hos Skolverket."
       ]
     },
     {
@@ -87,11 +87,11 @@ window.SB_GUIDE = {
     },
     {
       rubrik: "Fristående förskola registrerar sig först",
-      text: "Fristående skolor finns redan i Skolverkets register och kan direkt utse ett ombud. En fristående förskola måste först registrera organisationen hos Skolverket. Räkna med minst tio arbetsdagar innan bidraget stänger."
+      text: "Fristående skolor finns redan i Skolverkets register och kan direkt utse ett ombud. En fristående förskola måste först registrera organisationen hos Skolverket. Räkna med minst fem arbetsdagar innan bidraget stänger om förskolan drivs som aktiebolag, ekonomisk förening, enskild firma, handelsbolag eller kommanditbolag, och tio arbetsdagar om den drivs i annan form, till exempel som ideell förening eller stiftelse."
     },
     {
       rubrik: "Skolpengen är grunden, statsbidraget extra",
-      text: "Den vanliga driften betalas av elevens hemkommun genom grundbelopp (skolpeng). Kommunen kan också betala tilläggsbelopp för elever med mycket stora stödbehov. Riktade statsbidrag från Skolverket är något annat: extra pengar för ett visst syfte, som inte får ersätta den ordinarie finansieringen."
+      text: "Den vanliga driften betalas av elevens hemkommun genom grundbelopp (skolpeng). Kommunen kan också betala tilläggsbelopp, till exempel för elever med mycket stora stödbehov. Riktade statsbidrag från Skolverket är något annat: extra pengar för ett visst syfte, som inte får ersätta den ordinarie finansieringen."
     },
     {
       rubrik: "Vissa bidrag kan bara kommuner söka",
@@ -113,10 +113,10 @@ window.SB_GUIDE = {
 
   ordlista: [
     { term: "Huvudman", forklaring: "Den som driver en skola eller förskola och har ansvaret för den. Det kan vara en kommun, en region, staten eller en enskild huvudman." },
-    { term: "Enskild huvudman", forklaring: "En juridisk person, till exempel ett aktiebolag, en förening eller en stiftelse, som har godkännande att driva en fristående skola eller förskola." },
+    { term: "Enskild huvudman", forklaring: "En enskild aktör, oftast en juridisk person som ett aktiebolag, en förening eller en stiftelse, som har godkännande att driva en fristående skola eller förskola." },
     { term: "Kommunal huvudman", forklaring: "En kommun som driver egna förskolor och skolor." },
     { term: "Fristående skola", forklaring: "En skola som drivs av en enskild huvudman i stället för av kommunen. Den är öppen för alla och finansieras med skolpeng från kommunerna. Kallas ofta friskola." },
-    { term: "Skolenhet", forklaring: "En skolbyggnad eller flera byggnader nära varandra där utbildning bedrivs, med en egen rektor. En huvudman kan ha många skolenheter." },
+    { term: "Skolenhet", forklaring: "En skolbyggnad eller flera byggnader nära varandra där utbildning bedrivs. Arbetet på skolenheten leds av en rektor. En huvudman kan ha många skolenheter." },
     { term: "Skolform", forklaring: "Typ av utbildning, till exempel förskola, förskoleklass, grundskola, anpassad grundskola, gymnasieskola och komvux." },
     { term: "Statsbidrag", forklaring: "Pengar från staten till exempelvis skolhuvudmän. Riktade statsbidrag är öronmärkta för ett visst syfte och har villkor." },
     { term: "Bidragsår", forklaring: "Den period som pengarna ska användas under. Det är ofta ett kalenderår (till exempel 2026) eller ett läsår (till exempel 2026/27)." },
@@ -132,7 +132,7 @@ window.SB_GUIDE = {
     { term: "Dubbelfinansiering", forklaring: "När samma kostnad betalas av två statliga bidrag. Det är inte tillåtet i många statsbidrag." },
     { term: "Ordinarie finansiering", forklaring: "De pengar verksamheten ändå har, till exempel skolpeng och skatteintäkter. Statsbidrag ska oftast gå till något extra och får inte ersätta dem." },
     { term: "Grundbelopp", forklaring: "Pengar per elev som hemkommunen betalar till en fristående skola eller förskola, ofta kallat skolpeng. Det ska täcka den vanliga verksamheten, som undervisning, lokaler och måltider." },
-    { term: "Tilläggsbelopp", forklaring: "Extra pengar som en fristående huvudman kan söka hos elevens hemkommun för en elev med omfattande behov av särskilt stöd, till exempel för assistent eller särskilda hjälpmedel." },
+    { term: "Tilläggsbelopp", forklaring: "Extra pengar som en fristående huvudman i undantagsfall kan söka hos barnets eller elevens hemkommun. Oftast gäller det en elev med omfattande behov av särskilt stöd, till exempel för assistent eller särskilda hjälpmedel. I skolan kan det också gälla modersmålsundervisning och lovskola." },
     { term: "Socioekonomiskt index", forklaring: "Ett mått från SCB på elevernas förutsättningar, till exempel föräldrarnas utbildning. Det används i vissa bidrag så att huvudmän med tuffare förutsättningar får mer per elev." },
     { term: "Firmatecknare", forklaring: "Den eller de personer som får skriva under avtal och andra handlingar för en organisation. Det framgår till exempel av Bolagsverkets register." },
     { term: "Behörig företrädare", forklaring: "En person som har rätt att företräda organisationen, antingen som firmatecknare eller genom fullmakt eller delegation." },
@@ -145,7 +145,7 @@ window.SB_GUIDE = {
     { term: "Entreprenad", forklaring: "När en huvudman lämnar över delar av utbildningen till någon annan genom avtal. I vissa bidrag är det huvudmannen, inte entreprenören, som söker." },
     { term: "APL (arbetsplatsförlagt lärande)", forklaring: "Den del av en yrkesutbildning som eleven gör på en arbetsplats. Lärlingsutbildning har mer APL än vanligt." },
     { term: "Förstelärare", forklaring: "En karriärtjänst för särskilt skickliga lärare. Med statsbidraget för karriärtjänster ska förstelärare få ett lönetillägg på minst 5 000 kronor i månaden, i vissa fall mer." },
-    { term: "Lektor", forklaring: "En karriärtjänst för lärare med forskarutbildning. Med statsbidraget ska lektorn få en löneökning på minst 10 000 kronor i månaden, i vissa fall mer." },
+    { term: "Lektor", forklaring: "En karriärtjänst för lärare med examen på forskarnivå (licentiat- eller doktorsexamen). Med statsbidraget ska lektorn få en löneökning på minst 10 000 kronor i månaden, i vissa fall mer." },
     { term: "Lärarlegitimation", forklaring: "Ett bevis från Skolverket att läraren har rätt utbildning. Många lönebidrag kräver att läraren är legitimerad." },
     { term: "Förordning", forklaring: "Regler som regeringen beslutar. Varje statsbidrag har oftast en egen förordning med villkor, återkrav och överklagande." },
     { term: "Föreskrifter (SKOLFS)", forklaring: "Mer detaljerade regler som Skolverket beslutar, till exempel om sista ansökningsdag. De publiceras i Skolverkets författningssamling, SKOLFS." },
@@ -196,7 +196,7 @@ window.SB_GUIDE = {
     },
     {
       fraga: "Kan fristående förskolor söka statsbidrag?",
-      svar: "Ja, flera bidrag, till exempel för fortbildning och personalförstärkning. Men vissa förskolebidrag går bara till kommunerna. Då får kommunen använda pengarna även i fristående förskolor, så fråga er kommun. En fristående förskola måste först registrera sig hos Skolverket."
+      svar: "Ja, flera bidrag, till exempel för fortbildning av lärare och förskollärare och för inköp av litteratur. Men vissa förskolebidrag går bara till kommunerna. Då får kommunen använda pengarna även i fristående förskolor, så fråga er kommun. En fristående förskola måste först registrera sig hos Skolverket."
     },
     {
       fraga: "Vi har flera skolor. Söker varje skola för sig?",
@@ -244,6 +244,7 @@ window.SB_GUIDE = {
     { titel: "Skolverket – Statsbidrag för personalförstärkning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-personalforstarkning-2026" },
     { titel: "Skolverket – Statsbidrag för lovskola 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lovskola-2026" },
     { titel: "Skolverket – Statsbidrag för fortbildning av lärare och förskollärare 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-fortbildning-av-larare-och-forskollarare-2026" },
+    { titel: "Skolverket – Statsbidrag för inköp av litteratur 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-inkop-av-litteratur-2026" },
     { titel: "Skolverket – Statsbidrag för kvalitetshöjande åtgärder i förskolan 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kvalitetshojande-atgarder-i-forskolan-2026" },
     { titel: "Skolverket – Statsbidrag för maxtaxa 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-maxtaxa-2026" },
     { titel: "Skolverket – Ansöka om tilläggsbelopp", url: "https://www.skolverket.se/larande-och-trygghet/elevhalsa-och-stodinsatser/stod-och-tidiga-insatser/ansoka-om-tillaggsbelopp" },

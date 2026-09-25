@@ -190,7 +190,7 @@ window.SB_GRANTS.push(
       { titel: "Förordning (2024:62) om statsbidrag för inköp av litteratur", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-202462-om-statsbidrag-for-inkop-av_sfs-2024-62/" }
     ],
     senastKontrollerad: "2026-09-25",
-    osakerhet: "Någon sida för 2027 finns ännu inte. Perioden för 2027 och beslutsmånaden december 2026 är uppskattade utifrån 2025 (begäran 1 september–8 oktober, beslut i december)."
+    osakerhet: "Någon sida för 2027 finns ännu inte. Perioden för 2027 och beslutsmånaden december 2026 är uppskattade utifrån 2025 (begäran 1 september–8 oktober, beslut i december). Skolverket skriver 'kommunala, statliga, fristående och övriga huvudmän' och nämner inte regioner särskilt; vi har tolkat det som att även regioner ingår."
   },
   {
     id: "laxhjalp",

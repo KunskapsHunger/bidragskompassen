@@ -110,24 +110,7 @@
     });
   }
 
-  /* ---------- Hero counters ---------- */
-  var countersAnimated = false;
-  function renderCounters() {
-    var el = document.getElementById('hero-counters');
-    var current = grants.filter(function (g) { return !core.isEnded(g); });
-    var open = current.filter(function (g) { return core.grantStatus(g, today).code === 'open'; }).length;
-    var org = core.findById(core.ORGANISERS, state.organiser);
-    var forOrg = current.filter(function (g) { return core.canApply(g, state.organiser); }).length;
-    var items = [[current.length, 'bidrag'], [open, 'öppna nu'], [forOrg, org.countLabel]];
-    dom.clear(el);
-    el.appendChild(h('span', { class: 'sr-only', text: items.map(function (it) { return it[0] + ' ' + it[1]; }).join(', ') + '.' }));
-    items.forEach(function (it, idx) {
-      var num = h('span', { class: 'counter__num', text: countersAnimated ? String(it[0]) : '0' });
-      el.appendChild(h('span', { class: 'counter', 'aria-hidden': 'true' }, [num, h('span', { class: 'counter__label', text: it[1] })]));
-      if (!countersAnimated) window.setTimeout(function () { SB.motion.countUp(num, it[0]); }, 500 + idx * 150);
-    });
-    countersAnimated = true;
-  }
+  /* Hero counters live in js/counters.js (they follow the hero query). */
 
   /* ---------- Footer ---------- */
   function renderFooter() {
@@ -179,12 +162,10 @@
     renderOrgSwitch();
     initNav();
     renderFooter();
-    ['motion', 'smart', 'search', 'filters', 'catalog', 'detail', 'wizard', 'wheel', 'guide'].forEach(initModule);
-    renderCounters();
+    ['motion', 'smart', 'counters', 'search', 'filters', 'catalog', 'detail', 'wizard', 'wheel', 'guide'].forEach(initModule);
     subscribe(function (next, prev) {
       if (next.organiser !== prev.organiser) {
-        renderCounters();
-        dom.$$('#org-seg input').forEach(function (i) { i.checked = i.value === next.organiser; });
+            dom.$$('#org-seg input').forEach(function (i) { i.checked = i.value === next.organiser; });
       }
     });
     window.addEventListener('hashchange', function () { route(core.decodeHash(window.location.hash), false); });

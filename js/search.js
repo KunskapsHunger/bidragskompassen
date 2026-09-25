@@ -1,4 +1,5 @@
-/* Bidragskompassen – hero search: ARIA 1.2 combobox with live suggestions. */
+/* Bidragskompassen – hero search: ARIA 1.2 combobox. Local suggestions appear instantly; a settled
+ * query (≥ 3 characters) is also sent to the smart ranking, which re-ranks or appends when it answers. */
 (function () {
   'use strict';
   var SB = window.SB;
@@ -6,6 +7,8 @@
   var dom = SB.dom;
   var h = dom.h;
   var LIMIT = 6;
+  var MAX_WITH_APPENDED = 9;
+  var ANNOUNCE_MS = 450;
 
   function init(app) {
     var form = document.getElementById('hero-search');
@@ -13,8 +16,13 @@
     var list = document.getElementById('hero-list');
     var status = document.getElementById('hero-status');
     var index = core.buildIndex(app.grants);
-    var options = [];   // [{ el, action }]
+    var options = [];   // [{ el, action, key }] – option ids are stable per grant: hero-opt-<id>
     var active = -1;
+    var shownQ = null;
+    var announcedQ = null;
+    var announceTimer = null;
+
+    function counters(q) { if (SB.counters) SB.counters.update(q); }
 
     function setExpanded(open) {
       list.hidden = !open;
@@ -36,72 +44,120 @@
       }
     }
 
-    function option(id, children, action, extraClass) {
-      var el = h('li', { id: id, role: 'option', 'aria-selected': 'false', class: 'combo__opt' + (extraClass ? ' ' + extraClass : '') }, children);
+    function option(id, key, children, action, extraClass) {
+      var el = h('li', { id: id, role: 'option', 'aria-selected': 'false', 'data-key': key,
+        class: 'combo__opt' + (extraClass ? ' ' + extraClass : '') }, children);
       el.addEventListener('mousedown', function (e) { e.preventDefault(); });
       el.addEventListener('click', function () { run(action); });
-      return { el: el, action: action };
+      return { el: el, action: action, key: key };
     }
 
-    function render(keepActive) {
-      var q = input.value.trim();
-      var activeId = keepActive && active >= 0 && options[active] ? options[active].el.id : null;
+    function grantOption(it, q, org) {
+      var g = it.grant;
+      var meta = it.smartOnly
+        ? [h('span', { class: 'combo__smart', text: 'Föreslagen utifrån din fråga' }), ' · ' + g.myndighet]
+        : [[g.myndighet, core.statusText(it.status)].join(' · '),
+          it.dim ? h('span', { class: 'combo__cannot', text: ' · ' + org.cannot }) : null];
+      var cls = [it.dim ? 'is-dim' : '', it.smartOnly ? 'combo__opt--smart' : ''].join(' ').trim();
+      return option('hero-opt-' + g.id, g.id, [
+        h('span', { class: 'combo__name' }, it.smartOnly ? g.kortnamn : dom.highlight(g.kortnamn, q)),
+        h('span', { class: 'combo__meta' }, meta)
+      ], { type: 'grant', id: g.id }, cls);
+    }
+
+    function allLabel(res) {
+      return res.total > 0 ? 'Visa alla ' + res.total + ' träffar i registret' : 'Inga förslag – sök i registret ändå';
+    }
+    function allOption(res, q) {
+      return option('hero-opt-all', '__all', [h('span', { class: 'combo__all', text: allLabel(res) }), h('span', { 'aria-hidden': 'true', text: ' →' })],
+        { type: 'all', q: q }, 'combo__opt--all');
+    }
+    function hint() {
+      return h('li', { class: 'combo__hint', role: 'presentation', 'aria-hidden': 'true' }, [
+        h('span', { class: 'combo__hint-dot' }), 'Letar efter fler träffar …'
+      ]);
+    }
+
+    /** Full rebuild; FLIP when a smart answer re-ranks an untouched list. */
+    function rebuild(res, q, org, loading, animate) {
+      var activeId = active >= 0 && options[active] ? options[active].el.id : null;
+      var play = animate ? SB.motion.flip(list, '.combo__opt') : null;
       dom.clear(list);
-      options = [];
-      if (core.tokenize(q).length === 0) { setExpanded(false); status.textContent = ''; if (SB.smart) SB.smart.cancelHero(); return; }
-      var res = core.suggest(app.grants, index, q, app.ctx(), LIMIT);
-      var org = core.findById(core.ORGANISERS, app.get().organiser);
-      res.items.forEach(function (it, i) {
-        var g = it.grant;
-        var meta = [g.myndighet, core.statusText(it.status)];
-        options.push(option('hero-opt-' + i, [
-          h('span', { class: 'combo__name' }, dom.highlight(g.kortnamn, q)),
-          h('span', { class: 'combo__meta' }, [
-            meta.join(' · '),
-            it.dim ? h('span', { class: 'combo__cannot', text: ' · ' + org.cannot }) : null
-          ])
-        ], { type: 'grant', id: g.id }, it.dim ? 'is-dim' : ''));
+      options = res.items.map(function (it) { return grantOption(it, q, org); }).concat([allOption(res, q)]);
+      options.forEach(function (o, i) {
+        if (loading && i === options.length - 1) list.appendChild(hint());
+        list.appendChild(o.el);
       });
-      var extras = SB.smart ? SB.smart.heroExtras(q, res.items.map(function (it) { return it.grant.id; }), function (forQ) {
-        if (!list.hidden && input.value.trim() === forQ) render(true);
-      }) : [];
-      extras.forEach(function (g, i) {
-        options.push(option('hero-opt-s' + i, [
-          h('span', { class: 'combo__name', text: g.kortnamn }),
-          h('span', { class: 'combo__meta' }, [h('span', { class: 'combo__smart', text: 'Föreslagen utifrån din fråga' }), ' · ' + g.myndighet])
-        ], { type: 'grant', id: g.id }, 'combo__opt--smart'));
-      });
-      var allLabel = res.total > 0
-        ? 'Visa alla ' + res.total + ' träffar i registret'
-        : (extras.length ? 'Sök i registret' : 'Inga förslag – sök i registret ändå');
-      options.push(option('hero-opt-all', [h('span', { class: 'combo__all', text: allLabel }), h('span', { 'aria-hidden': 'true', text: ' →' })],
-        { type: 'all', q: q }, 'combo__opt--all'));
-      options.forEach(function (o) { list.appendChild(o.el); });
       setExpanded(true);
-      var keep = activeId ? options.map(function (o) { return o.el.id; }).indexOf(activeId) : -1;
-      setActive(keep);
-      announce(res, extras.length);
+      setActive(activeId ? options.map(function (o) { return o.el.id; }).indexOf(activeId) : -1);
+      if (play) play();
     }
 
-    var announce = dom.debounce(function (res, extra) {
-      var smartText = extra ? ' ' + dom.plural(extra, 'förslag', 'förslag') + ' till utifrån din fråga.' : '';
-      status.textContent = (res.total === 0 && !extra)
-        ? 'Inga förslag.'
-        : (res.total ? dom.plural(res.items.length, 'förslag', 'förslag') + ' av ' + dom.plural(res.total, 'träff', 'träffar') + '.' : '') + smartText;
-    }, 400);
+    /** Keyboard-stable update: keep every existing option and the active id; only append new hits. */
+    function append(res, q, org) {
+      var activeId = options[active].el.id;
+      var have = {};
+      options.forEach(function (o) { have[o.key] = true; });
+      var allIdx = options.length - 1;
+      var fresh = res.items.filter(function (it) { return !have[it.grant.id]; })
+        .slice(0, Math.max(0, MAX_WITH_APPENDED - allIdx))
+        .map(function (it) { return grantOption(it, q, org); });
+      var allOpt = options[allIdx];
+      fresh.forEach(function (o) { list.insertBefore(o.el, allOpt.el); });
+      options = options.slice(0, allIdx).concat(fresh, [allOpt]);
+      dom.$$('.combo__hint', list).forEach(function (el) { el.parentNode.removeChild(el); });
+      dom.clear(allOpt.el.firstChild).appendChild(document.createTextNode(allLabel(res)));
+      setActive(options.map(function (o) { return o.el.id; }).indexOf(activeId));
+    }
+
+    function announce(q, res, loading) {
+      window.clearTimeout(announceTimer);
+      if (loading || announcedQ === q) return; // one announcement per settled query
+      announceTimer = window.setTimeout(function () {
+        if (input.value.trim() !== q || list.hidden) return;
+        announcedQ = q;
+        var n = res.items.length;
+        status.textContent = n === 0 ? 'Inga förslag.'
+          : dom.plural(n, 'förslag', 'förslag') + (res.total > n ? ' av ' + dom.plural(res.total, 'träff', 'träffar') : '') + '.';
+      }, ANNOUNCE_MS);
+    }
+
+    function onSmartDone(q) {
+      if (input.value.trim() !== q) return;
+      if (list.hidden) { counters(q); return; }
+      render('smart');
+    }
+
+    /** reason: 'input' | 'smart' | 'organiser' | 'focus' */
+    function render(reason) {
+      var q = input.value.trim();
+      if (core.tokenize(q).length === 0) {
+        dom.clear(list); options = []; setExpanded(false);
+        status.textContent = ''; shownQ = null;
+        if (SB.smart) SB.smart.cancelHero();
+        counters('');
+        return;
+      }
+      var smartState = SB.smart ? SB.smart.heroRequest(q, false, onSmartDone) : 'off';
+      var res = core.heroSuggest(app.grants, index, q, app.ctx(), SB.smart ? SB.smart.peek(q) : null, LIMIT);
+      var org = core.findById(core.ORGANISERS, app.get().organiser);
+      var loading = smartState === 'loading';
+      if (reason === 'smart' && active >= 0 && !list.hidden && shownQ === q) append(res, q, org);
+      else rebuild(res, q, org, loading, reason === 'smart' && !SB.motion.isReduced());
+      shownQ = q;
+      counters(q);
+      announce(q, res, loading);
+    }
 
     function run(action) {
       setExpanded(false);
-      if (action.type === 'grant') {
-        SB.detail.open(action.id, { trigger: input });
-      } else {
-        app.goToCatalog({ q: action.q });
-      }
+      if (action.type === 'grant') SB.detail.open(action.id, { trigger: input });
+      else app.goToCatalog({ q: action.q }); // the catalog shares the smart cache: no second call
     }
 
-    var update = dom.debounce(render, 90);
+    var update = dom.debounce(function () { render('input'); }, 90);
     input.addEventListener('input', update);
-    input.addEventListener('focus', function () { if (input.value.trim()) render(); });
+    input.addEventListener('focus', function () { if (input.value.trim()) render('focus'); });
     input.addEventListener('blur', function () { window.setTimeout(function () { setExpanded(false); }, 120); });
 
     input.addEventListener('keydown', function (e) {
@@ -109,12 +165,12 @@
       switch (e.key) {
         case 'ArrowDown':
           e.preventDefault();
-          if (!open) { render(); if (options.length) setActive(0); return; }
+          if (!open) { render('focus'); if (options.length) setActive(0); return; }
           setActive(active + 1 >= options.length ? 0 : active + 1);
           break;
         case 'ArrowUp':
           e.preventDefault();
-          if (!open) { render(); if (options.length) setActive(options.length - 1); return; }
+          if (!open) { render('focus'); if (options.length) setActive(options.length - 1); return; }
           setActive(active <= 0 ? options.length - 1 : active - 1);
           break;
         case 'Enter':
@@ -122,7 +178,7 @@
           break;
         case 'Escape':
           if (open) { e.preventDefault(); setExpanded(false); }
-          else if (input.value) { e.preventDefault(); input.value = ''; status.textContent = ''; }
+          else if (input.value) { e.preventDefault(); input.value = ''; render('input'); }
           break;
         case 'Home': case 'End':
           if (open && active >= 0) setActive(-1);
@@ -134,11 +190,13 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       setExpanded(false);
-      app.goToCatalog({ q: input.value.trim() });
+      app.goToCatalog({ q: input.value.trim() }); // asks the smart ranking immediately
     });
 
     app.subscribe(function (next, prev) {
-      if (next.organiser !== prev.organiser && !list.hidden) render();
+      if (next.organiser === prev.organiser) return;
+      if (!list.hidden) render('organiser');
+      else if (input.value.trim()) SB.smart && SB.smart.heroRequest(input.value.trim(), false, onSmartDone);
     });
   }
 

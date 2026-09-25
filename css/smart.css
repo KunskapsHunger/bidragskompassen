@@ -23,3 +23,22 @@
 
 .combo__opt--smart { background: var(--blue-100); }
 .combo__smart { font-weight: 700; }
+
+/* Hero list: calm loading hint while the smart answer is on its way */
+.combo__hint {
+  display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 24px;
+  border-bottom: 1px solid rgba(60, 60, 59, 0.18); background: var(--beige-100);
+  font-size: var(--fs-sm); color: var(--blue-500);
+}
+.combo__hint-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--blue-400); animation: smart-pulse 1.2s ease-in-out infinite; }
+
+/* Live hero counters – widths reserved so changing numbers and labels never shift the layout */
+.counter__num { display: inline-block; min-width: 2ch; text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+.counter__label { min-width: 8ch; }
+.counter__caption {
+  flex-basis: 100%; min-height: 1.3em; margin-top: calc(-1 * var(--sp-sm));
+  font-size: var(--fs-sm); font-style: italic; color: var(--blue-200);
+}
+.hero__counters.is-zero .counter__num { color: var(--blue-300); }
+.hero__cue { border-radius: var(--r-pill); transition: background-color 0.3s, color 0.3s, padding 0.3s; }
+.hero__cue.is-emphasised { padding-inline: 20px; background: var(--white); color: var(--blue-600); }

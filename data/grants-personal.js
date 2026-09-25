@@ -52,7 +52,7 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Statsbidrag för Lärarlönelyftet 2026/27 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lararlonelyftet-2026-27" },
       { titel: "Statsbidrag för Lärarlönelyftet 2025/26 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lararlonelyftet-2025-26" },
-      { titel: "Förordning (2016:100) om statsbidrag för höjda löner till lärare och vissa andra personalkategorier", url: "http://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-2016100-om-statsbidrag-for-hojda_sfs-2016-100" }
+      { titel: "Förordning (2016:100) om statsbidrag för höjda löner till lärare och vissa andra personalkategorier", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2016100-om-statsbidrag-for-hojda_sfs-2016-100/" }
     ],
     senastKontrollerad: "2026-09-25",
     osakerhet: "Skolverkets sida anger sista dag för höstens begäran både som 2 november och 3 november 2026 – räkna med 2 november för säkerhets skull. Datum för 2027/28 är uppskattade utifrån tidigare år. Sidan nämner inte regioner uttryckligen som mottagare."
