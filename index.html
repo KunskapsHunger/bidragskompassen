@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="sv" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bidragskompassen – statsbidrag för skolan, förklarat</title>
+  <meta name="description" content="Hitta rätt statsbidrag för förskola, skola och vuxenutbildning. Datum, villkor och hur ni söker – förklarat på vanlig svenska.">
+  <meta name="theme-color" content="#1F2F45">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231F2F45%27/%3E%3Ctext x=%2716%27 y=%2724%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23FFFFFF%27%3EB%3C/text%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className = d.className.replace('no-js', 'js');
+      var pref = null;
+      try { pref = window.localStorage.getItem('sb.reduceMotion'); } catch (e) { pref = null; }
+      var sys = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (pref === '1' || (pref === null && sys)) d.classList.add('reduce-motion');
+      /* Fail-safe: if the app never boots, drop the .js class so nothing stays hidden. */
+      window.setTimeout(function () { if (!window.SB || !window.SB.booted) d.classList.remove('js'); }, 4000);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&amp;family=Inter:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/wizard.css">
+  <link rel="stylesheet" href="css/wheel.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/smart.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehållet</a>
+
+  <header class="site-header on-dark" id="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" aria-hidden="true"><use href="#bk-mark"/></svg>
+        <span class="brand__name"><span>Bidrags<em>kompassen</em></span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__icon" aria-hidden="true">☰</span>Meny
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#kompassen">Kompassen</a></li>
+          <li><a href="#arshjulet">Årshjulet</a></li>
+          <li><a href="#alla-bidrag">Alla bidrag</a></li>
+          <li><a href="#sa-gor-du">Så gör du</a></li>
+          <li><a href="#ordlista">Ordlista</a></li>
+        </ul>
+      </nav>
+      <div class="org-switch" role="radiogroup" aria-labelledby="org-label" aria-describedby="org-desc">
+        <span class="org-switch__label label-caps" id="org-label">Jag söker för</span>
+        <span class="sr-only" id="org-desc">Valet anpassar alla listor efter vem som får söka.</span>
+        <div class="seg" id="org-seg"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="sample-banner" id="sample-banner" hidden>
+    Sidan visar just nu <strong>exempeldata</strong> medan innehållet tas fram. Uppgifterna stämmer inte.
+  </div>
+  <noscript>
+    <p class="sample-banner">Sidan behöver JavaScript för sökning och filter. Slå på JavaScript i webbläsaren.</p>
+  </noscript>
+
+  <main id="main" tabindex="-1">
+
+    <!-- 1. Hero -->
+    <section class="hero on-dark" id="top" aria-labelledby="hero-title">
+      <div class="hero__pattern" aria-hidden="true">
+        <svg width="100%" height="100%">
+          <defs>
+            <symbol id="bk-mark" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M33.9 14.1 L26.6 26.6 L21.4 21.4 Z" fill="currentColor"/><path d="M14.1 33.9 L21.4 21.4 L26.6 26.6 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+            <pattern id="e-motif" width="168" height="168" patternUnits="userSpaceOnUse">
+              <use href="#bk-mark" x="18" y="18" width="48" height="48"/>
+              <use href="#bk-mark" x="102" y="102" width="48" height="48"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#e-motif)"/>
+        </svg>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="wrap hero__inner">
+        <p class="hero__eyebrow label-caps" data-reveal>Statsbidrag för skolan, förklarat</p>
+        <h1 class="hero__title" id="hero-title" data-split>Pengarna finns. <em>Vi visar vägen.</em></h1>
+
+        <div class="hero__grid">
+          <p class="hero__lead" data-reveal style="--i:3">
+            Bidragskompassen samlar statens bidrag till förskola, skola och vuxenutbildning.
+            Här ser ni vem som får söka, när ni ska söka och hur det går till – på vanlig svenska.
+          </p>
+
+          <form class="hero-search" id="hero-search" role="search" data-reveal style="--i:4">
+            <label class="hero-search__label label-caps" for="hero-q">Sök bland alla bidrag</label>
+            <div class="combo">
+              <input class="combo__input" id="hero-q" type="text" role="combobox"
+                     aria-autocomplete="list" aria-expanded="false" aria-controls="hero-list"
+                     aria-describedby="hero-hint" autocomplete="off" spellcheck="false"
+                     placeholder="Till exempel läsning eller lovskola">
+              <button class="btn btn--primary combo__submit" type="submit">Sök <span class="arrow" aria-hidden="true">→</span></button>
+              <ul class="combo__list" id="hero-list" role="listbox" aria-label="Förslag" hidden></ul>
+            </div>
+            <p class="sr-only" id="hero-hint">Förslag visas medan du skriver. Använd pil upp och pil ner för att välja och Enter för att öppna.</p>
+            <p class="sr-only" id="hero-status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <p class="hero__counters" id="hero-counters" data-reveal style="--i:5"></p>
+      </div>
+
+      <div class="wrap hero__foot">
+        <a class="hero__cue" href="#kompassen"><span class="hero__cue-line" aria-hidden="true"></span>Hitta rätt bidrag med tre frågor</a>
+        <label class="switch hero__motion">
+          <input type="checkbox" data-motion-toggle>
+          <span class="switch__track" aria-hidden="true"></span>
+          <span class="small">Minska rörelse</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- 2. Kompassen -->
+    <section class="section" id="kompassen" aria-labelledby="kompassen-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-head__meta label-caps" data-reveal><span>01 — Kompassen</span><span>Tre frågor</span></p>
+          <h2 class="section-head__title" id="kompassen-title" data-split>Tre frågor. <em>Rätt bidrag.</em></h2>
+          <p class="section-head__lead" data-reveal style="--i:2">
+            Svara på tre korta frågor. Vi visar de bidrag som passar er bäst – och förklarar varför.
+          </p>
+        </header>
+        <div class="wizard" id="wizard"></div>
+      </div>
+    </section>
+
+    <!-- 3. Årshjulet -->
+    <section class="section on-dark" id="arshjulet" aria-labelledby="arshjulet-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-head__meta label-caps" data-reveal><span>02 — Årshjulet</span><span id="wheel-year-meta"></span></p>
+          <h2 class="section-head__title" id="arshjulet-title" data-split>Året runt. <em>I ett ögonkast.</em></h2>
+          <p class="section-head__lead" data-reveal style="--i:2">
+            Varje ring är ett bidrag. De tjocka bågarna visar när ni kan söka eller begära ut pengar.
+            Nålen visar dagens datum.
+          </p>
+        </header>
+        <div class="wheel" id="wheel"></div>
+      </div>
+    </section>
+
+    <!-- 4. Katalogen -->
+    <section class="section" id="alla-bidrag" aria-labelledby="katalog-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-head__meta label-caps" data-reveal><span>03 — Alla bidrag</span><span id="catalog-total-meta"></span></p>
+          <h2 class="section-head__title" id="katalog-title" data-split>Alla bidrag. <em>Ett register.</em></h2>
+          <p class="section-head__lead" data-reveal style="--i:2">
+            Sök med egna ord och sortera efter det som är viktigt för er. Länken i adressfältet sparar ert urval, så att ni kan dela det.
+          </p>
+        </header>
+        <div class="catalog" id="catalog"></div>
+      </div>
+    </section>
+
+    <!-- 5. Så gör du -->
+    <section class="section section--tint" id="sa-gor-du" aria-labelledby="guide-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-head__meta label-caps" data-reveal><span>04 — Så gör du</span><span>Steg för steg</span></p>
+          <h2 class="section-head__title" id="guide-title" data-split>Så söker ni. <em>Steg för steg.</em></h2>
+          <p class="section-head__lead" data-reveal style="--i:2">
+            Så här brukar det gå till, från idé till redovisning. Villkoren skiljer sig mellan bidragen, så läs alltid det enskilda bidraget också.
+          </p>
+        </header>
+        <div id="guide-steps"></div>
+      </div>
+      <div id="guide-fristaende"></div>
+    </section>
+
+    <!-- 6. Ordlista & frågor -->
+    <section class="section" id="ordlista" aria-labelledby="ordlista-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="section-head__meta label-caps" data-reveal><span>05 — Ordlista &amp; frågor</span><span>Från A till Ö</span></p>
+          <h2 class="section-head__title" id="ordlista-title" data-split>Ord som krånglar. <em>Förklarade.</em></h2>
+          <p class="section-head__lead" data-reveal style="--i:2">
+            Myndighetsord på vanlig svenska, och svar på det många undrar.
+          </p>
+        </header>
+        <div class="lexicon" id="lexicon"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer on-dark" aria-labelledby="footer-title">
+    <div class="wrap">
+      <h2 class="sr-only" id="footer-title">Om sidan</h2>
+      <div class="footer-grid">
+        <p class="footer__disclaimer">Informationen är förenklad. <em>Kontrollera alltid villkoren hos myndigheten innan ni söker.</em></p>
+        <div class="footer__col">
+          <h2 class="label-caps">Senast kontrollerad</h2>
+          <p id="footer-checked">–</p>
+        </div>
+        <div class="footer__col">
+          <h2 class="label-caps">Källor</h2>
+          <ul id="footer-sources"></ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="label-caps">Hitta</h2>
+          <ul>
+            <li><a href="#kompassen">Kompassen</a></li>
+            <li><a href="#arshjulet">Årshjulet</a></li>
+            <li><a href="#alla-bidrag">Alla bidrag</a></li>
+            <li><a href="#sa-gor-du">Så gör du</a></li>
+            <li><a href="#ordlista">Ordlista &amp; frågor</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__settings" id="installningar" tabindex="-1">
+          <h2 class="label-caps">Inställningar</h2>
+          <label class="switch">
+            <input type="checkbox" data-motion-toggle>
+            <span class="switch__track" aria-hidden="true"></span>
+            <span>Minska rörelse</span>
+          </label>
+          <p class="footer__small">Stänger av animationer på sidan. Valet sparas i den här webbläsaren.</p>
+          <label class="switch">
+            <input type="checkbox" data-smart-toggle checked aria-describedby="smart-privacy">
+            <span class="switch__track" aria-hidden="true"></span>
+            <span>Smart sökning</span>
+          </label>
+          <p class="footer__small" id="smart-privacy">När smart sökning är på skickas det du skriver i sökrutan till en AI-tjänst (TypeSafe) via vår server – bara för att sortera träffarna efter vad frågan troligen handlar om. Frågan sparas inte i någon databas. Skriv inga personuppgifter i sökrutan; det behövs aldrig.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__logo brand__name"><svg class="brand__mark" aria-hidden="true"><use href="#bk-mark"/></svg><span>Bidrags<em>kompassen</em></span></p>
+        <p class="footer__small">Bidragskompassen är en guide, inte en myndighet. Beslut om bidrag fattas av respektive myndighet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="drawer" id="detail" aria-labelledby="detail-title">
+    <div class="drawer__bar">
+      <p class="label-caps drawer__kicker">Bidrag</p>
+      <div class="drawer__actions">
+        <button class="link-btn" type="button" id="detail-copy">Kopiera länk</button>
+        <button class="link-btn" type="button" id="detail-print">Skriv ut</button>
+        <button class="drawer__close" type="button" id="detail-close"><span aria-hidden="true">×</span><span class="sr-only">Stäng</span></button>
+      </div>
+    </div>
+    <div class="drawer__body" id="detail-body"></div>
+  </dialog>
+
+  <p class="sr-only" id="sr-announcer" aria-live="polite"></p>
+
+  <!-- Data (missing files are simply skipped) -->
+  <script src="data/grants-grundskola.js"></script>
+  <script src="data/grants-personal.js"></script>
+  <script src="data/grants-gymnasium-vux.js"></script>
+  <script src="data/grants-skolverket-ovriga.js"></script>
+  <script src="data/grants-ovriga.js"></script>
+  <script src="data/guide.js"></script>
+  <script src="data/_sample.js"></script>
+
+  <!-- App -->
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/core-search.js"></script>
+  <script src="js/core-url.js"></script>
+  <script src="js/core-wheel.js"></script>
+  <script src="js/core-smart.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/smart.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/wizard.js"></script>
+  <script src="js/wheel.js"></script>
+  <script src="js/guide.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

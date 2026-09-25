@@ -1,0 +1,6 @@
+node_modules/
+film/node_modules/
+film/out/
+film/voice/
+.env
+.claude/

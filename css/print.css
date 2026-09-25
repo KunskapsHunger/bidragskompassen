@@ -1,0 +1,23 @@
+/* Bidragskompassen – print: when a grant is open, print only the grant; otherwise a clean page. */
+@page { margin: 18mm 16mm; }
+
+* { animation: none !important; transition: none !important; }
+body { background: #FFFFFF; color: #3C3C3B; font-size: 11pt; }
+.skip-link, .site-header, .hero__pattern, .hero__glow, .hero__foot, .hero-search, .sample-banner,
+.catalog__bar, .catalog__filters, .viewtoggle, .wheel, .wizard, .drawer__bar, .menu-toggle { display: none !important; }
+.on-dark, .section.on-dark, .site-footer, .fri { background: #FFFFFF !important; color: #3C3C3B !important; }
+.on-dark * { color: #3C3C3B !important; }
+[data-reveal], [data-split] .w__i { opacity: 1 !important; transform: none !important; }
+a[href^="https:"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
+.card__link::after { content: none !important; }
+
+/* Drawer open → print only the drawer */
+.has-drawer body > *:not(.drawer) { display: none !important; }
+.has-drawer .drawer {
+  position: static !important; display: block !important; width: auto !important; height: auto !important;
+  max-height: none !important; overflow: visible !important; transform: none !important;
+}
+.has-drawer .drawer__body { overflow: visible !important; padding: 0 !important; }
+.drawer::backdrop { display: none; }
+.dsec { break-inside: avoid; grid-template-columns: 38mm 1fr; }
+.tl { display: none; }

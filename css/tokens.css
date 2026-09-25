@@ -1,0 +1,79 @@
+/* Bidragskompassen – design tokens */
+
+/* Bodoni Moda and Inter load from Google Fonts (both SIL Open Font License). */
+
+:root {
+  /* Palette – nothing outside this list */
+  --blue-100: #EFF2F8;
+  --blue-200: #D7DEEC;
+  --blue-300: #ADBCD7;
+  --blue-400: #4F6A8C;
+  --blue-500: #384A66;
+  --blue-600: #1F2F45;
+  --beige-100: #F2EFEB;
+  --beige-200: #E6E0D8;
+  --beige-300: #DAD2C7;
+  --beige-400: #C8C1B6;
+  --beige-500: #BCB3A6;
+  --beige-600: #ABA69D;
+  --violet: #553876;
+  --violet-deep: #3F2A5A;
+  --ink: #3C3C3B;
+  --white: #FFFFFF;
+
+  /* Semantic (light surfaces) */
+  --surface: var(--beige-100);
+  --text: var(--ink);
+  --text-soft: var(--blue-500);          /* 8.6:1 on beige-100, 7.4:1 on beige-200 */
+  --hairline: rgba(60, 60, 59, 0.24);
+  --hairline-strong: rgba(60, 60, 59, 0.55);
+  --focus: var(--violet);                /* 8.2:1 on beige-100 */
+  --mark-bg: var(--blue-200);
+
+  /* Type */
+  --serif: "Bodoni Moda", "Bodoni MT", Didot, serif;
+  --sans: "Inter", Arial, sans-serif;
+  --fs-sm: 0.875rem;
+  --fs-body: 1rem;
+  --fs-ingress: 1.125rem;
+  --fs-h3: 1.5rem;
+  --fs-h2: clamp(2.25rem, 1.4rem + 3.8vw, 4.75rem);
+  --fs-h1: clamp(3rem, 1.2rem + 8vw, 9rem);
+  --fs-display: clamp(4rem, 2rem + 8vw, 9rem);
+  --lh: 1.3;
+  --track-serif: 0.02em;
+  --track-caps: 0.08em;
+
+  /* Space – 8px scale */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 32px;
+  --sp-xl: 64px;
+  --sp-2xl: clamp(80px, 10vw, 144px);
+  --gutter: clamp(16px, 3vw, 24px);
+  --max: 1200px;
+
+  /* Shape */
+  --r-sm: 4px;
+  --r-pill: 9999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.7s;
+
+  --header-h: 64px;
+}
+
+/* Dark (navy) surfaces redefine the semantic tokens */
+.on-dark {
+  --surface: var(--blue-600);
+  --text: var(--white);
+  --text-soft: var(--blue-300);          /* 7.1:1 on blue-600 */
+  --hairline: rgba(255, 255, 255, 0.22);
+  --hairline-strong: rgba(255, 255, 255, 0.6);
+  --focus: var(--white);
+  --mark-bg: var(--blue-400);
+  color: var(--text);
+}

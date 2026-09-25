@@ -1,0 +1,25 @@
+/* Bidragskompassen – optional smart search: calm status line above results, hints, hero extras */
+
+.smartbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px var(--sp-lg);
+  min-height: 32px; margin-bottom: var(--sp-md);
+  font-size: var(--fs-sm); color: var(--text-soft);
+}
+.smartbar__status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.smartbar__status .link-btn { font-size: inherit; color: var(--text); }
+.smartbar__dot {
+  flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--blue-400);
+  animation: smart-pulse 1.2s ease-in-out infinite;
+}
+@keyframes smart-pulse { 50% { opacity: 0.25; } }
+.smartbar__about { color: var(--text-soft); }
+.smartbar__suggest { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; color: var(--text); }
+.smartbar__chip { min-height: 32px; font-weight: 700; }
+.smartbar__nofit { flex-basis: 100%; font-size: var(--fs-sm); }
+.smartbar__nofit p + p { margin-top: 6px; }
+
+.card__smart { color: var(--blue-500); font-style: italic; }
+.card__smart::before { content: "◇ "; font-style: normal; }
+
+.combo__opt--smart { background: var(--blue-100); }
+.combo__smart { font-weight: 700; }
