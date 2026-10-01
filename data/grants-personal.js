@@ -177,13 +177,13 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-08-15", till: "2026-09-15", text: "Ansökan för höstterminen 2026 (stängd).", ungefar: false },
-      { typ: "ansokan", fran: "2027-01-15", till: "2027-02-16", text: "Ansökan för vårterminen 2027. Sista dag 16 februari styrs av Skolverkets föreskrifter; öppningsdatum uppskattat från 2026.", ungefar: true },
+      { typ: "ansokan", fran: "2027-01-15", till: "2027-02-15", text: "Ansökan för vårterminen 2027. Enligt Skolverkets föreskrifter ska ansökan ha kommit in senast 15 februari. Öppningsdatumet är uppskattat utifrån 2026.", ungefar: true },
       { typ: "redovisning", fran: "2027-04-01", till: "2027-05-03", text: "Redovisning av bidrag för vår- och hösttermin 2026.", ungefar: false },
       { typ: "ansokan", fran: "2027-08-15", till: "2027-09-15", text: "Ansökan för höstterminen 2027 – uppskattat utifrån 2026.", ungefar: true }
     ],
     belopp: "Två modeller att välja per lärare. 1) Löneersättning: cirka 56 procent av en schablonlön, t.ex. 193 760 kr per termin för en heltidsanställd lärare som studerar på heltid. 2) Högskolepoäng: 1 000 kr per poäng (1 500 kr för svenska som andraspråk). Våren 2026 fick 528 huvudmän totalt cirka 168 miljoner kr.",
     villkor: [
-      "Studierna ska vara Lärarlyftets ämneskurser, utbildning till speciallärare eller specialpedagog, svenska som andraspråk, yrkeslärarutbildning som leder till examen, eller vissa kurser för förskollärare i förskoleklass.",
+      "Studierna ska vara Lärarlyftets ämneskurser, utbildning till speciallärare eller specialpedagog, svenska som andraspråk, yrkeslärarutbildning som leder till examen, eller vissa kurser för förskollärare i förskoleklass. Sedan 1 juli 2026 ingår också kurser för lärare som efter 30 juni 2028 ska undervisa i årskurs 1, om hur förskolans arbetssätt kan användas i undervisningen.",
       "Läraren ska i regel ha lärar- eller förskollärarexamen. Undantag finns för bl.a. yrkeslärare som studerar mot examen och lärare som läser svenska som andraspråk.",
       "Med löneersättningsmodellen ska läraren få minst 80 procent av lönen för studietiden om hen är tjänstledig eller studerar på tid utanför en deltidstjänst.",
       "Samma kostnad får inte finansieras av flera statsbidrag.",
@@ -201,18 +201,20 @@ window.SB_GRANTS.push(
     fallgropar: [
       "Ansökningar efter sista dag avvisas, och man kan inte lägga till lärare i efterhand.",
       "Bidraget söks per termin – man måste söka igen varje termin tills utbildningen är klar.",
-      "Lärosätenas vanliga ämneskurser omfattas inte – bara Lärarlyftets uppdragsutbildningar (utom för speciallärare/specialpedagog och svenska som andraspråk).",
+      "Lärosätenas vanliga ämneskurser omfattas inte – bara Lärarlyftets uppdragsutbildningar. Undantag: för speciallärare/specialpedagog, svenska som andraspråk och utbildning som leder till yrkeslärarexamen räknas även vanlig högskoleutbildning.",
       "VAL-utbildning (för obehöriga lärare) ger bara bidrag om den leder till yrkeslärarexamen eller gäller svenska som andraspråk.",
       "Professionsprogrammet och VAK omfattas inte.",
-      "Om fler söker än pengarna räcker till görs ett urval. Pågående utbildningar och skolor med tuffa förutsättningar prioriteras."
+      "Om fler söker än pengarna räcker till görs ett urval. Pågående utbildningar och skolor med tuffa förutsättningar prioriteras.",
+      "Pengar som inte används enligt villkoren krävs tillbaka. Sedan 1 juli 2026 kan Skolverket avstå från återkrav vid särskilda skäl. Tidigare krävdes synnerliga, alltså mycket starka, skäl."
     ],
     nyckelord: ["Lärarlyftet", "Lärarlyftet II", "fortbildning", "vidareutbildning", "behörighet", "utöka behörighet", "speciallärare", "specialpedagog", "specialpedagogik", "svenska som andraspråk", "sva", "sfi", "yrkeslärare", "VAL", "kompetensutveckling", "förskollärare", "tioårig grundskola"],
     kallor: [
       { titel: "Statsbidrag för fortbildning av lärare och förskollärare 2026 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-fortbildning-av-larare-och-forskollarare-2026" },
-      { titel: "Förordning (2023:144) om statsbidrag för fortbildning av lärare och förskollärare", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2023144-om-statsbidrag-for_sfs-2023-144/" }
+      { titel: "Förordning (2023:144) om statsbidrag för fortbildning av lärare och förskollärare", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2023144-om-statsbidrag-for_sfs-2023-144/" },
+      { titel: "Skolverkets föreskrifter SKOLFS 2024:497 (sista ansökningsdag)", url: "https://skolfs.skolverket.se/api/document/GRUNDFORFATTNING/2024:497/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Någon sida för 2027 finns ännu inte. Datum för 2027 är uppskattade utifrån 2026 och Skolverkets föreskrift om sista ansökningsdag (16 februari respektive 15 september). Beslutsdatum för höstens ansökan 2026 och total budget för 2026–2027 anges inte på sidan. Bidraget ersatte 2023 bland annat det tidigare statsbidraget för Lärarlyftet och bidragen för specialpedagogik, sva/sfi, förskollärare och yrkeslärare."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Någon sida för 2027 finns ännu inte. Sista ansökningsdag står i Skolverkets föreskrifter (SKOLFS 2024:497): 15 februari för våren och 15 september för hösten. Faller dagen på en helg gäller nästa vardag – därför var sista dag 16 februari 2026. Öppningsdatumen för 2027 är uppskattade utifrån 2026. Förordningen är ändrad till och med SFS 2026:613. Beslutsdatum för höstens ansökan 2026 och total budget för 2026–2027 anges inte på sidan. Bidraget ersatte 2023 bland annat det tidigare statsbidraget för Lärarlyftet och bidragen för specialpedagogik, sva/sfi, förskollärare och yrkeslärare."
   },
 
   {
@@ -309,55 +311,6 @@ window.SB_GRANTS.push(
   },
 
   {
-    id: "kvalitetshojande-atgarder-forskolan",
-    namn: "Statsbidrag för kvalitetshöjande åtgärder i förskolan 2027",
-    kortnamn: "Förskolan: personal och mindre grupper",
-    myndighet: "Skolverket",
-    giltighet: "aktiv",
-    sammanfattning: "Pengar till kommuner för mindre barngrupper, för att behålla eller anställa personal och för kompetensutveckling av förskollärare och barnskötare. Kommunen kan föra pengar vidare till fristående förskolor.",
-    syfte: "Att höja kvaliteten i förskolan genom lagom stora barngrupper, tillräckligt med personal och personal med rätt kompetens.",
-    omraden: ["personal", "kompetens"],
-    skolformer: ["forskola"],
-    sokande: { fristaende: "via-kommun", kommun: "ja", region: "nej", stat: "nej", ovriga: "nej" },
-    sokandeNot: "Bara kommuner kan få bidraget. Fristående förskolor kan inte söka själva, men kommunen får använda pengarna även i fristående förskolor. Kommunen ska redovisa hur mycket som gått till fristående förskolor. Fristående huvudmän som vill ta del bör alltså kontakta sin kommun.",
-    typ: "rekvisition",
-    perioder: [
-      { typ: "beslut", fran: null, till: null, text: "Bidragsramar för 2027 – Skolverket har inte publicerat dem ännu.", ungefar: false },
-      { typ: "rekvisition", fran: "2027-01-15", till: "2027-02-15", text: "Kommunen begär ut pengarna för 2027 (1 januari–31 december 2027).", ungefar: false },
-      { typ: "utbetalning", fran: "2027-09-01", till: "2027-09-30", text: "Hälften betalas ut vid beslutet (våren 2027), resten planeras till september 2027.", ungefar: true },
-      { typ: "redovisning", fran: "2027-03-01", till: "2027-04-01", text: "Kommunerna redovisar hur 2026 års bidrag använts.", ungefar: false },
-      { typ: "redovisning", fran: "2028-03-01", till: "2028-04-03", text: "Kommunerna redovisar hur 2027 års bidrag använts.", ungefar: false }
-    ],
-    belopp: "Totalt 2 886 miljoner kr för 2027 (2026: 3 086 miljoner kr). SCB räknar fram varje kommuns bidragsram.",
-    villkor: [
-      "Pengarna får bara användas till tre saker: mindre barngrupper enligt Skolverkets riktmärke, att behålla eller anställa personal, och kompetensutveckling för förskollärare och annan personal i barngrupperna (t.ex. barnskötare).",
-      "Kommunen får flytta pengar mellan de tre delarna under året.",
-      "Kostnaderna ska uppstå under bidragsåret (1 januari–31 december)."
-    ],
-    hurDuGor: [
-      "Kommunen: kontrollera bidragsramen när Skolverket publicerar den.",
-      "Bestäm hur pengarna ska fördelas mellan de tre delarna – och om en del ska gå till fristående förskolor.",
-      "Begär ut pengarna i e-tjänsten 15 januari–15 februari 2027.",
-      "Redovisa året efter hur mycket som använts till varje del och hur mycket som gått till fristående förskolor.",
-      "Fristående förskola: fråga kommunen hur den fördelar bidraget."
-    ],
-    redovisning: "Kommunen redovisar i e-tjänsten hur mycket som använts till varje av de tre delarna och hur mycket som fördelats till fristående förskolor. För 2026: 1 mars–1 april 2027. För 2027: 1 mars–3 april 2028.",
-    fallgropar: [
-      "Fristående förskolor kan inte söka direkt – de är beroende av hur kommunen väljer att fördela.",
-      "Kommunen kan inte begära ut mer än sin bidragsram.",
-      "Pengar som används till annat än de tre delarna kan krävas tillbaka."
-    ],
-    nyckelord: ["förskola", "barnskötare", "förskollärare", "barngrupper", "barngruppernas storlek", "kompetensutveckling förskola", "rekrytera personal förskola", "fristående förskola"],
-    kallor: [
-      { titel: "Statsbidrag för kvalitetshöjande åtgärder i förskolan 2027 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kvalitetshojande-atgarder-i-forskolan-2027" },
-      { titel: "Statsbidrag för kvalitetshöjande åtgärder i förskolan 2026 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kvalitetshojande-atgarder-i-forskolan-2026" },
-      { titel: "Förordning (2021:848) om statsbidrag för kvalitetshöjande åtgärder inom förskolan", url: "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-2021848-om-statsbidrag-for_sfs-2021-848" }
-    ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Bidragsramar och exakt beslutsdatum för 2027 är inte publicerade. Bidraget gäller hela förskolans kvalitet och kan därför också finnas under förskoleområdet."
-  },
-
-  {
     id: "praktiknara-forskning",
     namn: "Statsbidrag för praktiknära forskning och utveckling 2026/27",
     kortnamn: "Forskartid för lärare",
@@ -390,7 +343,7 @@ window.SB_GRANTS.push(
       "Om ni beviljas: begär ut pengarna i e-tjänsten varje termin, med lön och forskningstid per lärare.",
       "Meddela Skolverket om läraren inte kan forska så mycket som beviljats."
     ],
-    redovisning: "Ingen separat slutredovisning anges. Uppgifterna lämnas i begäran om utbetalning varje termin. Minskar forskningstiden efter sista utbetalningen ska Skolverket meddelas, och pengar kan krävas tillbaka.",
+    redovisning: "Uppgifterna om lön och forskningstid lämnas i begäran om utbetalning varje termin. Beslutet om bidrag anger sista dag för redovisning (10 §), och huvudmannen ska lämna den ekonomiska och annan redovisning som Skolverket begär (14 §). Minskar forskningstiden efter sista utbetalningen ska Skolverket meddelas, och pengar kan krävas tillbaka.",
     fallgropar: [
       "Läraren måste redan ha tagit sin forskarexamen när ansökan görs.",
       "Samarbete med universitet krävs inte, men projektet måste vara tydligt kopplat till verksamheten.",
@@ -401,7 +354,7 @@ window.SB_GRANTS.push(
       { titel: "Statsbidrag för praktiknära forskning och utveckling 2026/27 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-praktiknara-forskning-och-utveckling-2026-27" },
       { titel: "Förordning (2021:237) om statsbidrag för främjande av forskning och utvecklingsarbete i skolväsendet", url: "https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/forordning-2021237-om-statsbidrag-for_sfs-2021-237" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Ansökningsperioden för 2027/28 är inte publicerad och är uppskattad utifrån 2026. Sidan säger 'kommunala, fristående och övriga huvudmän' – regioner och statliga huvudmän antas ingå i 'övriga'."
   }
 );

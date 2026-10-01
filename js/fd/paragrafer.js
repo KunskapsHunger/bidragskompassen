@@ -29,7 +29,7 @@
     if (pr) parts.push(h('div', { class: 'para__praktik' }, [h('strong', null, dom.highlight(pr.rubrik + ': ', q)), dom.highlight(pr.text, q)]));
     var f = guideRef.forordning || {};
     parts.push(h('p', { class: 'para__links small' }, [
-      f.url ? dom.safeLink(f.url, 'Läs ' + p.ref + ' i förordningen', 'para__source') : null,
+      f.url ? dom.safeLink(f.url, 'Läs ' + p.ref + ' ' + (f.iText || 'i förordningen'), 'para__source') : null,
       h('a', { class: 'para__anchor', href: '#' + it.slug, 'aria-label': 'Länk direkt till ' + p.ref + ', ' + p.rubrik, text: 'Länk till avsnittet' })
     ]));
     return parts;

@@ -20,12 +20,12 @@ window.SB_GRANTS.push(
       { typ: "beslut", fran: "2027-04-01", till: "2027-04-30", text: "Beslut kommer cirka 12 veckor efter sista ansökningsdag, vanligen i april.", ungefar: true },
       { typ: "redovisning", fran: null, till: null, text: "Sista redovisningsdag står i ert beslut. Redovisningen öppnar i e-tjänsten 28 dagar innan.", ungefar: false }
     ],
-    belopp: "Inget fast belopp per elev. Läsåret 2026/27 fördelades cirka 220 miljoner kronor på 443 ansökningar. Man fick i genomsnitt ungefär 71 procent av det man sökt. Ansökningar med elever i anpassad grundskola och särskilda undervisningsformer (t.ex. specialskola och sjukhusskola) samt huvudmän i glesbygd prioriterades.",
+    belopp: "Inget fast belopp per elev. Läsåret 2026/27 fördelades cirka 220 miljoner kronor på 443 ansökningar. Pengarna räckte till knappt 71 procent av det totala sökta beloppet. Hur stor andel varje huvudman fick varierar, eftersom beloppet viktas – bland annat så att små huvudmän kan göra satsningar på liknande villkor som stora. Ansökningar med elever i anpassad grundskola och särskilda undervisningsformer (t.ex. specialskola och sjukhusskola) samt huvudmän i glesbygd prioriterades.",
     villkor: [
       "Pengarna ska gå till professionella kulturaktörer, t.ex. arvoden, resor, entréer, material och lokalhyra.",
       "Transporter får vara högst 20 procent av bidraget.",
       "Pengarna får inte gå till skolans vanliga undervisning, lärarlöner, administration eller skolresor.",
-      "Rektor ska intyga att skolan har ett eget kulturarbete och en plan med tydliga mål.",
+      "Skolhuvudmannen intygar i ansökan att det finns ett eget kulturarbete och en handlingsplan med tydliga mål. Planen skickas inte in.",
       "Bidraget får inte ersätta pengar som skolan redan lägger på kultur."
     ],
     hurDuGor: [
@@ -47,10 +47,12 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Kulturrådet – Skapande skola", url: "https://www.kulturradet.se/sok-bidrag/skapande-skola/" },
       { titel: "Kulturrådet – Beslut och fördelning läsåret 2026/2027", url: "https://www.kulturradet.se/i-fokus/barn-och-unga/skapande-skola/nyheter/2026/beslut-och-fordelning-av-skapande-skola-bidraget-lasaret-2026-2027/" },
-      { titel: "Kulturrådet – Så redovisar du Skapande skola", url: "https://www.kulturradet.se/sok-bidrag/skapande-skola/sa-redovisar-du/" }
+      { titel: "Kulturrådet – Så redovisar du Skapande skola", url: "https://www.kulturradet.se/sok-bidrag/skapande-skola/sa-redovisar-du/" },
+      { titel: "Förordning (2007:1436) om statsbidrag till kulturell verksamhet i skolan", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-20071436-om-statsbidrag-till_sfs-2007-1436/" },
+      { titel: "Kulturrådet – Riktlinjer för statsbidrag till Skapande skola", url: "https://www.kulturradet.se/globalassets/start/om-oss/sa-arbetar-kulturradet/sa-styrs-vi/riktlinjer/riktlinjer-dokument/riktlinjer-for-statsbidrag-till-skapande-skola-260609.pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Datum för ansökan 2027 är inte publicerade ännu; de är uppskattade utifrån 2026. Kulturrådets bidragssida nämner grundskolan, anpassad grundskola, sameskolan och specialskolan, men beslutet för 2026/27 talar om elever från förskoleklass till årskurs 9. Kontrollera med Kulturrådet om förskoleklassen omfattas."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Datum för ansökan 2027 är inte publicerade ännu; de är uppskattade utifrån 2026. Förskoleklassen omfattas: det framgår av förordningen (1 och 4 §§) och Kulturrådets riktlinjer."
   },
 
   {
@@ -110,13 +112,13 @@ window.SB_GRANTS.push(
     omraden: ["stod"],
     skolformer: ["forskola", "forskoleklass", "fritidshem", "grundskola", "anpassad-grundskola", "sameskola", "gymnasieskola", "anpassad-gymnasieskola", "komvux"],
     sokande: { fristaende: "ja", kommun: "ja", region: "villkor", stat: "nej", ovriga: "nej" },
-    sokandeNot: "Kommunala och enskilda (fristående) huvudmän inom skolväsendet kan söka. En region kan söka om den är huvudman för en skola. Specialskolan (staten) kan inte få bidraget. Om en fristående anordnare driver komvux på uppdrag av kommunen är det kommunen som söker. Ansökan ska göras av en behörig företrädare, till exempel förvaltningschef, skolchef, vd eller styrelseordförande.",
+    sokandeNot: "Kommunala och enskilda (fristående) huvudmän inom skolväsendet kan söka. Projektet kan gälla förskola, förskoleklass, fritidshem, grundskola, anpassad grundskola, sameskola, gymnasieskola, anpassad gymnasieskola och komvux, även komvux som anpassad utbildning. En region kan söka om den är huvudman för en skola. Specialskolan (staten) kan inte få bidraget. Om en fristående anordnare driver komvux på uppdrag av kommunen är det kommunen som söker. Ansökan ska göras av en behörig företrädare, till exempel förvaltningschef, skolchef, vd eller styrelseordförande.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-01", till: "2026-11-30", text: "Ansökan 1 oktober–30 november 2026, för projekt under läsåret 2027/28.", ungefar: false },
-      { typ: "beslut", fran: "2027-04-01", till: "2027-04-30", text: "Beslut beräknas komma i april 2027.", ungefar: true },
-      { typ: "utbetalning", fran: "2027-08-01", till: "2027-11-30", text: "Hälften betalas ut i augusti och hälften i november.", ungefar: true },
-      { typ: "redovisning", fran: null, till: "2028-09-30", text: "Redovisning senast 30 september efter projektåret.", ungefar: true }
+      { typ: "beslut", fran: "2027-04-01", till: "2027-04-30", text: "SPSM bedömer ansökningarna under första kvartalet 2027 och meddelar beslut i april 2027.", ungefar: false },
+      { typ: "utbetalning", fran: "2027-08-01", till: "2027-11-30", text: "Hälften betalas ut i augusti och hälften i november 2027.", ungefar: false },
+      { typ: "redovisning", fran: null, till: "2028-09-30", text: "Slutredovisning och slutrapport för projekt under läsåret 2027/28 senast 30 september 2028, i SPSM:s bidragsportal.", ungefar: false }
     ],
     belopp: "Bidraget täcker faktiska lönekostnader för högst 1,2 tjänst i projektledning och projektgrupp. För 2027 är taket 778 000 kr per heltidstjänst, alltså högst 933 600 kr per projekt.",
     villkor: [
@@ -141,10 +143,12 @@ window.SB_GRANTS.push(
     nyckelord: ["funktionsnedsättning", "NPF", "särskilt stöd", "specialpedagogik", "SIS", "utvecklingsprojekt", "SPSM", "anpassningar"],
     kallor: [
       { titel: "SPSM – Utvecklingsprojekt för barn och elever med funktionsnedsättning", url: "https://www.spsm.se/stod-och-rad/sok-statsbidrag/skolor-inom-skolvasendet/utvecklingsprojekt-till-barn-och-elever-med-funktionsnedsattning/" },
-      { titel: "SPSM – Statsbidrag för skolor och förskolor", url: "https://www.spsm.se/stod-och-rad/sok-statsbidrag/skolor-inom-skolvasendet/" }
+      { titel: "SPSM – Statsbidrag för skolor och förskolor", url: "https://www.spsm.se/stod-och-rad/sok-statsbidrag/skolor-inom-skolvasendet/" },
+      { titel: "SPSM – Information om bidraget till utvecklingsprojekt, bidragsår 2027 (pdf)", url: "https://www.spsm.se/contentassets/ca478d2407dd406a8eb8ef28ae49ae8c/2027-information-om-bidraget-utvecklingsprojekt.pdf" },
+      { titel: "Förordning (1991:931) om statsbidrag till särskilda insatser på skolområdet", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1991931-om-statsbidrag-till_sfs-1991-931/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Exakt redovisningsdatum för projekt 2027/28 antas vara 30 september 2028 utifrån SPSM:s regel ”senast 30 september”. Att regioner kan söka bygger på att de kan vara huvudmän; SPSM nämner bara kommunala och enskilda huvudmän."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Bidraget har ingen egen förordning. Det styrs av SPSM:s regleringsbrev, och SPSM tillämpar delar av förordning (1991:931) på samma sätt (bland annat om uppgifter, uppföljning, återkrav och stopp för utbetalning). Villkor och belopp kan därför ändras från år till år. Att regioner kan söka bygger på att de kan vara huvudmän; SPSM nämner bara kommunala och enskilda huvudmän."
   },
 
   {
@@ -162,11 +166,14 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-09-15", till: "2026-10-30", text: "Ansökan för bidragsåret 2027 görs 15 september–30 oktober 2026.", ungefar: false },
-      { typ: "redovisning", fran: "2026-11-01", till: "2026-11-30", text: "Redovisning för bidragsåret 2026 görs 1–30 november 2026.", ungefar: false }
+      { typ: "redovisning", fran: "2026-11-01", till: "2026-11-30", text: "Redovisning för bidragsåret 2026 görs 1–30 november 2026.", ungefar: false },
+      { typ: "beslut", fran: "2026-11-01", till: "2026-11-30", text: "SPSM räknar med att besluta om preliminär fördelning för 2027 i november 2026.", ungefar: true },
+      { typ: "beslut", fran: "2027-01-01", till: "2027-01-31", text: "SPSM räknar med att besluta om utbetalning för 2027 i januari 2027.", ungefar: true },
+      { typ: "utbetalning", fran: null, till: null, text: "Bidraget betalas ut med en fjärdedel i mars, juni, september och december 2027 (9 § i förordningen).", ungefar: false }
     ],
     belopp: "Upp till 25 000 kr per elev och termin. För en hel termin ska eleven ha deltagit i minst 30 kalenderdagar. För kortare insatser med ett begränsat antal tillfällen under året: högst 750 kr per tillfälle och elev.",
     villkor: [
-      "Insatsen ska i stor utsträckning komma elever till del som är folkbokförda i en annan kommun än där utbildningen bedrivs.",
+      "Insatsen ska i stor utsträckning komma elever till del som är folkbokförda i en annan kommun än där utbildningen bedrivs. Enligt SPSM ges bidrag bara för de eleverna, inte för elever från den egna kommunen.",
       "Eleverna ska ha en funktionsnedsättning eller andra särskilda behov som kräver anpassningar. I anpassad skola gäller det elever med intellektuell funktionsnedsättning och minst en ytterligare funktionsnedsättning."
     ],
     hurDuGor: [
@@ -184,10 +191,11 @@ window.SB_GRANTS.push(
     nyckelord: ["funktionsnedsättning", "hörselklass", "synnedsättning", "regional skola", "SIS", "särskilt stöd", "SPSM"],
     kallor: [
       { titel: "SPSM – Regionala utbildningsinsatser", url: "https://www.spsm.se/stod-och-rad/sok-statsbidrag/skolor-inom-skolvasendet/regionala-utbildningsinsatser/" },
-      { titel: "Förordning (1991:931) om statsbidrag till särskilda insatser på skolområdet", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1991931-om-statsbidrag-till_sfs-1991-931/" }
+      { titel: "Förordning (1991:931) om statsbidrag till särskilda insatser på skolområdet", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1991931-om-statsbidrag-till_sfs-1991-931/" },
+      { titel: "SPSM – Information om bidraget Regionala utbildningsinsatser, bidragsår 2027 (pdf)", url: "https://www.spsm.se/contentassets/be7f1d8e5187492e96fad4488a428f00/2027-information-om-bidraget-regionala-utbildningsinsatser.pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "SPSM anger inte när beslut och utbetalning sker. SPSM:s sida skriver ”huvudmän” utan att räkna upp fristående; att fristående huvudmän kan söka bygger på förordningens formulering ”huvudman inom skolväsendet”."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Besluten i november 2026 och januari 2027 är SPSM:s planering, inte fasta datum. SPSM:s sida skriver ”huvudmän” utan att räkna upp fristående; att fristående huvudmän kan söka bygger på förordningens formulering ”huvudman inom skolväsendet”."
   },
 
   {
@@ -210,7 +218,7 @@ window.SB_GRANTS.push(
     belopp: "Schablonbelopp per deltagare: 20 000 kr för Europa utanför EU/EES och 22 000 kr för övriga världen. Skolan måste själv bidra med lika mycket (medfinansiering). Atlas planering (för att träffa en möjlig partner): 12 000 kr respektive 20 000 kr per deltagare.",
     villkor: [
       "Partnerskolan ska ligga utanför EU/EES.",
-      "Skolan ska medfinansiera med ett lika stort belopp som bidraget.",
+      "Skolan ska medfinansiera med minst lika mycket som bidraget, till exempel med arbetstid. Kravet kommer från förordning (2000:523), som säger att bidraget får vara högst lika stort som det huvudmannen själv bidrar med.",
       "Projektet ska engagera fler elever än de som reser.",
       "Alla svenska deltagare måste fylla i en enkät efter besöket.",
       "Kvitton och underlag ska sparas i sju år."
@@ -233,9 +241,10 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "UHR – Atlas partnerskap", url: "https://uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/atlas-partnerskap/" },
       { titel: "UHR – Atlas planering", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/atlas-planering/" },
-      { titel: "UHR – Projektsida Atlas partnerskap", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/hantera-projekt/atlas-partnerskap/" }
+      { titel: "UHR – Projektsida Atlas partnerskap", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/hantera-projekt/atlas-partnerskap/" },
+      { titel: "Förordning (2000:523) om statsbidrag för att främja internationella kontakter inom skolans område", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2000523-om-statsbidrag-for-att_sfs-2000-523/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "UHR har inte publicerat datum för nästa ansökningsomgång. Att regioner kan söka bygger på att de kan driva skolor; UHR räknar upp skolformer, inte huvudmän."
   },
 
@@ -255,7 +264,7 @@ window.SB_GRANTS.push(
     perioder: [
       { typ: "ansokan", fran: null, till: null, text: "Ansökan är stängd nu och nästa omgång är inte publicerad. UHR har tidigare haft informationsmöten om ansökan i mars.", ungefar: true }
     ],
-    belopp: "Per elev: 18 000 kr (Europa utanför EU/EES) eller 22 000 kr (övriga världen) för minst 3 veckor, plus 2 000 kr per extra vecka, högst 12 extra veckor. Medföljande lärare: 20 000 kr (högst en per projekt).",
+    belopp: "Per elev: 18 000 kr (Europa utanför EU/EES) eller 22 000 kr (övriga världen) för minst 3 veckor, plus 2 000 kr per extra vecka, högst 12 extra veckor. Medföljande lärare: 20 000 kr (högst en per projekt). För en stödperson till en elev som behöver extra stöd kan ni söka extra pengar i ansökan och motivera summan.",
     villkor: [
       "Praktiken ska vara minst 3 veckor (15 arbetsdagar) och högst 15 veckor. För anpassad gymnasieskola räcker 2 veckor.",
       "Praktikplatsen ska ligga utanför EU/EES.",
@@ -279,7 +288,7 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "UHR – Atlas praktik", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/atlas-praktik/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "UHR har inte publicerat datum för nästa ansökningsomgång. UHR nämner inte fristående skolor uttryckligen, men texten omfattar alla skolor med yrkesprogram."
   },
 
@@ -294,7 +303,7 @@ window.SB_GRANTS.push(
     omraden: ["internationellt", "kompetens"],
     skolformer: ["forskola", "forskoleklass", "grundskola", "anpassad-grundskola", "specialskola", "sameskola", "gymnasieskola", "anpassad-gymnasieskola", "komvux"],
     sokande: { fristaende: "ja", kommun: "ja", region: "ja", stat: "ja", ovriga: "ja" },
-    sokandeNot: "Detta är EU-pengar som UHR fördelar i Sverige. Organisationer inom förskola och skola, vuxnas lärande och yrkesutbildning kan söka – både offentliga och privata, alltså även fristående huvudmän. Kommuner kan söka som utbildningsanordnare. Privatpersoner kan inte söka. Organisationer som själva har Erasmus-ackreditering kan inte söka korttidsprojekt. Den som bara är medlem i ett ackrediterat konsortium, till exempel kommunens, kan däremot söka.",
+    sokandeNot: "Detta är EU-pengar som UHR fördelar i Sverige. Organisationer inom förskola och skola, vuxnas lärande och yrkesutbildning kan söka – både offentliga och privata. UHR nämner uttryckligen enskilda huvudmän och friskolekoncerner, alltså även fristående skolor. Kommuner kan söka som utbildningsanordnare. Privatpersoner kan inte söka. En organisation som själv har en Erasmus-ackreditering inom skola kan inte söka korttidsprojekt inom skola. Den som bara är medlem i ett ackrediterat konsortium, till exempel kommunens, kan däremot söka.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: null, till: null, text: "Ansökan öppnar under hösten och sista dag är i februari året efter. 2026 var sista dag 19 februari. Nästa sista dag väntas i februari 2027. Någon extra höstomgång 2026 finns inte i Sverige.", ungefar: true }
@@ -303,7 +312,7 @@ window.SB_GRANTS.push(
     villkor: [
       "Högst 30 deltagare per projekt.",
       "Projektet pågår 6–18 månader.",
-      "Organisationer med Erasmus-ackreditering kan inte söka.",
+      "Organisationer som själva har en Erasmus-ackreditering inom skola kan inte söka korttidsprojekt inom skola.",
       "Slutrapport krävs innan den sista delen av pengarna betalas ut."
     ],
     hurDuGor: [
@@ -316,7 +325,7 @@ window.SB_GRANTS.push(
     ],
     redovisning: "Slutrapport efter projektet. Den stämmer av budgeten och är ett krav för att sista utbetalningen ska göras.",
     fallgropar: [
-      "Att söka korttidsprojekt när organisationen redan är ackrediterad.",
+      "Att söka korttidsprojekt inom skola när organisationen redan har en egen ackreditering inom skola.",
       "Att missa deadline – EU:s system stänger exakt på klockslaget.",
       "Att inte dokumentera aktiviteterna – det kan leda till att pengar måste betalas tillbaka."
     ],
@@ -324,8 +333,8 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "UHR – Erasmus+ mobilitet korttidsprojekt", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/erasmus-mobilitet-korttidsprojekt/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Exakt deadline för 2027 är inte publicerad; februari bygger på tidigare år (19 februari 2026 enligt EU:s utlysning). Nuvarande Erasmus+-program gäller 2021–2027. Hur utbyten finansieras från 2028 beror på EU:s nästa program. Att organisationer med egen ackreditering inte kan söka följer av EU:s programguide; UHR:s sida nämner bara att konsortiemedlemmar kan söka."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Exakt deadline för 2027 är inte publicerad; februari bygger på tidigare år (19 februari 2026 enligt EU:s utlysning). Nuvarande Erasmus+-program gäller 2021–2027. Hur utbyten finansieras från 2028 beror på EU:s nästa program."
   },
 
   {
@@ -334,29 +343,29 @@ window.SB_GRANTS.push(
     kortnamn: "Erasmus+ – ackreditering",
     myndighet: "UHR",
     giltighet: "aktiv",
-    sammanfattning: "EU-medel via UHR. En ackreditering är ett slags medlemskap i Erasmus+. Den ger skolan eller kommunen tillgång till pengar för utbyten varje år utan att konkurrera med ett nytt projekt varje gång. Sista ansökningsdag 29 september 2026.",
+    sammanfattning: "EU-medel via UHR. En ackreditering är ett slags medlemskap i Erasmus+. Den ger skolan eller kommunen tillgång till pengar för utbyten varje år utan att konkurrera med ett nytt projekt varje gång. 2026 års omgång stängde 29 september.",
     syfte: "Ackrediteringen ska göra att skolor kan planera internationellt utbyte långsiktigt och strategiskt i stället för projekt för projekt.",
     omraden: ["internationellt", "kompetens"],
     skolformer: ["forskola", "forskoleklass", "grundskola", "anpassad-grundskola", "specialskola", "sameskola", "gymnasieskola", "anpassad-gymnasieskola", "komvux"],
     sokande: { fristaende: "ja", kommun: "ja", region: "ja", stat: "ja", ovriga: "ja" },
-    sokandeNot: "Detta är EU-pengar som UHR fördelar. Offentliga och privata utbildningsanordnare kan söka, alltså även fristående huvudmän. Kommuner och regioner kan också söka, ensamma eller som samordnare för ett konsortium (minst två organisationer). I 2026 års omgång kan UHR bevilja högst 10 ansökningar inom förskola och skola, 15 inom vuxnas lärande och 20 inom yrkesutbildning.",
+    sokandeNot: "Detta är EU-pengar som UHR fördelar. Offentliga och privata utbildningsanordnare kan söka, alltså även fristående huvudmän. Kommuner och regioner kan också söka, ensamma eller som samordnare för ett konsortium (minst två organisationer). I 2026 års omgång (stängd) kunde UHR bevilja högst 10 ansökningar inom förskola och skola, 15 inom vuxnas lärande och 20 inom yrkesutbildning.",
     typ: "ansokan",
     perioder: [
-      { typ: "ansokan", fran: null, till: "2026-09-29", text: "Sista ansökningsdag för ackreditering är 29 september 2026 kl. 12.00.", ungefar: false },
-      { typ: "beslut", fran: null, till: null, text: "Besked om beslut skickas med e-post i början av vårterminen 2027.", ungefar: true },
+      { typ: "ansokan", fran: null, till: "2026-09-29", text: "2026 års ansökan om ackreditering stängde 29 september 2026 kl. 12.00. Nästa omgång väntas under 2027 enligt programguiden för det året.", ungefar: false },
+      { typ: "beslut", fran: null, till: null, text: "Besked om beslut för 2026 års omgång skickas med e-post i början av vårterminen 2027. Nya ackrediteringar gäller från 1 februari 2027 till 31 december 2027.", ungefar: true },
       { typ: "ansokan", fran: null, till: null, text: "Ackrediterade organisationer kan sedan söka budget varje år. Ansökan öppnar före årsskiftet med sista dag i februari.", ungefar: true }
     ],
     belopp: "Ackrediteringen i sig ger inga pengar. Den ger rätt att varje år söka budget för utbyten, och den budgeten är i stort sett garanterad (beloppet kan variera).",
     villkor: [
       "Ni behöver en plan för hur utbytena ska utveckla verksamheten.",
-      "Ackrediteringen gäller till och med programperiodens slut 2027.",
-      "Organisationer med ackreditering kan inte söka korttidsprojekt."
+      "Ackrediteringar från 2026 års omgång gäller 1 februari 2027–31 december 2027, när programperioden slutar.",
+      "En organisation med ackreditering inom skola kan inte söka korttidsprojekt inom skola."
     ],
     hurDuGor: [
       "Skriv en plan för vad skolan eller kommunen vill utveckla med hjälp av utbyten.",
       "Bestäm om ni söker själva eller som konsortium med flera skolor.",
       "Registrera organisationen i EU:s system och få ett organisations-id (OID).",
-      "Skicka in ansökan senast 29 september 2026 kl. 12.00.",
+      "Håll utkik på uhr.se efter nästa ansökningsomgång – 2026 var sista dag 29 september kl. 12.00.",
       "Om ni blir ackrediterade: sök budget i februari de år ni vill genomföra utbyten."
     ],
     redovisning: "Ackrediterade organisationer rapporterar för varje budgetprojekt enligt villkoren i avtalet med UHR.",
@@ -370,7 +379,7 @@ window.SB_GRANTS.push(
       { titel: "UHR – Erasmus+ mobilitet ackreditering", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/erasmus-mobilitet-ackreditering/" },
       { titel: "UHR – Erasmus+ ackreditering skola", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/hantera-projekt/erasmus-mobilitet-ackreditering/skola/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Programperioden slutar 2027. Det är inte klart hur ackrediteringar hanteras i EU:s nästa program från 2028. UHR anger bara att besked kommer i början av vårterminen, inget exakt beslutsdatum."
   },
 
@@ -436,7 +445,7 @@ window.SB_GRANTS.push(
       { typ: "ansokan", fran: "2026-11-02", till: "2027-02-01", text: "Huvudomgången öppnar i början av november och har sista dag 1 februari (kl. 23.59). 2026 var sista dag 2 februari.", ungefar: true },
       { typ: "beslut", fran: "2027-05-01", till: "2027-05-31", text: "Beslut i huvudomgången brukar komma i maj.", ungefar: true }
     ],
-    belopp: "Fasta schabloner per deltagare och aktivitet, inte faktiska kostnader. Skolan måste medfinansiera en del. 80 procent betalas ut i förskott och 20 procent efter slutrapport.",
+    belopp: "Fasta schabloner per deltagare och aktivitet, inte faktiska kostnader. Skolan måste medfinansiera en del. Bidrag på högst 15 000 euro betalas ut helt när kontraktet är underskrivet. Större bidrag betalas med 80 procent i förskott och 20 procent när slutrapporten är godkänd.",
     villkor: [
       "Samarbete med minst en partner i ett annat nordiskt eller baltiskt land (inklusive Åland, Färöarna och Grönland).",
       "Projektet pågår 6–24 månader.",
@@ -447,12 +456,12 @@ window.SB_GRANTS.push(
       "Välj typ av projekt: klassutbyte, lärarutbyte, studiebesök eller utvecklingsprojekt.",
       "Sök i Nordplus webbsystem när det öppnar i november.",
       "Skicka in senast 1 februari (kl. 23.59).",
-      "Genomför projektet och lämna slutrapport för att få de sista 20 procenten."
+      "Genomför projektet och lämna slutrapport. Är bidraget över 15 000 euro betalas de sista 20 procenten först då."
     ],
-    redovisning: "Slutrapport och ekonomisk redovisning efter projektet. De sista 20 procenten betalas ut först när rapporten är godkänd.",
+    redovisning: "Slutrapport och ekonomisk redovisning efter projektet. För bidrag över 15 000 euro betalas de sista 20 procenten ut först när rapporten är godkänd.",
     fallgropar: [
       "Att glömma medfinansieringen.",
-      "Att inte lämna slutrapport – då betalas inte sista delen ut.",
+      "Att inte lämna slutrapport – för bidrag över 15 000 euro betalas då inte sista delen ut.",
       "Att tro att programmet gäller hela Europa – bara Norden och Baltikum ingår."
     ],
     nyckelord: ["Nordplus", "Norden", "Baltikum", "klassresa", "klassutbyte", "vänskola", "utbyte", "Finland", "Norge", "Danmark"],
@@ -462,7 +471,7 @@ window.SB_GRANTS.push(
       { titel: "Nordplus – Call for applications 2026", url: "https://nordplusonline.org/whats-new/call-for-applications" },
       { titel: "UHR – Nordplus förberedande besök", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/nordplus-forberedande-besok/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Datum för huvudomgången 2027 är uppskattade utifrån Nordplus fasta mönster (1 februari, eller närmast följande vardag). Beslutsmånad är uppskattad. Nordplus nuvarande programperiod gäller 2023–2027."
   },
 
@@ -472,21 +481,23 @@ window.SB_GRANTS.push(
     kortnamn: "Nordplus Vuxen – vuxnas lärande i Norden",
     myndighet: "UHR",
     giltighet: "aktiv",
-    sammanfattning: "Nordiska pengar via UHR för utbyten och samarbetsprojekt inom vuxnas lärande i Norden och Baltikum. Kan passa komvux, sfi och andra som arbetar med vuxenutbildning.",
+    sammanfattning: "Nordiska pengar för utbyten och samarbetsprojekt inom vuxnas lärande i Norden och Baltikum. Programmet leds från Danmark, och UHR svarar på frågor i Sverige. Kan passa komvux, sfi och andra som arbetar med vuxenutbildning.",
     syfte: "Programmet ska stärka vuxnas lärande genom samarbete, nätverk och utbyte mellan nordiska och baltiska organisationer.",
     omraden: ["internationellt", "kompetens"],
     skolformer: ["komvux"],
     sokande: { fristaende: "ja", kommun: "ja", region: "ja", stat: "ja", ovriga: "ja" },
-    sokandeNot: "Organisationer, institutioner och föreningar som arbetar med eller stödjer vuxnas lärande kan söka. Det gäller både kommunal vuxenutbildning och privata anordnare. Pengarna kommer från Nordiska ministerrådet.",
+    sokandeNot: "Organisationer, institutioner och föreningar som arbetar med eller stödjer vuxnas lärande kan söka. Det gäller både kommunal vuxenutbildning och privata anordnare. Pengarna kommer från Nordiska ministerrådet. Huvudadministratör är danska Uddannelses- og Forskningsstyrelsen, som beslutar, skriver kontrakt och betalar ut. UHR är Nordplus informationskontor i Sverige.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: null, till: "2026-10-01", text: "Extra omgång för förberedande besök och studiebesök: sista dag 1 oktober 2026 kl. 23.59.", ungefar: false },
-      { typ: "ansokan", fran: "2026-11-02", till: "2027-02-01", text: "Huvudomgången öppnar i början av november. Sista dag är 1 februari, eller närmast följande vardag om den 1:a är en helgdag.", ungefar: true }
+      { typ: "ansokan", fran: "2026-11-02", till: "2027-02-01", text: "Huvudomgången öppnar i början av november. Sista dag är 1 februari, eller närmast följande vardag om den 1:a är en helgdag.", ungefar: true },
+      { typ: "beslut", fran: "2027-06-01", till: "2027-06-30", text: "Beslut i huvudomgången kommer från den danska huvudadministratören, enligt UHR i mitten av juni.", ungefar: true }
     ],
-    belopp: "Fasta schabloner per deltagare och aktivitet. Belopp anges i Nordplus handbok.",
+    belopp: "Fasta schabloner per deltagare och aktivitet enligt Nordplus handbok. För 2026: resa tur och retur 330 euro inom Norden och Baltikum, 660 euro till eller från Färöarna och Island och 1 300 euro till eller från Grönland. Uppehälle från 70 euro per dag för vuxenstuderande upp till 1 350 euro per månad för personal. Bidrag på högst 15 000 euro betalas ut helt när kontraktet är underskrivet. Större bidrag betalas med 80 procent i förskott och 20 procent när slutrapporten är godkänd.",
     villkor: [
       "Samarbete med partner i minst ett annat nordiskt eller baltiskt land.",
-      "Medfinansiering krävs."
+      "Medfinansiering krävs – bidraget täcker bara en del av kostnaderna.",
+      "Bidrag över 15 000 euro betalas i två delar: 80 procent efter underskrivet kontrakt och 20 procent när slutrapporten är godkänd."
     ],
     hurDuGor: [
       "Hitta en partner i Norden eller Baltikum som arbetar med vuxenutbildning.",
@@ -504,10 +515,11 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "UHR – Nordplus vuxen", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/nordplus-vuxen/" },
       { titel: "Nordplus – Apply", url: "https://nordplusonline.org/apply-for-funding/apply/" },
-      { titel: "UHR – Nordplus förberedande besök", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/nordplus-forberedande-besok/" }
+      { titel: "UHR – Nordplus förberedande besök", url: "https://www.uhr.se/internationella-mojligheter/samarbete-och-utbyte/sok-finansiering/nordplus-forberedande-besok/" },
+      { titel: "Nordplus handbok 2026", url: "https://nordplusonline.org/globalassets/documents/conditions/the-nordplus-handbook-2026.pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "UHR:s sida nämner inte komvux eller folkhögskolor med namn, men de ingår i beskrivningen av organisationer inom vuxnas lärande. Datum för 2027 är uppskattade utifrån fast mönster. Belopp kunde inte kontrolleras på UHR:s sida."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "UHR:s sida nämner inte komvux eller folkhögskolor med namn, men de ingår i beskrivningen av organisationer inom vuxnas lärande. Datum för 2027 är uppskattade utifrån fast mönster. Beloppen gäller handboken för 2026 och kan ändras till omgången 2027."
   },
 
   {
@@ -521,23 +533,24 @@ window.SB_GRANTS.push(
     omraden: ["internationellt", "personal"],
     skolformer: ["forskola", "grundskola", "fritidshem", "gymnasieskola"],
     sokande: { fristaende: "villkor", kommun: "villkor", region: "villkor", stat: "villkor", ovriga: "villkor" },
-    sokandeNot: "Detta är EU-pengar som MUCF fördelar. Organisationer som vill ta emot volontärer måste först ha en kvalitetsmärkning (Quality Label) från MUCF. Enligt EU:s regler kan både offentliga och privata organisationer delta, alltså även skolor och kommuner. Volontären får inte ersätta ordinarie personal.",
+    sokandeNot: "Detta är EU-pengar som MUCF fördelar. Organisationer som vill ta emot volontärer måste först ha en kvalitetsmärkning (Quality Label) från MUCF. Bara den som har Quality Label som ledande organisation kan söka pengarna. En skola kan bli ledande organisation själv, eller bara vara värd och delta i ett projekt som en annan organisation leder och söker pengar för. Enligt EU:s regler kan både offentliga och privata organisationer få Quality Label, alltså även skolor och kommuner. Volontären får inte ersätta ordinarie personal.",
     typ: "ansokan",
     perioder: [
-      { typ: "ansokan", fran: null, till: "2026-10-29", text: "Ansök om Quality Label senast 29 oktober för att kunna söka i vårens omgång. Handläggningen tar cirka 2 månader.", ungefar: false },
+      { typ: "ansokan", fran: null, till: "2026-10-29", text: "Den som vill söka pengar som ledande organisation i vårens omgång 2027 ska ha sökt Quality Label för den rollen senast 29 oktober 2026. Handläggningen tar cirka två månader enligt MUCF:s sida om Quality Label, men minst tre månader enligt MUCF:s vanliga frågor. Är skolan bara värd räcker det att märkningen är klar när aktiviteten startar.", ungefar: false },
       { typ: "ansokan", fran: null, till: null, text: "Volontärprojekt går inte att söka just nu. Huvudomgången brukar ha sista dag i februari (18 februari 2026).", ungefar: true }
     ],
     belopp: "Organisationen får bidrag för handledning och volontärens vistelse (boende och mat). Volontären får resebidrag, fickpengar, språkkurs och bostad. Beloppen följer EU:s schabloner.",
     villkor: [
-      "Organisationen måste ha en giltig Quality Label.",
+      "Alla organisationer som tar emot volontärer måste ha en giltig Quality Label. För att söka pengarna krävs Quality Label som ledande organisation.",
       "Volontären ska vara 18–30 år.",
       "Volontärinsatsen pågår 2–12 månader.",
       "Volontären ska göra en solidaritetsinsats – inte ersätta anställd personal."
     ],
     hurDuGor: [
       "Fundera på vilken roll en volontär kan ha, till exempel på fritids eller i språkstödjande aktiviteter.",
-      "Ansök om Quality Label hos MUCF senast 29 oktober.",
-      "När ni har Quality Label: sök pengar för volontärprojekt i vårens omgång.",
+      "Bestäm om skolan ska söka pengar själv som ledande organisation eller vara värd i ett projekt som någon annan leder.",
+      "Ansök om Quality Label hos MUCF – för ledande roll senast 29 oktober om ni vill söka pengar i vårens omgång.",
+      "Som ledande organisation: sök pengar för volontärprojekt i vårens omgång.",
       "Hitta en volontär via Europeiska ungdomsportalen.",
       "Ordna boende, handledare och introduktion.",
       "Rapportera enligt avtalet med MUCF."
@@ -554,7 +567,7 @@ window.SB_GRANTS.push(
       { titel: "MUCF – Ansök om Quality Label", url: "https://www.mucf.se/bidrag/ansok-om-quality-label" },
       { titel: "MUCF – Bidrag inom Europeiska solidaritetskåren", url: "https://www.mucf.se/bidrag/eu-bidrag/europeiskasolidaritetskaren" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "MUCF:s egna sidor säger inte uttryckligen att skolor kan vara värdorganisation; det bygger på EU:s allmänna regel att offentliga och privata organisationer kan delta. Deadline 2027 är inte publicerad. Programmet gäller 2021–2027."
   },
 
@@ -589,7 +602,7 @@ window.SB_GRANTS.push(
       "Sök i ESF-rådets system Projektrummet.",
       "Om ni beviljas: rapportera löpande och ansök om utbetalning."
     ],
-    redovisning: "Löpande lägesrapporter och ansökningar om utbetalning i Projektrummet, samt slutrapport med resultat.",
+    redovisning: "Projektet lämnar en kvartalsrapport var tredje månad, med start tre månader efter projektstart. Ansökan om utbetalning görs för en kalendermånad i taget, senast två månader efter månadens slut, om inte beslutet säger något annat. Den sista ansökan om utbetalning ska komma in senast två månader efter projektets slut och innehålla slutrapporten.",
     fallgropar: [
       "Att underskatta administrationen – ESF-projekt kräver noggrann ekonomisk redovisning.",
       "Att inte ha råd att ligga ute med pengar innan utbetalning.",
@@ -601,7 +614,7 @@ window.SB_GRANTS.push(
       { titel: "Svenska ESF-rådet – Utlysningsplan", url: "https://www.esf.se/utlysningar/utlysningsplan/" },
       { titel: "Svenska ESF-rådet – Sök stöd steg för steg", url: "https://www.esf.se/soka-stod/sok-stod-steg-for-steg/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Utlysningsplanen är preliminär och kan ändras. Om en fristående skolhuvudman kan söka avgörs i varje utlysning. Utlysningsplanen nämner personal i skolverksamhet i Norra Mellansverige, unga som riskerar studieavbrott i Stockholm och (hösten 2027) skolelever 13–16 år i Norra Mellansverige; ingen planerad utlysning riktar sig uttryckligen till komvux. Om medfinansiering krävs och hur mycket anges i varje utlysning. ESF+ finansieras med EU-pengar och statliga medel i samma stöd."
   },
 
@@ -661,8 +674,8 @@ window.SB_GRANTS.push(
     syfte: "Arvsfonden stödjer nyskapande projekt inom ideell verksamhet för barn, unga, äldre och personer med funktionsnedsättning.",
     omraden: ["ovrigt", "halsa-trygghet"],
     skolformer: ["grundskola", "anpassad-grundskola", "fritidshem", "gymnasieskola", "anpassad-gymnasieskola"],
-    sokande: { fristaende: "villkor", kommun: "villkor", region: "villkor", stat: "nej", ovriga: "ja" },
-    sokandeNot: "Ideella föreningar, stiftelser och liknande organisationer söker. Bolag kan inte söka (utom aktiebolag med särskild vinstutdelningsbegränsning). En kommun kan i vissa fall få projektstöd om projektet ligger utanför kommunens vanliga ansvar, görs i nära samarbete med en förening och kommunen bidrar med egna pengar. En skola – kommunal eller fristående – kan normalt vara samarbetspartner, men föreningen och målgruppen ska ha huvudrollen.",
+    sokande: { fristaende: "villkor", kommun: "villkor", region: "villkor", stat: "villkor", ovriga: "ja" },
+    sokandeNot: "Ideella föreningar, stiftelser och liknande organisationer söker. Bolag kan inte söka (utom aktiebolag med särskild vinstutdelningsbegränsning). En offentlig huvudman, till exempel en kommun eller region, kan få projektstöd om det finns särskilda skäl (lag 2021:401, 2 kap. 4 §): projektet ska ligga utanför huvudmannens vanliga ansvar, göras i nära samarbete med ideella organisationer som har inflytande, och huvudmannen ska bidra med egen finansiering, till exempel personal eller lokaler. En skola – kommunal eller fristående – kan normalt vara samarbetspartner, men föreningen och målgruppen ska ha huvudrollen.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: null, till: null, text: "Ansökningar tas emot löpande hela året.", ungefar: false },
@@ -690,9 +703,10 @@ window.SB_GRANTS.push(
     ],
     nyckelord: ["Arvsfonden", "förening", "projekt", "barn och unga", "fritid", "samarbete", "ideell"],
     kallor: [
-      { titel: "Allmänna arvsfonden – Vanliga frågor", url: "https://www.arvsfonden.se/ansokan/vanliga-fragor" }
+      { titel: "Allmänna arvsfonden – Vanliga frågor", url: "https://www.arvsfonden.se/ansokan/vanliga-fragor" },
+      { titel: "Lag (2021:401) om Allmänna arvsfonden", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2021401-om-allmanna-arvsfonden_sfs-2021-401/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Arvsfonden är inte ett statsbidrag. Det är inte närmare beskrivet hur ofta skolor är partner i beviljade projekt. En fristående skola som drivs av en ideell förening eller stiftelse kan möjligen söka själv, men bara för verksamhet utanför skolans uppdrag – detta kunde inte bekräftas."
   }
 );

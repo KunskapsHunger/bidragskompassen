@@ -63,7 +63,7 @@ window.SB_GRANTS.push(
     omraden: ["internationellt"],
     skolformer: ["gymnasieskola"],
     sokande: { fristaende: "ja", kommun: "ja", region: "nej", stat: "nej", ovriga: "nej" },
-    sokandeNot: "Kommunala och fristående huvudmän för gymnasieskola som har IB-program och betalar avgifter till IBO kan begära pengarna. Fristående skolor gör det på samma villkor som kommunerna. Den som redan får annat statsbidrag för att finansiera IB-utbildningen kan inte få detta bidrag.",
+    sokandeNot: "Kommunala och fristående huvudmän för gymnasieskola som har IB-program och betalar avgifter till IBO kan begära pengarna. För fristående skolor finns ett villkor till: IB-utbildningen ska hållas skild från annan utbildning som får offentligt bidrag (2 § i förordningen). Den som redan får annat statsbidrag för att finansiera IB-utbildningen kan inte få detta bidrag.",
     typ: "rekvisition",
     perioder: [
       { typ: "rekvisition", fran: "2026-08-15", till: "2026-09-15", text: "Begäran om utbetalning för 2026 (stängd).", ungefar: false },
@@ -72,6 +72,7 @@ window.SB_GRANTS.push(
     belopp: "Ersätter faktiska avgifter till IBO: årsavgiften per skola (diploma annual fee), anslutningsavgiften per skola (bara en gång, första gången huvudmannen söker) och examensavgiften per elev.",
     villkor: [
       "IB-programmet ska vara anmält till Skolverket och godkänt av IBO.",
+      "För fristående skolor: IB-utbildningen ska hållas skild från annan utbildning som får offentligt bidrag.",
       "Huvudmannen ska visa faktura och kvitto på att avgiften är betald.",
       "Examensavgift ersätts bara för elever vars hemkommun var skyldig att erbjuda eleven gymnasieutbildning när eleven började.",
       "Huvudmannen får inte ha annat statsbidrag som finansierar IB-utbildningen."
@@ -91,10 +92,11 @@ window.SB_GRANTS.push(
     nyckelord: ["IB", "International Baccalaureate", "IBO", "IB-programmet", "Diploma Programme", "examensavgift", "IB-avgift", "internationell gymnasieexamen"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för International Baccalaureate Office (IBO) 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-international-baccalaureate-office-ibo-2026" },
-      { titel: "Skolverket: Statsbidrag för International Baccalaureate Office (IBO) 2025", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-international-baccalaureate-office-ibo-2025" }
+      { titel: "Skolverket: Statsbidrag för International Baccalaureate Office (IBO) 2025", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-international-baccalaureate-office-ibo-2025" },
+      { titel: "Förordning (1993:795) om statsbidrag till avgifter till International Baccalaureate Office", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1993795-om-statsbidrag-till-_sfs-1993-795/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Datum för 2027 är uppskattade utifrån 2025 och 2026. Det framgår inte på sidan hur stor den totala ramen är."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Datum för 2027 är uppskattade utifrån 2025 och 2026. Förordningen ger huvudmän som uppfyller villkoren rätt till bidraget, så det finns ingen fast ram att konkurrera om. För 2025 fick 31 huvudmän sammanlagt 4 346 076 kr (beslut 24 oktober 2025). Skolverkets sida förklarar inte hur en fristående skola ska visa att IB-utbildningen hålls skild från annan utbildning – fråga Skolverket vid osäkerhet."
   },
   {
     id: "elevorganisationer",
@@ -116,10 +118,11 @@ window.SB_GRANTS.push(
       { typ: "redovisning", fran: "2027-03-01", till: "2027-04-01", text: "Redovisning av 2026 års bidrag (preliminärt).", ungefar: false },
       { typ: "redovisning", fran: "2028-03-01", till: "2028-04-03", text: "Redovisning av 2027 års bidrag (preliminärt).", ungefar: false }
     ],
-    belopp: "För 2026 fick 4 organisationer totalt 7 050 000 kr. Ramen för 2027 bestäms i regleringsbrevet i december 2026. Fördelning: ett fast grundbidrag, sedan 65 procent efter antal bidragsgrundande medlemmar och 35 procent efter antal lokala föreningar.",
+    belopp: "För 2026 fick 4 organisationer totalt 7 050 000 kr. Ramen för 2027 bestäms i regleringsbrevet i december 2026. Fördelning: varje organisation får först ett fast grundbidrag. Av det som är kvar fördelas 65 procent efter antal bidragsgrundande medlemmar och 35 procent efter antal lokala föreningar.",
     villkor: [
       "Organisationen ska arbeta för att öka elevers inflytande i skolan.",
       "Den ska vara riksomfattande med flera lokala eller regionala föreningar.",
+      "Den ska i huvudsak bestå av elever. För 2026 krävde Skolverket att minst 60 procent av medlemmarna var elever – det kravet står inte med på sidan för 2027.",
       "Den ska vara ideell och uppfylla demokrativillkor.",
       "Den får inte ha skulder hos Kronofogden, vara i konkurs eller likvidation eller ha obetalda återkrav hos Skolverket.",
       "Ett revisorsintyg om medlemsantalet krävs."
@@ -140,10 +143,11 @@ window.SB_GRANTS.push(
     nyckelord: ["elevkår", "elevråd", "elevinflytande", "elevorganisation", "demokrati i skolan", "föreningsbidrag", "organisationsbidrag"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för elevorganisationer 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-elevorganisationer-2027" },
-      { titel: "Skolverket: Statsbidrag för elevorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-elevorganisationer-2026" }
+      { titel: "Skolverket: Statsbidrag för elevorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-elevorganisationer-2026" },
+      { titel: "Förordning (1998:1636) om vissa statsbidrag för utveckling av skolväsendet", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-19981636-om-vissa-statsbidrag-for_sfs-1998-1636/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Beloppet för 2027 är inte bestämt förrän regleringsbrevet kommer i december 2026."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Beloppet för 2027 är inte bestämt förrän regleringsbrevet kommer i december 2026. Kravet på minst 60 procent elever bland medlemmarna fanns för 2026 men står inte med på sidan för 2027. Det framgår inte om det har tagits bort. Hur stort grundbidraget är framgår inte av Skolverkets sida."
   },
   {
     id: "foraldraorganisationer",
@@ -169,6 +173,7 @@ window.SB_GRANTS.push(
     villkor: [
       "Organisationen ska arbeta för att öka vårdnadshavares inflytande i skolan.",
       "Den ska vara riksomfattande och öppen för medlemmar i hela landet.",
+      "För 2026 krävde Skolverket att minst 60 procent av medlemmarna var vårdnadshavare till elever – det kravet står inte med på sidan för 2027.",
       "Den ska vara ideell och uppfylla demokrativillkor.",
       "Den får inte ha skulder hos Kronofogden, vara i konkurs eller likvidation eller ha obetalda återkrav hos Skolverket."
     ],
@@ -188,10 +193,11 @@ window.SB_GRANTS.push(
     nyckelord: ["föräldraförening", "föräldrainflytande", "vårdnadshavare", "föräldrar i skolan", "föräldraråd", "organisationsbidrag"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för föräldraorganisationer 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-foraldraorganisationer-2027" },
-      { titel: "Skolverket: Statsbidrag för föräldraorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-foraldraorganisationer-2026" }
+      { titel: "Skolverket: Statsbidrag för föräldraorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-foraldraorganisationer-2026" },
+      { titel: "Förordning (1998:1636) om vissa statsbidrag för utveckling av skolväsendet", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-19981636-om-vissa-statsbidrag-for_sfs-1998-1636/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Beloppet för 2027 är inte bestämt förrän regleringsbrevet kommer i december 2026."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Beloppet för 2027 är inte bestämt förrän regleringsbrevet kommer i december 2026. Kravet på minst 60 procent vårdnadshavare bland medlemmarna fanns för 2026 men står inte med på sidan för 2027. Det framgår inte om det har tagits bort."
   },
   {
     id: "amneslararorganisationer",
@@ -234,10 +240,11 @@ window.SB_GRANTS.push(
     nyckelord: ["ämneslärarförening", "lärarförening", "matematiklärare", "svensklärare", "språklärare", "ämnesutveckling", "ämnesdidaktik", "organisationsbidrag"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för ämneslärarorganisationer 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-amneslararorganisationer-2027" },
-      { titel: "Skolverket: Statsbidrag för ämneslärarorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-amneslararorganisationer-2026" }
+      { titel: "Skolverket: Statsbidrag för ämneslärarorganisationer 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-amneslararorganisationer-2026" },
+      { titel: "Regleringsbrev 2026 för Statens skolverk (anslag 1:5)", url: "https://www.esv.se/statsliggaren/regleringsbrev/?RBID=26231" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Sidan för 2027 nämner inte längre kraven på minst 60 procent lärare och fler än 100 medlemmar, som fanns för 2026. Det är oklart om kraven har tagits bort eller bara saknas på sidan. Ingen redovisningsperiod anges."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Bidraget har ingen egen förordning. Pengarna avsätts i Skolverkets regleringsbrev (2026: anslag 1:5), och villkor och fördelning bestäms av Skolverket, så de kan ändras från år till år. Sidan för 2027 nämner inte längre kraven på minst 60 procent lärare och fler än 100 medlemmar, som fanns för 2026. Det är oklart om kraven har tagits bort eller bara saknas på sidan. Ingen redovisningsperiod anges."
   },
   {
     id: "entreprenorskap-organisationer",
@@ -304,8 +311,8 @@ window.SB_GRANTS.push(
     syfte: "Att göra det möjligt för elever att delta i internationella vetenskapstävlingar och att sådana tävlingar kan ordnas i Sverige.",
     omraden: ["internationellt", "ovrigt"],
     skolformer: ["grundskola", "gymnasieskola"],
-    sokande: { fristaende: "nej", kommun: "nej", region: "nej", stat: "nej", ovriga: "ja" },
-    sokandeNot: "Bara svenska organisationer som ordnar elevers deltagande i vetenskapstävlingar kan söka. Skolor och huvudmän (kommunala eller fristående) kan inte söka, men elever från alla skolor kan delta i tävlingarna och uttagningarna.",
+    sokande: { fristaende: "villkor", kommun: "villkor", region: "villkor", stat: "villkor", ovriga: "ja" },
+    sokandeNot: "Svenska organisationer som gör det möjligt för elever att delta i vetenskapstävlingar, eller som ordnar sådana tävlingar, kan söka. Det är oftast föreningar och vetenskapliga samfund, men 2026 fick också till exempel en kommun, fristående skolhuvudmän, en högskola och företag pengar. En kommun eller fristående huvudman kan alltså söka om den själv tar elever till en tävling eller ordnar en – men pengarna gäller kostnader för tävlingen, inte skolans vanliga undervisning. Elever från alla skolor kan delta i tävlingarna och uttagningarna.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-01-15", till: "2026-02-16", text: "Ansökan för 2026 (stängd). Beslut i mars 2026.", ungefar: false },
@@ -334,10 +341,11 @@ window.SB_GRANTS.push(
     nyckelord: ["skololympiad", "matematikolympiad", "fysikolympiad", "kemiolympiad", "biologiolympiad", "programmeringsolympiad", "vetenskapstävling", "ämnestävling", "tävling elever", "uttagning"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för vetenskapstävlingar 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-vetenskapstavlingar-2027" },
-      { titel: "Skolverket: Statsbidrag för vetenskapstävlingar 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-vetenskapstavlingar-2026" }
+      { titel: "Skolverket: Statsbidrag för vetenskapstävlingar 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-vetenskapstavlingar-2026" },
+      { titel: "Regleringsbrev 2026 för Statens skolverk (anslag 1:5, anslagspost 3)", url: "https://www.esv.se/statsliggaren/regleringsbrev/?RBID=26231" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Beslutsmånaden för 2027 är uppskattad. Ingen redovisningsperiod anges på sidan."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Bidraget har ingen egen förordning. Pengarna och prioriteringen styrs av Skolverkets regleringsbrev (2026: anslag 1:5, anslagspost 3), så villkor och belopp kan ändras från år till år. Skolverket säger inte exakt vilken sorts organisation som kan söka – är ni osäkra, fråga Skolverket. Beslutsmånaden för 2027 är uppskattad. Ingen redovisningsperiod anges på sidan."
   },
   {
     id: "teknik-naturvetenskapscentrum",
@@ -349,12 +357,12 @@ window.SB_GRANTS.push(
     syfte: "Att stärka verksamheten vid teknik- och naturvetenskapscentrum, så att fler får intresse för och kunskap om naturvetenskap och teknik.",
     omraden: ["ovrigt"],
     skolformer: ["forskoleklass", "grundskola", "gymnasieskola"],
-    sokande: { fristaende: "nej", kommun: "nej", region: "nej", stat: "nej", ovriga: "ja" },
-    sokandeNot: "Bara teknik- och naturvetenskapscentrum (science center) kan söka. Skolor och huvudmän (kommunala eller fristående) kan inte söka, men deras elever har nytta av bidraget när de besöker centren eller deltar i deras aktiviteter.",
+    sokande: { fristaende: "nej", kommun: "villkor", region: "villkor", stat: "villkor", ovriga: "ja" },
+    sokandeNot: "Det är centret, eller den som driver det, som söker. För 2026 fick bland annat bolag, stiftelser, föreningar, kommuner (till exempel Jönköpings, Linköpings och Strömsunds kommun), Region Gotland, ett kommunalförbund och universitet bidrag som huvudmän för ett science center. En kommun eller region kan alltså söka om den driver ett centrum som uppfyller kraven. En skola kan inte söka för sin egen undervisning, men elever har nytta av bidraget när de besöker centren eller deltar i deras aktiviteter.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-01-15", till: "2026-02-16", text: "Ansökan för 2026 (stängd). Beslut i maj 2026.", ungefar: false },
-      { typ: "ansokan", fran: "2027-01-15", till: "2027-02-15", text: "Trolig ansökan för 2027, uppskattad utifrån 2026.", ungefar: true },
+      { typ: "ansokan", fran: "2027-01-15", till: "2027-02-15", text: "Trolig ansökan för 2027, uppskattad utifrån 2026. Enligt Skolverkets föreskrifter (SKOLFS 2010:8) ska ansökan ha kommit in senast 15 februari det år bidraget gäller.", ungefar: true },
       { typ: "utbetalning", fran: null, till: null, text: "Hela beloppet betalas ut i samband med beslutet (2026 i maj).", ungefar: false }
     ],
     belopp: "För 2026 fick 20 centrum totalt 25 500 000 kr. Ett centrum kan få högst det sökta beloppet och högst 49 procent av sina intäkter året innan (statsbidraget från Skolverket räknas inte med).",
@@ -371,7 +379,7 @@ window.SB_GRANTS.push(
       "Se till att ni har behörighet i Skolverkets e-tjänst för statsbidrag.",
       "Ansök i e-tjänsten under ansökningsperioden (2026 var den 15 januari–16 februari)."
     ],
-    redovisning: "Skolverkets sida beskriver ingen särskild redovisningsperiod. Centret ska göra årliga uppföljningar, och Skolverket kan kontrollera i efterhand.",
+    redovisning: "Skolverkets sida beskriver ingen särskild redovisningsperiod. Enligt SKOLFS 2010:8 betalas bidraget ut en gång om året, och för att få pengarna ska centret ha skickat in ekonomisk redovisning och verksamhetsberättelse för det senast avslutade räkenskapsåret. Centret ska också följa upp verksamheten varje år, och Skolverket kan kontrollera i efterhand.",
     fallgropar: [
       "Att söka mer än 49 procent av förra årets intäkter.",
       "Att centret i huvudsak finansieras av statsbidraget – det måste ha annan huvudfinansiering."
@@ -379,10 +387,11 @@ window.SB_GRANTS.push(
     nyckelord: ["science center", "vetenskapscentrum", "teknikcentrum", "naturvetenskap", "teknik", "NO", "experiment", "skolbesök", "studiebesök"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för teknik- och naturvetenskapscentrum 2026 (science center)", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-teknik--och-naturvetenskapscentrum-2026" },
-      { titel: "Förordning (1997:153) om statsbidrag till teknik- och naturvetenskapscentrum", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1997153-om-statsbidrag-till-teknik-_sfs-1997-153/" }
+      { titel: "Förordning (1997:153) om statsbidrag till teknik- och naturvetenskapscentrum", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1997153-om-statsbidrag-till-teknik-_sfs-1997-153/" },
+      { titel: "Skolverkets föreskrifter (SKOLFS 2010:8) om statsbidrag till teknik- och naturvetenskapscentrum", url: "https://skolfs.skolverket.se/api/document/GRUNDFORFATTNING/2010:8/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Skolverket har ännu inte publicerat någon sida för 2027. Datumen för 2027 är uppskattade utifrån 2026."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Skolverket har ännu inte publicerat någon sida för 2027. Datumen för 2027 är uppskattade utifrån 2026; sista dagen 15 februari följer av SKOLFS 2010:8. Regeln om högst 49 procent av intäkterna står på Skolverkets sida för 2026, inte i förordningen eller föreskrifterna, och kan ändras."
   },
   {
     id: "utlandssvenska-elever",
@@ -394,17 +403,17 @@ window.SB_GRANTS.push(
     syfte: "Att ersätta kostnaderna när barn till svenskar som bor utomlands går i skola i Sverige från årskurs 7, så att de kan få en svensk utbildning.",
     omraden: ["internationellt"],
     skolformer: ["grundskola", "anpassad-grundskola", "gymnasieskola", "anpassad-gymnasieskola"],
-    sokande: { fristaende: "ja", kommun: "ja", region: "nej", stat: "ja", ovriga: "nej" },
-    sokandeNot: "Kommunala, fristående och statliga huvudmän som har utlandssvenska elever i årskurs 7–9, i gymnasieskolan (även IB) eller i fjärde tekniskt år kan söka. Fristående skolor söker på samma villkor som kommunala. Undantag: IB-utbildning som anordnas av Stockholms kommun, Göteborgs kommun och Sigtunaskolan humanistiska läroverket omfattas inte av bidraget.",
+    sokande: { fristaende: "ja", kommun: "ja", region: "villkor", stat: "ja", ovriga: "nej" },
+    sokandeNot: "Kommunala, fristående och statliga huvudmän som har utlandssvenska elever i årskurs 7–9, i gymnasieskolan (även IB) eller i fjärde tekniskt år kan söka. Fristående skolor söker på samma villkor som kommunala. Förordningen gäller alla huvudmän för skolformerna, så även en region som driver till exempel en gymnasieskola bör kunna söka – Skolverket räknar dock bara upp kommunala, fristående och statliga huvudmän. Undantag: IB-utbildning som anordnas av Stockholms kommun, Göteborgs kommun och Sigtunaskolan humanistiska läroverket omfattas inte av bidraget.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-02-15", till: "2026-03-02", text: "Ansökan 1 för vårterminen 2026 (stängd).", ungefar: false },
       { typ: "ansokan", fran: "2026-09-15", till: "2026-10-01", text: "Ansökan 2 för höstterminen 2026 i e-tjänsten. Sena ansökningar avvisas.", ungefar: false },
       { typ: "beslut", fran: null, till: null, text: "Beslut om ansökan 2 publiceras i november 2026.", ungefar: false },
-      { typ: "ansokan", fran: "2027-02-15", till: "2027-03-02", text: "Ansökan 1 för vårterminen 2027, uppskattad utifrån 2026.", ungefar: true },
+      { typ: "ansokan", fran: "2027-02-15", till: "2027-03-01", text: "Ansökan 1 för vårterminen 2027. Enligt förordningen ska ansökan ha kommit in senast 1 mars (2026 stängde den 2 mars eftersom 1 mars var en söndag). När ansökan öppnar är uppskattat utifrån 2026.", ungefar: true },
       { typ: "ansokan", fran: "2027-09-15", till: "2027-10-01", text: "Ansökan 2 för höstterminen 2027, uppskattad utifrån 2026.", ungefar: true }
     ],
-    belopp: "Söks per termin. För grundskolan bestämmer regeringen ett belopp per elev varje år. För gymnasieskolan är det hälften av riksprislistans belopp för programmet (inklusive mat). För IB hälften av beloppet för naturvetenskapsprogrammet och för fjärde tekniskt år hälften av det beloppet.",
+    belopp: "Söks per termin. För grundskolan bestämmer regeringen ett belopp per elev varje år – för 2026 är det 42 400 kr per elev och termin i årskurs 7–9 (regleringsbrevet). För gymnasieskolan är det hälften av riksprislistans belopp för programmet (inklusive mat). För IB hälften av beloppet för naturvetenskapsprogrammet och för fjärde tekniskt år hälften av det beloppet.",
     villkor: [
       "Eleven räknas som utlandssvensk om båda vårdnadshavarna bor utomlands i minst sex månader i följd, minst en av dem är svensk medborgare och eleven inte är folkbokförd i Sverige.",
       "Huvudmannen ska själv bedöma detta när eleven börjar årskurs 7–9 och på nytt när eleven börjar gymnasiet.",
@@ -415,7 +424,7 @@ window.SB_GRANTS.push(
       "Ta reda på vilka elever som kan vara utlandssvenska och kontrollera att de inte är folkbokförda i Sverige.",
       "Gör och dokumentera bedömningen för varje elev.",
       "Kontrollera att ni har behörighet i Skolverkets e-tjänst för statsbidrag.",
-      "Ansök för varje termin: i februari–mars för våren och 15 september–1 oktober för hösten.",
+      "Ansök för varje termin: senast 1 mars för våren och senast 1 oktober för hösten.",
       "Spara underlagen om Skolverket vill kontrollera."
     ],
     redovisning: "Ingen separat redovisning beskrivs. Huvudmannen ska spara dokumentation om bedömningen av varje elev så att Skolverket kan kontrollera.",
@@ -428,10 +437,11 @@ window.SB_GRANTS.push(
     nyckelord: ["utlandssvensk", "utlandssvenska elever", "bor utomlands", "ej folkbokförd", "internatskola", "riksinternat", "Sigtuna", "svenska familjer utomlands", "expat"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för utlandssvenska elever 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-utlandssvenska-elever-2026" },
-      { titel: "Förordning (2015:736) om statsbidrag till kostnader för utbildning i Sverige för utlandssvenska elever", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2015736-om-statsbidrag-till_sfs-2015-736/" }
+      { titel: "Förordning (2015:736) om statsbidrag till kostnader för utbildning i Sverige för utlandssvenska elever", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2015736-om-statsbidrag-till_sfs-2015-736/" },
+      { titel: "Regleringsbrev för budgetåret 2026 avseende Statens skolverk (anslag 1:8, anslagspost 2)", url: "https://www.statskontoret.se/statsliggaren/regleringsbrev/1/2026/senaste" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Datumen för 2027 är uppskattade utifrån 2026. Sidan nämner inte regionala huvudmän; vi har därför satt region till nej (förordningen talar bara allmänt om huvudmän för skolformerna). Beloppen för 2026 var inte publicerade på sidan när vi kontrollerade."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Sista dagarna (1 mars och 1 oktober) står i förordningen. När ansökan öppnar 2027 är uppskattat utifrån 2026. Skolverkets sida nämner inte regionala huvudmän, men förordningen (2 §) talar om huvudmän för skolformerna i allmänhet – därför har vi satt region till villkor. Beloppet för årskurs 7–9 år 2027 bestäms i regleringsbrevet för 2027."
   },
   {
     id: "distansundervisning-utlandssvenska",
@@ -451,7 +461,7 @@ window.SB_GRANTS.push(
       { typ: "ansokan", fran: "2027-02-01", till: "2027-03-02", text: "Ansökan för vårterminen 2027.", ungefar: false },
       { typ: "ansokan", fran: "2027-09-01", till: "2027-10-01", text: "Ansökan för höstterminen 2027.", ungefar: false }
     ],
-    belopp: "Bidraget lämnas per elev. Skolverkets sida anger inget belopp.",
+    belopp: "Bidraget lämnas per elev. Förordningen och Skolverkets sida anger inget belopp. Enligt Riksrevisionen (RiR 2026:11, uppgifter från Skolverket) var beloppen läsåret 2024/25: heltid i årskurs 6–9 75 000 kr per elev, heltid i gymnasieskolan 35 826 kr per elev och enstaka ämne i årskurs 6–9 4 050–9 000 kr beroende på ämne.",
     villkor: [
       "Minst en vårdnadshavare ska vara svensk medborgare.",
       "Minst en vårdnadshavare ska bo utomlands av ett godkänt skäl, till exempel arbete för svensk myndighet, svenskt företag eller internationell organisation, studier eller forskning, kulturarbete eller annan verksamhet som är viktig för Sverige. Synnerliga sociala skäl kan också godtas.",
@@ -473,10 +483,12 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Skolverket: Statsbidrag för distansundervisning 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-distansundervisning-2027" },
       { titel: "Skolverket: Statsbidrag för distansundervisning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-distansundervisning-2026" },
-      { titel: "Sofia distans (Stockholms stad)", url: "https://sofiadistans.stockholm.se/" }
+      { titel: "Sofia distans (Stockholms stad)", url: "https://sofiadistans.stockholm.se/" },
+      { titel: "Förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1994519-om-statsbidrag-till_sfs-1994-519/" },
+      { titel: "Riksrevisionen: Statsbidrag till svenska utlandsskolor – ett föråldrat och ineffektivt system (RiR 2026:11)", url: "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2026/statsbidrag-till-svenska-utlandsskolor---ett-foraldrat-och-ineffektivt-system.html" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Skolverkets sida anger inte hur stort bidraget är per elev."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Skolverkets sida anger inte hur stort bidraget är per elev. Beloppen ovan kommer från Riksrevisionens rapport och gäller läsåret 2024/25 – senare belopp kan vara andra."
   },
   {
     id: "utbildning-svenska-utlandsskolor",
@@ -493,9 +505,10 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-15", till: "2026-11-16", text: "Ansökan för 2027 (förskoleklass och grundskola samt gymnasieskola). Från 2027 görs ansökan i e-tjänsten för statsbidrag. Blanketten publiceras 15 oktober.", ungefar: false },
-      { typ: "beslut", fran: null, till: null, text: "Beslut under första kvartalet 2027 (för 2026 kom beslutet i februari).", ungefar: false }
+      { typ: "beslut", fran: null, till: null, text: "Beslut under första kvartalet 2027 (för 2026 kom beslutet i februari).", ungefar: false },
+      { typ: "utbetalning", fran: null, till: null, text: "En fjärdedel betalas ut i mars, juni, september och december under bidragsåret. Ni behöver inte begära det.", ungefar: false }
     ],
-    belopp: "Antalet elever räknas som ett snitt av de tre senaste åren. Regeringen bestämmer beloppet per elev varje år. 75 procent av det totala beloppet justeras sedan efter hur levnadskostnaderna har utvecklats i landet där skolan ligger.",
+    belopp: "Antalet elever räknas som ett snitt av de tre senaste åren (eleverna räknas den 15 oktober). Regeringen bestämmer beloppet per elev varje år, och beloppet per elev blir lägre ju större skolan är. För 2026 (SKOLFS 2025:456), förskoleklass och grundskola: högst 10 elever 112 800 kr per elev; vid 11 elever 111 640 kr per elev och därefter 1 210 kr lägre för varje elev till; minst 54 elever 57 830 kr per elev. Gymnasieskola: 59 380 kr per elev oavsett skolans storlek. 75 procent av bidraget justeras sedan efter levnadskostnaderna i landet där skolan ligger (ECA-index).",
     villkor: [
       "Skolan ska vara godkänd som svensk utlandsskola av Skolverket.",
       "Eleverna ska ha minst en vårdnadshavare som är svensk medborgare och bor utomlands av ett godkänt skäl, till exempel arbete för svensk myndighet, svenskt företag eller internationell organisation, studier eller forskning eller kulturarbete. Synnerliga sociala skäl kan godtas.",
@@ -507,7 +520,7 @@ window.SB_GRANTS.push(
       "Se till att ni har behörighet i Skolverkets e-tjänst för statsbidrag.",
       "Ansök 15 oktober–16 november 2026. Går det inte i e-tjänsten kan ni skicka via Sefos (säker filöverföring) efter kontakt med Skolverket."
     ],
-    redovisning: "Ingen särskild redovisning av användningen beskrivs, eftersom bidraget är ett allmänt stöd. Skolan ska kunna visa underlag för eleverna.",
+    redovisning: "Ingen redovisning av hur bidraget har använts krävs, eftersom det är ett allmänt stöd. Huvudmannen ska däremot varje år lämna en årsredovisning till Skolverket (med protokoll från årsmötet, resultaträkning, balansräkning och förvaltningsberättelse) och de uppgifter Skolverket begär. Skolan ska kunna visa underlag för eleverna.",
     fallgropar: [
       "Att använda fel intyg för vårdnadshavarens skäl att bo utomlands.",
       "Att en ny skola tror att den kan söka utan att först bli godkänd som svensk utlandsskola.",
@@ -518,9 +531,12 @@ window.SB_GRANTS.push(
       { titel: "Skolverket: Statsbidrag till utbildning vid svenska utlandsskolor 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-utbildning-vid-svenska-utlandsskolor-2027" },
       { titel: "Skolverket: Statsbidrag till utbildning vid svenska utlandsskolor 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-utbildning-vid-svenska-utlandsskolor-2026" },
       { titel: "Skolverket: Statsbidrag för svenska utlandsskolor 2026 (översikt)", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-svenska-utlandsskolor-2026" },
-      { titel: "Riksrevisionen: Statsbidrag till svenska utlandsskolor – ett föråldrat och ineffektivt system (2026)", url: "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2026/statsbidrag-till-svenska-utlandsskolor---ett-foraldrat-och-ineffektivt-system.html" }
+      { titel: "Riksrevisionen: Statsbidrag till svenska utlandsskolor – ett föråldrat och ineffektivt system (2026)", url: "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2026/statsbidrag-till-svenska-utlandsskolor---ett-foraldrat-och-ineffektivt-system.html" },
+      { titel: "Förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1994519-om-statsbidrag-till_sfs-1994-519/" },
+      { titel: "Belopp för bidragsåret 2026 (SKOLFS 2025:456)", url: "https://skolfs.skolverket.se/api/document/GRUNDFORFATTNING/2025:456/pdf" },
+      { titel: "Skolverkets föreskrifter (SKOLFS 2008:9)", url: "https://skolfs.skolverket.se/api/document/SENASTE_LYDELSE/2008:9/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Riksrevisionen kritiserade systemet i juni 2026 och föreslog att regeringen ser över det, till exempel genom att ta bort bidraget eller ändra reglerna. Inga ändringar är beslutade, men reglerna kan komma att ändras. Beloppet per elev för 2027 är inte publicerat ännu."
   },
   {
@@ -585,11 +601,13 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-15", till: "2026-11-16", text: "Ansökan för 2027. Från 2027 görs ansökan i e-tjänsten för statsbidrag.", ungefar: false },
-      { typ: "beslut", fran: null, till: null, text: "Beslut i början av 2027.", ungefar: false }
+      { typ: "beslut", fran: null, till: null, text: "Beslut i början av 2027.", ungefar: false },
+      { typ: "utbetalning", fran: null, till: null, text: "Hälften betalas ut i juni och hälften i december under bidragsåret (40 § i förordningen).", ungefar: false }
     ],
-    belopp: "Skolverkets sida anger inget belopp. Bidraget är ett allmänt stöd som huvudmannen själv bestämmer hur det används.",
+    belopp: "Ett belopp per elev, räknat på antalet elever den 15 oktober året före bidragsåret. Ju fler elever, desto lägre belopp per elev. För 2026 (SKOLFS 2025:456): högst 5 elever 20 920 kr per elev; vid 6 elever 20 110 kr per elev och därefter 850 kr lägre för varje elev till; minst 20 elever 8 130 kr per elev. Hela bidraget justeras sedan efter levnadskostnaderna i landet (ECA-index). Bidraget är ett allmänt stöd som huvudmannen själv bestämmer hur det används.",
     villkor: [
       "Eleverna ska vara utlandssvenska och läsa årskurs 6–9 eller gymnasiet på distans.",
+      "Eleven får inte samtidigt vara elev vid en svensk utlandsskola (30 §).",
       "Bidraget regleras av förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar."
     ],
     hurDuGor: [
@@ -605,10 +623,12 @@ window.SB_GRANTS.push(
     nyckelord: ["handledning", "distansstudier", "utlandssvensk", "svensk skola utomlands", "Sofia distans", "Hermods", "utlandsskola"],
     kallor: [
       { titel: "Skolverket: Statsbidrag till handledning åt utlandssvenska elever vid distansundervisning 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-handledning-at-utlandssvenska-elever-vid-distansundervisning-2027" },
-      { titel: "Skolverket: Statsbidrag till handledning åt utlandssvenska elever vid distansundervisning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-handledning-at-utlandssvenska-elever-vid-distansundervisning-2026" }
+      { titel: "Skolverket: Statsbidrag till handledning åt utlandssvenska elever vid distansundervisning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-handledning-at-utlandssvenska-elever-vid-distansundervisning-2026" },
+      { titel: "Förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1994519-om-statsbidrag-till_sfs-1994-519/" },
+      { titel: "Belopp för bidragsåret 2026 (SKOLFS 2025:456)", url: "https://skolfs.skolverket.se/api/document/GRUNDFORFATTNING/2025:456/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Beloppet och hur det räknas ut framgår inte av Skolverkets sida."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Beloppen för 2027 är inte publicerade ännu; de bestäms av regeringen varje år. Exakt hur ECA-justeringen och Skolverkets avrundning görs går inte att räkna fram från källorna. Riksrevisionen föreslog i juni 2026 att regeringen ser över bidragen till utlandsskolorna."
   },
   {
     id: "kompletterande-svensk-undervisning",
@@ -625,9 +645,10 @@ window.SB_GRANTS.push(
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-15", till: "2026-11-16", text: "Ansökan för 2027. Skolverket skickar en länk via Sefos (säker e-post) före 15 oktober, och ansökan skickas genom den.", ungefar: false },
-      { typ: "beslut", fran: null, till: null, text: "Beslut under första kvartalet 2027.", ungefar: false }
+      { typ: "beslut", fran: null, till: null, text: "Beslut under första kvartalet 2027.", ungefar: false },
+      { typ: "utbetalning", fran: null, till: null, text: "Hälften betalas ut i juni och hälften i december under bidragsåret (40 § i förordningen).", ungefar: false }
     ],
-    belopp: "Räknas efter antalet elever som deltar i undervisningen den 15 oktober 2026. Skolverkets sida anger inget belopp per elev.",
+    belopp: "Ett belopp per elev, räknat på antalet elever som deltar i undervisningen den 15 oktober året före (för 2027: den 15 oktober 2026). Regeringen bestämmer beloppet varje år: 4 510 kr per elev för 2026 och 4 280 kr för 2025 (SKOLFS 2025:456 och 2024:667). En förening med bara kompletterande svenska får bidrag först när minst fem elever deltar. Beloppet för 2027 är inte beslutat ännu.",
     villkor: [
       "En förening med bara kompletterande svenska får bidrag om minst fem elever deltar. En utlandsskola får bidrag om minst en elev deltar.",
       "Eleven får inte gå i ordinarie undervisning på en svensk utlandsskola eller i annan statligt stödd svenskundervisning.",
@@ -643,7 +664,7 @@ window.SB_GRANTS.push(
       "Skicka in ansökan via Sefos 15 oktober–16 november 2026.",
       "Kontrollera att bankkontot står på huvudmannen – annars behövs en fullmakt."
     ],
-    redovisning: "Ingen särskild redovisningsperiod beskrivs på Skolverkets sida. Skolverket kan kontrollera i efterhand.",
+    redovisning: "Ingen särskild redovisningsperiod beskrivs på Skolverkets sida. Huvudmannen ska varje år lämna en årsredovisning till Skolverket, med protokoll från årsmötet, resultaträkning, balansräkning och förvaltningsberättelse (SKOLFS 2008:9 13 §), och de uppgifter Skolverket begär. Skolverket kan kontrollera i efterhand.",
     fallgropar: [
       "Att ha färre än fem elever den 15 oktober (för föreningar).",
       "Att räkna med elever som redan går i en svensk utlandsskola.",
@@ -652,10 +673,13 @@ window.SB_GRANTS.push(
     nyckelord: ["kompletterande svenska", "svenskundervisning utomlands", "svensk skolförening", "modersmål svenska", "SUF", "svenska för barn utomlands", "expat", "utlandssvensk"],
     kallor: [
       { titel: "Skolverket: Statsbidrag för kompletterande svensk undervisning 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kompletterande-svensk-undervisning-2027" },
-      { titel: "Skolverket: Statsbidrag för kompletterande svensk undervisning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kompletterande-svensk-undervisning-2026" }
+      { titel: "Skolverket: Statsbidrag för kompletterande svensk undervisning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kompletterande-svensk-undervisning-2026" },
+      { titel: "Förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1994519-om-statsbidrag-till_sfs-1994-519/" },
+      { titel: "Belopp för bidragsåret 2026 (SKOLFS 2025:456)", url: "https://skolfs.skolverket.se/api/document/GRUNDFORFATTNING/2025:456/pdf" },
+      { titel: "Skolverkets föreskrifter (SKOLFS 2008:9)", url: "https://skolfs.skolverket.se/api/document/SENASTE_LYDELSE/2008:9/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Beloppet per elev framgår inte av Skolverkets sida."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Beloppet per elev för 2027 är inte beslutat ännu. Det bestäms av regeringen varje år."
   },
   {
     id: "svensk-undervisning-internationell-skola",
@@ -668,17 +692,18 @@ window.SB_GRANTS.push(
     omraden: ["internationellt"],
     skolformer: ["grundskola", "gymnasieskola"],
     sokande: { fristaende: "villkor", kommun: "nej", region: "nej", stat: "nej", ovriga: "villkor" },
-    sokandeNot: "Bara sex namngivna huvudmän kan få bidraget: svenska sektionerna vid Lycée International i Saint-Germain-en-Laye (Frankrike), United Nations International School of Hanoi (Vietnam), Dubai International Academy (Förenade Arabemiraten), QSI International School of Pápa (Ungern), American School of Warsaw (Polen) och International School of Geneva (Schweiz). Andra skolor kan inte söka.",
+    sokandeNot: "Bara sex namngivna huvudmän kan få bidraget: svenska sektionerna vid Lycée International i Saint-Germain-en-Laye (Frankrike), United Nations International School of Hanoi (Vietnam), Dubai International Academy (Förenade Arabemiraten), QSI International School of Pápa (Ungern), American School of Warsaw (Polen) och International School of Geneva (Schweiz). Andra skolor kan inte söka. Sektionen i Genève fanns inte med i beslutet för 2026.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-15", till: "2026-11-16", text: "Ansökan för 2027 i e-tjänsten för statsbidrag (tidigare år via Excelblankett).", ungefar: true },
-      { typ: "beslut", fran: null, till: null, text: "För 2026 kom beslutet i januari 2026.", ungefar: false }
+      { typ: "beslut", fran: null, till: null, text: "För 2026 kom beslutet i januari 2026.", ungefar: false },
+      { typ: "utbetalning", fran: null, till: null, text: "För sektionerna i Genève och Warszawa betalas bidraget ut med en fjärdedel i mars, juni, september och december (SKOLFS 1998:30).", ungefar: false }
     ],
-    belopp: "Räknas efter ett snitt av antalet elever den 15 oktober de tre senaste åren (för 2027: 2024, 2025 och 2026). Regeringen bestämmer beloppet per elev. För 2025 var det 18 310 kr per elev.",
+    belopp: "Räknas efter ett snitt av antalet elever den 15 oktober de tre senaste åren (för 2027: 2024, 2025 och 2026). Regeringen bestämmer beloppet per elev. För 2026 var det 19 020 kr per elev (18 310 kr för 2025). Beslutet för 2026 gav fem sektioner sammanlagt 4 032 240 kr för 212 elever.",
     villkor: [
       "Undervisningen ska gälla svenska och Sverige – svenska språket, svensk historia och samhällskunskap.",
       "Minst en vårdnadshavare ska vara svensk medborgare.",
-      "För skolorna i Genève och Warszawa ska familjen också använda svenska i vardagen, och undervisningen ska i huvudsak följa svenska kurs- och ämnesplaner."
+      "För skolorna i Genève och Warszawa gäller en egen förordning (SKOLFS 1998:30): familjen ska använda svenska i vardagen, undervisningen ska i huvudsak följa svenska kurs- och ämnesplaner och omfatta sex timmar i veckan (fem i de lägre årskurserna om undervisningen sker i små grupper). Når undervisningen inte upp till det kan bidrag i stället ges som för kompletterande svensk undervisning."
     ],
     hurDuGor: [
       "Kontrollera att er huvudman finns med bland de sex godkända.",
@@ -693,9 +718,11 @@ window.SB_GRANTS.push(
     nyckelord: ["svensk sektion", "internationell skola", "svenska utomlands", "Genève", "Warszawa", "Paris", "Dubai", "Hanoi", "Pápa", "utlandssvensk"],
     kallor: [
       { titel: "Skolverket: Statsbidrag till svensk undervisning vid utländsk skola (internationell skola) 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-svensk-undervisning-vid-utlandsk-skola-internationell-skola-2027" },
-      { titel: "Skolverket: Statsbidrag till svensk undervisning vid utländsk skola (internationell skola) 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-svensk-undervisning-vid-utlandsk-skola-internationell-skola-2026" }
+      { titel: "Skolverket: Statsbidrag till svensk undervisning vid utländsk skola (internationell skola) 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-till-svensk-undervisning-vid-utlandsk-skola-internationell-skola-2026" },
+      { titel: "Förordning (1994:519) om statsbidrag till utbildning av utlandssvenska barn och ungdomar", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-1994519-om-statsbidrag-till_sfs-1994-519/" },
+      { titel: "Förordning om statsbidrag till svensk undervisning vid International School of Geneva och American School of Warsaw (SKOLFS 1998:30)", url: "https://skolfs.skolverket.se/api/document/SENASTE_LYDELSE/1998:30/pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Skolverkets sida för 2027 anger ansökan 15 oktober–16 november 2027, vilket troligen är ett skrivfel för 2026 (omgången för 2026 söktes hösten 2025, och övriga utlandsskolebidrag för 2027 söks 15 oktober–16 november 2026). Vi har därför angett 2026 och markerat datumet som ungefärligt. Kontrollera med Skolverket."
   },
   {
@@ -703,39 +730,41 @@ window.SB_GRANTS.push(
     namn: "Statsbidrag för kompletterande pedagogisk utbildning på forskarnivå",
     kortnamn: "KPU för forskarutbildade",
     myndighet: "Skolverket",
-    giltighet: "aktiv",
+    giltighet: "upphor",
     sammanfattning: "Pengar till Stockholms universitet för utbildningsbidrag till personer med doktorsexamen som läser en särskild kompletterande pedagogisk utbildning (KPU) för att bli ämneslärare.",
     syfte: "Att fler med forskarexamen ska bli lärare. Deltagarna får ett utbildningsbidrag under studietiden.",
     omraden: ["kompetens", "personal"],
     skolformer: ["grundskola", "gymnasieskola"],
     sokande: { fristaende: "nej", kommun: "nej", region: "nej", stat: "villkor", ovriga: "nej" },
-    sokandeNot: "Det går inte att ansöka. Bara Stockholms universitet, som samordnar utbildningen, kan begära ut pengarna. Skolor och huvudmän kan inte söka. Den som har en doktorsexamen och vill bli lärare kan i stället söka utbildningen och få utbildningsbidrag.",
+    sokandeNot: "Det går inte att ansöka. Bara Stockholms universitet, som samordnar utbildningen, kan begära ut pengarna. Skolor och huvudmän kan inte söka. Programmet ges för sista gången 2026 och det går inte längre att anmäla sig till det.",
     typ: "rekvisition",
     perioder: [
       { typ: "rekvisition", fran: "2026-09-01", till: "2026-09-15", text: "Begäran om utbetalning av höstens pengar 2026 (stängd).", ungefar: false },
-      { typ: "redovisning", fran: "2027-01-01", till: "2027-01-15", text: "Redovisning av hur 2026 års pengar har använts. Outnyttjade pengar ska betalas tillbaka senast 3 februari 2027.", ungefar: false },
-      { typ: "rekvisition", fran: "2027-02-01", till: "2027-02-15", text: "Begäran om utbetalning av vårens pengar 2027, uppskattad utifrån 2026.", ungefar: true },
-      { typ: "rekvisition", fran: "2027-09-01", till: "2027-09-15", text: "Begäran om utbetalning av höstens pengar 2027, uppskattad utifrån 2026.", ungefar: true }
+      { typ: "redovisning", fran: "2027-01-01", till: "2027-01-15", text: "Redovisning av hur 2026 års pengar har använts. Outnyttjade pengar ska betalas tillbaka senast 3 februari 2027.", ungefar: false }
     ],
-    belopp: "Bestäms i Skolverkets regleringsbrev för varje år. Skolverkets sida anger inget belopp.",
+    belopp: "Ramen bestäms i Skolverkets regleringsbrev för varje år, och Skolverkets sida anger inget belopp. Studenten kan enligt förordningen få 25 000 kr per kalendermånad i utbildningsbidrag vid heltidsstudier, i högst tolv månader.",
     villkor: [
       "Pengarna ska gå till utbildningsbidrag till studenter på KPU som leder till ämneslärarexamen för personer med examen på forskarnivå.",
       "Pengar som inte används ska betalas tillbaka."
     ],
     hurDuGor: [
-      "Är du forskarutbildad och vill bli lärare: sök KPU för forskarutbildade vid de lärosäten som ger utbildningen.",
+      "Är du forskarutbildad och vill bli lärare: programmet ges för sista gången 2026 och tar inte emot nya studenter. Håll utkik hos Stockholms universitet och regeringen om något nytt beslutas.",
       "Lärosätet (Stockholms universitet) begär ut pengarna två gånger per år i Skolverkets e-tjänst.",
       "Stockholms universitet redovisar i januari året efter."
     ],
     redovisning: "Stockholms universitet redovisar hur pengarna har använts 1–15 januari året efter och betalar tillbaka outnyttjade pengar senast i början av februari.",
     fallgropar: [
-      "Att tro att en skola kan söka bidraget – det går bara till Stockholms universitet."
+      "Att tro att en skola kan söka bidraget – det går bara till Stockholms universitet.",
+      "Att räkna med en ny omgång 2027 – programmet ges för sista gången 2026."
     ],
     nyckelord: ["KPU", "kompletterande pedagogisk utbildning", "doktor", "forskarutbildad", "bli lärare", "ämneslärarexamen", "lärarutbildning", "utbildningsbidrag"],
     kallor: [
-      { titel: "Skolverket: Statsbidrag för kompletterande pedagogisk utbildning på forskarnivå 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kompletterande-pedagogisk-utbildning-pa-forskarniva-2026" }
+      { titel: "Skolverket: Statsbidrag för kompletterande pedagogisk utbildning på forskarnivå 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-kompletterande-pedagogisk-utbildning-pa-forskarniva-2026" },
+      { titel: "Förordning (2016:706) om utbildningsbidrag för kompletterande pedagogisk utbildning som leder till ämneslärarexamen för personer som har en examen på forskarnivå", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2016706-om-utbildningsbidrag-for_sfs-2016-706/" },
+      { titel: "Stockholms universitet: KPU för forskarutbildade (programsida)", url: "https://www.su.se/utbildning/utbildningskatalog/lk/lkfoy" },
+      { titel: "Regeringen: Förlängd tid för uppdraget att anordna KPU för personer med examen på forskarnivå", url: "https://www.regeringen.se/regeringsuppdrag/2021/12/forlangd-tid-for-uppdraget-att-anordna-kompletterande-pedagogisk-utbildning-som-leder-till-amneslararexamen-for-personer-som-har-en-examen-pa-forskarniva/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Datumen för 2027 är uppskattade utifrån 2026. Beloppet framgår inte av Skolverkets sida."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Enligt Stockholms universitet ges programmet för sista gången 2026, och lärosätenas uppdrag från regeringen gäller till och med 31 december 2026. Därför har vi markerat bidraget som upphörande och tagit bort de uppskattade datumen för 2027. Skolverket har inte publicerat hur bidraget hanteras efter 2026. Ramen för 2026 framgår inte av Skolverkets sida."
   }
 );

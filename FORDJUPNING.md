@@ -120,3 +120,16 @@ Piloten `data/fordjupning/karriartjanster.js` är mallen – kopiera den. Allt n
 - Varje räknare säger tydligt vad den inte prövar. Siffror i exempel ska gå att kontrollera mot källan.
 - Aldrig påhittade belopp, datum eller regler. Osäkert = skriv det.
 - Inget varumärke (ingen Edukatus-logotyp, inget Bodoni 72).
+
+## Regelverk som inte är en svensk förordning
+För bidrag som styrs av en programguide, utlysning eller stiftelsens regler (t.ex. Erasmus+, Nordplus, ESF+, Arvsfonden) används samma `forordning`-objekt men utan `sfs`:
+```js
+forordning: {
+  namn: 'Erasmus+ programguide 2026',       // visas i källor
+  etikett: 'Erasmus+ programguide 2026',    // ersätter "Förordning <sfs>" i rubriker
+  iText: 'i programguiden',                 // "Läs <ref> i programguiden"
+  url: 'https://…',
+  lydelse: 'version 1, november 2025'       // valfritt; visas som "<etikett>: <lydelse>."
+}
+```
+`paragrafer[].ref` blir då avsnittets egen numrering eller ett kort namn (t.ex. "Avsnitt B", "Vem kan söka"), unikt inom guiden.

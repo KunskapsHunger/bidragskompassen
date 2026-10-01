@@ -74,7 +74,7 @@ window.SB_GRANTS.push(
     omraden: ["yrke", "nyanlanda"],
     skolformer: ["komvux"],
     sokande: { fristaende: "via-kommun", kommun: "ja", region: "nej", stat: "nej", ovriga: "via-kommun" },
-    sokandeNot: "Bara kommuner kan söka, och minst tre kommuner måste samarbeta (en kommun kan bara vara med i en samverkan). Fristående utbildningsföretag kan inte söka själva. De kan däremot vara med genom att en kommun köper utbildningen av dem (upphandling) eller godkänner dem som anordnare (auktorisation) – då är det kommunen som får och redovisar bidraget.",
+    sokandeNot: "Bara kommuner kan söka, och minst tre kommuner måste samarbeta (en kommun kan bara vara med i en samverkan). En kommun som på grund av sitt geografiska läge har undantag från skollagens krav på samverkan räknas ändå som samverkande kommun (1 a §). Fristående utbildningsföretag kan inte söka själva. De kan däremot vara med genom att en kommun köper utbildningen av dem (upphandling) eller godkänner dem som anordnare (auktorisation) – då är det kommunen som får och redovisar bidraget.",
     typ: "rekvisition",
     perioder: [
       { typ: "beslut", fran: null, till: null, text: "September 2026: Skolverket har beslutat bidragsramar för 2028 och 2029 – varje kommun har fått en ram. Totalt 3 miljarder kr per år.", ungefar: false },
@@ -85,9 +85,9 @@ window.SB_GRANTS.push(
     ],
     belopp: "Bidraget ges per årsstudieplats (800 poäng, kan delas mellan flera elever). Beloppen beror på yrkesområde, t.ex. 42 000 kr (barn och fritid) eller 90 000 kr (bygg, el, fordon) för vanlig yrkesutbildning, 110 000 kr för anpassad utbildning och upp till 145 000 kr för kombinationsutbildning. Plus 55 000 kr extra per årsstudieplats för elever med funktionsnedsättning som behöver omfattande stöd, och 36 000 kr för orienteringskurser. 2026 beviljades ca 3,3 miljarder kr och 2027 ca 3,4 miljarder kr. För 2028 och 2029 beräknas 3 miljarder kr per år i grundbidrag, plus tilläggsbidrag.",
     villkor: [
-      "Minst tre kommuner ska planera, dimensionera och erbjuda utbildningen tillsammans.",
+      "Minst tre kommuner ska planera, dimensionera och erbjuda utbildningen tillsammans. Kommuner med geografiskt undantag från skollagens samverkanskrav räknas ändå som samverkande (1 a §).",
       "Utbudet ska planeras i samråd med arbetsgivare/branscher, regionen och Arbetsförmedlingen, och det ska finnas yrkesråd.",
-      "Kommunerna ska själva betala för extra platser (medfinansiering): hittills minst 3/7 av de statsbidragsfinansierade platserna, från 2028 minst 30 procent av platserna som grundbidraget betalar.",
+      "Kommunerna ska själva betala för extra platser (medfinansiering). Bidragsåren 2026 och 2027: minst 3/7 så många platser som statsbidraget betalar – kravet gäller inte lärlingsutbildning, kombinationsutbildning eller yrkesförarutbildning. Från 2028: minst 30 procent av alla platser som grundbidraget betalar, men inget krav för tilläggsbidraget.",
       "Elever som behöver ska kunna kombinera yrkesutbildningen med sfi eller svenska som andraspråk på grundläggande nivå.",
       "Från 2027 ges inte längre kombinationsbidrag för yrkesutbildning ihop med svenska som andraspråk på gymnasial nivå, eller för lärlingsutbildning kombinerad med sfi/sva.",
       "Samma utbildningsplats får inte finansieras av två statsbidrag (t.ex. inte också av bidraget för företagsetableringar).",
@@ -116,8 +116,8 @@ window.SB_GRANTS.push(
       { titel: "Skolverket – Statsbidrag för regionalt yrkesvux 2028–2029", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-regionalt-yrkesvux-2028-2029" },
       { titel: "Förordning (2016:937) om statsbidrag för regional yrkesinriktad vuxenutbildning", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2016937-om-statsbidrag-for-regional_sfs-2016-937/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Bidraget byggs om från 2028 (grundbidrag + tilläggsbidrag). Skolverket skriver att mer information kommer under hösten 2026, och datum för begäran om utbetalning och ansökan om tilläggsbidrag är ännu inte publicerade. Beloppen för 2028–2029 är preliminära. Lärlingsvux och yrkesutbildning kombinerad med sfi har inga egna statsbidrag längre – de ingår här."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Bidraget byggs om från 2028 (grundbidrag + tilläggsbidrag) genom ändringen SFS 2026:1271; förordningen är ändrad till och med den. Skolverkets exempel för 2028 (700 platser kräver 300 egna) följer den äldre 3/7-regeln – enligt förordningens 30 procent blir det 210. Fråga Skolverket innan ni planerar. Skolverket skriver att mer information kommer under hösten 2026, och datum för begäran om utbetalning och ansökan om tilläggsbidrag är ännu inte publicerade. Beloppen för 2028–2029 är preliminära. Lärlingsvux och yrkesutbildning kombinerad med sfi har inga egna statsbidrag längre – de ingår här."
   },
 
   /* ------------------------------------------------------------------ */
@@ -135,7 +135,7 @@ window.SB_GRANTS.push(
     sokandeNot: "Kommunala, fristående, statliga och övriga huvudmän för gymnasieskola och anpassad gymnasieskola kan söka – men bara om de redan har ett avtal om att lämna över en del av undervisningen på entreprenad (någon annan utför undervisningen åt skolan). Det är skolans huvudman som söker, inte företaget eller skolan som utför undervisningen.",
     typ: "ansokan",
     perioder: [
-      { typ: "ansokan", fran: null, till: null, text: "Ansökan för läsåret 2026/27 öppnar hösten 2026 i e-tjänsten. Skolverket skriver att datum kommer inom kort.", ungefar: true },
+      { typ: "ansokan", fran: "2026-09-29", till: "2026-10-19", text: "Ansökan för läsåret 2026/27 i Skolverkets e-tjänst.", ungefar: false },
       { typ: "beslut", fran: null, till: "2026-11-30", text: "Skolverket planerar att besluta senast i november 2026.", ungefar: true },
       { typ: "utbetalning", fran: null, till: null, text: "Utbetalning senast december 2026 och maj 2027.", ungefar: true },
       { typ: "redovisning", fran: "2027-09-01", till: "2027-09-15", text: "Planerad redovisning i e-tjänsten (bl.a. elevernas kön, program, skolor och hur många som fått jobb inom yrket).", ungefar: true }
@@ -153,22 +153,22 @@ window.SB_GRANTS.push(
       "Kontrollera att utföraren är rekommenderad av programrådet för yrkesområdet.",
       "Samla skolform, skolenhetskod, studievägskod, program och yrkesområde för varje elev.",
       "Skriv varför utbildningen räknas som litet och dyrt yrkesområde och om den är riksrekryterande.",
-      "Håll koll på Skolverkets sida – ansökan öppnar hösten 2026 – och sök i e-tjänsten.",
+      "Sök i Skolverkets e-tjänst 29 september–19 oktober 2026.",
       "Följ upp hur många elever som fått jobb inom yrket; det ska redovisas i september 2027."
     ],
     redovisning: "Planerad redovisning 1–15 september 2027: elevernas kön, program och inriktningar, vilka skolor eleverna gått på och hur många som efter examen jobbar inom yrkesområdet. Frågorna är preliminära.",
     fallgropar: [
       "Söka för undervisning som man bara planerar att lägga ut på entreprenad.",
       "Utföraren saknar rekommendation från det nationella programrådet.",
-      "Missa ansökan – datumen var inte publicerade i september 2026 och kan bli korta."
+      "Missa ansökan – den är bara öppen 29 september–19 oktober 2026."
     ],
     nyckelord: ["dyra yrkesutbildningar", "små yrkesområden", "entreprenad", "köpa undervisning", "yrkesprogram", "utrustning", "bristyrken", "riksrekryterande yrkesutbildning", "naturbruk", "fordon", "industri", "programråd"],
     kallor: [
       { titel: "Skolverket – Statsbidrag för små och dyra yrkesområden 2026/27", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-sma-och-dyra-yrkesomraden-2026-27" },
       { titel: "Förordning (2026:1751) om statsbidrag för undervisning på entreprenad inom små och dyra yrkesområden", url: "https://svenskforfattningssamling.se/sites/default/files/sfs/2026-09/SFS2026-1751.pdf" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Helt nytt bidrag (förordning från september 2026). Ansökningsdatum var inte publicerade när vi kontrollerade; besluts-, utbetalnings- och redovisningstider är Skolverkets planering. Regioner nämns inte uttryckligen bland de sökande. Om bidraget fortsätter efter 2026/27 är inte klart."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Helt nytt bidrag. Förordningen (2026:1751) utfärdades 3 september 2026 och börjar gälla 6 oktober 2026 – Skolverket öppnade ansökan redan 29 september. Besluts-, utbetalnings- och redovisningstider är Skolverkets planering. Regioner nämns inte uttryckligen bland de sökande. Om bidraget fortsätter efter 2026/27 är inte klart."
   },
 
   /* ------------------------------------------------------------------ */
@@ -245,7 +245,7 @@ window.SB_GRANTS.push(
       "Kommunen har, eller står inför, en stor företagsetablering, expansion, nedläggning eller neddragning – eller gränsar till (i särskilda fall ligger nära) en sådan kommun.",
       "Utbildningen ska ge kompetens som efterfrågas på grund av förändringen, men behöver inte bara gälla det specifika företaget.",
       "Utbildningen ska planeras tillsammans med arbetslivet och i samråd med berörd kommun/län och Arbetsförmedlingen.",
-      "Sökande från hela landet ska kunna antas.",
+      "Vid etablering eller expansion ska sökande från hela landet kunna antas (4 §). För nedläggning eller neddragning (4 a §, gäller till och med 2026) står kravet inte i förordningen, men Skolverkets sida för 2026 räknar upp det som ett villkor för alla.",
       "Från 1 januari 2027 ändras förordningen: då kan bidrag bara ges vid företagsetableringar och företagsexpansioner, inte vid nedläggningar eller neddragningar. Bidrag som beviljats före dess följer de äldre reglerna.",
       "Inte för utbildning som redan får annat statsbidrag (t.ex. regionalt yrkesvux), uppdragsutbildning eller utbildning som kommunen får interkommunal ersättning för."
     ],
@@ -260,7 +260,7 @@ window.SB_GRANTS.push(
     fallgropar: [
       "Samma utbildningsplats finansieras också med regionalt yrkesvux – dubbelfinansiering är inte tillåten.",
       "Kostnader som inte tydligt hör till utbildningen.",
-      "Utbildningen stängs för sökande från andra delar av landet.",
+      "Utbildningen stängs för sökande från andra delar av landet vid en etablering eller expansion.",
       "Söka för 2027 på grund av en nedläggning eller neddragning – det ger inte längre bidrag från 1 januari 2027."
     ],
     nyckelord: ["företagsetablering", "nyetablering", "varsel", "nedläggning", "omställning", "batterifabrik", "yrkesvux", "komvux", "vuxenutbildning", "omskolning", "industrisatsning"],
@@ -268,7 +268,7 @@ window.SB_GRANTS.push(
       { titel: "Skolverket – Statsbidrag för företagsetableringar och nedläggningar 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-foretagsetableringar-och-nedlaggningar-2026" },
       { titel: "Förordning (2023:603) om statsbidrag för yrkesinriktad vuxenutbildning vid företagsetableringar m.m.", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/rubriken-upphor-att-galla-u2027-01-01_sfs-2023-603/" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Ingen sida för bidragsåret 2027 var publicerad. Ansökningstiden för 2027 är en uppskattning utifrån förra årets mönster, och det är inte bekräftat att det blir en omgång 2027. Enligt förordning (2025:630) gäller bidraget från 1 januari 2027 bara företagsetableringar och företagsexpansioner; Skolverkets sida för 2026 nämner ännu inte ändringen."
   },
 
@@ -386,8 +386,8 @@ window.SB_GRANTS.push(
     syfte: "Att stötta skolor att starta spetsutbildningar och höja kvaliteten i dem, så att särskilt intresserade elever får mer utmaning.",
     omraden: ["ovrigt"],
     skolformer: ["grundskola", "gymnasieskola"],
-    sokande: { fristaende: "ja", kommun: "ja", region: "nej", stat: "nej", ovriga: "nej" },
-    sokandeNot: "Kommunala och fristående huvudmän som har tillstånd från Skolverket att driva en riksrekryterande spetsutbildning i årskurs 7–9 eller på gymnasiet (matematik, naturvetenskap, teknik, samhällsvetenskap eller humaniora) kan söka.",
+    sokande: { fristaende: "villkor", kommun: "villkor", region: "nej", stat: "nej", ovriga: "nej" },
+    sokandeNot: "Kommunala och fristående huvudmän kan söka, men bara för en spetsutbildning som har ett giltigt beslut. För högstadiet ger Skolverket tillstånd. I gymnasieskolan ansöker kommunala huvudmän hos Skolverket och fristående huvudmän hos Skolinspektionen. Gymnasiets spetsutbildningar gäller matematik, naturvetenskap, teknik, samhällsvetenskap eller humaniora – estetisk spetsutbildning omfattas inte av bidraget.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-10-01", till: "2026-11-02", text: "Ansökan för läsåret 2026/27. Utgå från antal elever per årskurs den 15 oktober 2026.", ungefar: false },
@@ -395,14 +395,15 @@ window.SB_GRANTS.push(
     ],
     belopp: "Ges per elev. Totalt 45 miljoner kr fördelas för 2026/27 mellan alla som har rätt till bidraget.",
     villkor: [
-      "Tillstånd från Skolverket att driva spetsutbildningen krävs.",
+      "Det krävs ett giltigt beslut om spetsutbildningen: för högstadiet tillstånd från Skolverket, i gymnasieskolan beslut från Skolverket (kommunala huvudmän) eller Skolinspektionen (fristående huvudmän).",
+      "Estetisk spetsutbildning på det estetiska programmet omfattas inte av statsbidraget.",
       "Undervisningen ska ges av legitimerade och behöriga lärare som är anställda hos huvudmannen.",
       "Pengarna ska användas under läsåret till att starta eller utveckla kvaliteten i spetsutbildningen, t.ex. läromedel, utrustning, kompetensutveckling, personal och studiebesök.",
       "Inte för utbildning som får statsbidrag på annat sätt eller bedrivs som uppdragsutbildning.",
       "Inga skulder hos Kronofogden eller obetalda återkrav."
     ],
     hurDuGor: [
-      "Kontrollera att ert tillstånd gäller för läsåret.",
+      "Kontrollera att ert tillstånd eller beslut om spetsutbildning gäller för läsåret.",
       "Räkna antal elever per årskurs i spetsutbildningen den 15 oktober.",
       "Sök i e-tjänsten 1 oktober–2 november och intyga att villkoren är uppfyllda.",
       "Använd pengarna under läsåret och för bok över vad de gått till.",
@@ -416,10 +417,12 @@ window.SB_GRANTS.push(
     ],
     nyckelord: ["spetsutbildning", "spetsklass", "riksrekryterande", "matematik", "naturvetenskap", "särskilt begåvade", "högpresterande elever", "spetsgymnasium"],
     kallor: [
-      { titel: "Skolverket – Statsbidrag för riksrekryterande spetsutbildningar 2026/27", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-riksrekryterande-spetsutbildningar-i-grund--och-gymnasieskolan-2026-27" }
+      { titel: "Skolverket – Statsbidrag för riksrekryterande spetsutbildningar 2026/27", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-riksrekryterande-spetsutbildningar-i-grund--och-gymnasieskolan-2026-27" },
+      { titel: "Förordning (2024:675) om riksrekryterande spetsutbildning i högstadiet i grundskolan och statsbidrag för sådan utbildning", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2024675-om-riksrekryterande_sfs-2024-675/" },
+      { titel: "Förordning (2024:677) om statsbidrag för riksrekryterande spetsutbildning i gymnasieskolan", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2024677-om-statsbidrag-for_sfs-2024-677/" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "Bidraget gäller både grundskola och gymnasium och kan därför finnas i andra datafiler. Försöksverksamheten med spetsutbildning pågår till 30 juni 2027; vad som gäller därefter framgår av de nya förordningarna (2024:675 och 2024:677)."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "Bidraget gäller både grundskola och gymnasium och kan därför finnas i andra datafiler. Spetsutbildningar som startar från hösten 2025 följer förordningarna 2024:675 (högstadiet) och 2024:677 (gymnasiet). Äldre utbildningar i försöksverksamheten följer förordningarna 2011:355 (grundskolan, gäller till 1 juli 2027) och 2008:793 (gymnasieskolan, upphör vid utgången av juni 2028 enligt SFS 2024:681)."
   },
 
   /* ------------------------------------------------------------------ */
@@ -440,7 +443,7 @@ window.SB_GRANTS.push(
       { typ: "ansokan", fran: "2026-10-15", till: "2026-11-16", text: "Ansökan för höstterminen 2026 (ansökan 2).", ungefar: false },
       { typ: "ansokan", fran: "2027-04-15", till: "2027-05-17", text: "Ansökan för vårterminen 2027 väntas i april–maj, som 2026 (15 april–18 maj).", ungefar: true }
     ],
-    belopp: "Söks per termin. För gymnasieskolan: hälften av beloppet för programmet i Skolverkets riksprislista (inkl. måltider). För komvux: per verksamhetspoäng, högst 800 poäng per elev och år, med belopp som regeringen beslutar. Offentliga huvudmän får 6 procent avdrag för moms, och kommuner får ett avdrag för egna invånare som studerar i andra nordiska länder.",
+    belopp: "Söks per termin. För gymnasieskolan: hälften av beloppet för programmet i Skolverkets riksprislista (inkl. måltider). För komvux: per verksamhetspoäng, högst 800 poäng per elev och år, med belopp som regeringen beslutar – för 2026 är det 53 400 kr per 800 verksamhetspoäng (Skolverkets regleringsbrev, anslag 1:8 ap.2). Offentliga huvudmän får 6 procent avdrag för moms, och kommuner får ett avdrag för egna invånare som studerar i andra nordiska länder.",
     villkor: [
       "Eleven får inte vara folkbokförd i Sverige.",
       "Inte för elever på introduktionsprogram.",
@@ -460,9 +463,10 @@ window.SB_GRANTS.push(
     ],
     nyckelord: ["nordiska elever", "norska elever", "finska elever", "danska elever", "åländska elever", "icke folkbokförd", "utländsk elev", "nordiska avtalet", "komvux", "sfi"],
     kallor: [
-      { titel: "Skolverket – Statsbidrag för nordiska elever 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-nordiska-elever-2026" }
+      { titel: "Skolverket – Statsbidrag för nordiska elever 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-nordiska-elever-2026" },
+      { titel: "Statskontoret – Regleringsbrev för budgetåret 2026 avseende Statens skolverk", url: "https://www.statskontoret.se/statsliggaren/regleringsbrev/1/2026/senaste" }
     ],
-    senastKontrollerad: "2026-09-25",
+    senastKontrollerad: "2026-10-01",
     osakerhet: "Ansökningstiden för våren 2027 är uppskattad utifrån 2026."
   },
 
@@ -525,7 +529,7 @@ window.SB_GRANTS.push(
     omraden: ["stod"],
     skolformer: ["gymnasieskola"],
     sokande: { fristaende: "nej", kommun: "villkor", region: "nej", stat: "nej", ovriga: "villkor" },
-    sokandeNot: "Bara de fyra huvudmännen för habilitering och boende vid riksgymnasierna kan söka: Umeå, Kristianstads och Stockholms kommuner samt Stiftelsen Bräcke Diakoni i Göteborg. Andra skolor kan inte söka detta bidrag. Elever söker själva till utbildningen via SPSM.",
+    sokandeNot: "Bara de fyra huvudmännen för habilitering och boende vid riksgymnasierna kan söka: Umeå kommun, Kristianstads kommun, Stockholms stad och Stiftelsen Bräcke Diakoni i Göteborg. Andra skolor kan inte söka detta bidrag. Elever söker själva till utbildningen via SPSM.",
     typ: "ansokan",
     perioder: [
       { typ: "redovisning", fran: "2026-09-01", till: "2026-10-01", text: "Ekonomisk redovisning av läsåret 2025/26 och verksamhetsuppföljning, senast 1 oktober, i SPSM:s bidragsportal.", ungefar: false },
@@ -533,7 +537,7 @@ window.SB_GRANTS.push(
       { typ: "ansokan", fran: "2027-04-15", till: "2027-05-15", text: "Ansökan för läsåret 2027/28 i bidragsportalen. SPSM anger 15 april–15 maj varje år.", ungefar: false },
       { typ: "beslut", fran: null, till: null, text: "I juni tecknas en överenskommelse mellan SPSM och huvudmannen om bidragets storlek.", ungefar: false }
     ],
-    belopp: "Storleken bestäms i en överenskommelse med SPSM utifrån huvudmannens beräknade kostnader (personal, lokaler, administration m.m.). Hemkommun och hemregion betalar också en del, som SPSM administrerar.",
+    belopp: "Statsbidraget är två tredjedelar av de genomsnittliga kostnaderna per elev för boende, omvårdnad i boendet och habilitering. Hemkommun och hemregion betalar den sista tredjedelen, som SPSM administrerar. Storleken bestäms i en överenskommelse med SPSM utifrån huvudmannens beräknade kostnader (personal, lokaler, administration m.m.).",
     villkor: [
       "Gäller elever som antagits till Rh-anpassad utbildning; boende och omvårdnad bara för elever med rätt till elevhemsplats.",
       "Huvudmannen ska följa SPSM:s kvalitetskrav för habilitering och elevhem.",
@@ -554,10 +558,11 @@ window.SB_GRANTS.push(
     nyckelord: ["Rh-anpassad", "rörelsehinder", "riksgymnasium", "RgRh", "elevhem", "habilitering", "omvårdnad", "funktionsnedsättning gymnasiet", "SPSM"],
     kallor: [
       { titel: "SPSM – Omvårdnadsinsatser rörelsehinderanpassad utbildning", url: "https://www.spsm.se/stod-och-rad/sok-statsbidrag/omvardnadsinsatser-rh-anpassad-utbildning/" },
+      { titel: "SPSM – Anvisning inför ansökan och redovisning, läsår 2026/27 (pdf)", url: "https://www.spsm.se/siteassets/vara-skolor/sok-till-rh-anpassad-utbildning/2026-27-anvisning-infor-ansokan-och-redovisning.pdf" },
       { titel: "Skolverket – Utbildning för rörelsehindrade ungdomar (Rh-anpassad utbildning)", url: "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/utbildning-for-rorelsehindrade-ungdomar-rh--anpassad-utbildning" }
     ],
-    senastKontrollerad: "2026-09-25",
-    osakerhet: "SPSM anger inte ett totalbelopp för bidraget på sidan."
+    senastKontrollerad: "2026-10-01",
+    osakerhet: "SPSM anger inte ett totalbelopp för bidraget på sidan. Det årliga beloppet står i SPSM:s regleringsbrev."
   },
 
   /* ------------------------------------------------------------------ */

@@ -56,7 +56,7 @@
         h('p', { class: 'fd-stamp small' }, [
           'Kontrollerad ' + core.formatDate(guide.kontrollerad, { long: true }) + '.',
           f.lydelse ? h('br') : null,
-          f.lydelse ? 'Förordningen ' + f.lydelse + '.' : ''
+          f.lydelse ? (f.sfs || !f.etikett ? 'Förordningen ' : f.etikett + ': ') + f.lydelse + '.' : ''
         ])
       ]),
       h('div', null, [

@@ -54,12 +54,19 @@
     return String(longest <= 11 ? 1 : longest <= 15 ? 0.78 : longest <= 19 ? 0.64 : 0.54);
   }
 
+  /** "Förordning 2019:1288", or the rulebook's own label for grants not governed by a förordning
+   *  (e.g. "Erasmus+ programguide 2026"). */
+  function regelverkLabel(guide) {
+    var f = guide.forordning || {};
+    return f.sfs ? 'Förordning ' + f.sfs : (f.etikett || '');
+  }
+
   function hero(guide, grant) {
     var calc = (guide.kalkylatorer || [])[0];
     var facts = guide.snabbfakta || [];
     return h('section', { class: 'fd-hero', 'aria-labelledby': 'fd-title' }, h('div', { class: 'wrap fd-hero__grid' }, [
       h('div', { class: 'fd-hero__main' }, [
-        h('p', { class: 'label-caps fd-eyebrow', 'data-reveal': true }, ['Fördjupning', guide.forordning && guide.forordning.sfs ? ' · Förordning ' + guide.forordning.sfs : '']),
+        h('p', { class: 'label-caps fd-eyebrow', 'data-reveal': true }, ['Fördjupning', regelverkLabel(guide) ? ' · ' + regelverkLabel(guide) : '']),
         h('h1', { class: 'fd-title', id: 'fd-title', 'data-split': true, style: { '--fd-title-scale': titleScale(guide) } }, [guide.rubrik + ' ', guide.rubrikKursiv ? h('em', { text: guide.rubrikKursiv }) : null]),
         h('p', { class: 'fd-ingress', 'data-reveal': true, style: { '--i': '2' }, text: guide.ingress }),
         h('div', { class: 'fd-actions', 'data-reveal': true, style: { '--i': '3' } }, [
@@ -137,7 +144,7 @@
     if (back) back.setAttribute('href', 'index.html#bidrag/' + guide.id);
 
     var regler = h('section', { class: 'section fd-section', id: 'regler', 'aria-labelledby': 'regler-title' }, h('div', { class: 'wrap' }, [
-      sectionHead(sections[0].number, 'Reglerna', guide.forordning && guide.forordning.sfs ? 'Förordning ' + guide.forordning.sfs : '',
+      sectionHead(sections[0].number, 'Reglerna', regelverkLabel(guide),
         (sek.regler && sek.regler.rubrik) || 'Reglerna', (sek.regler && sek.regler.rubrikKursiv) || 'i klartext.', sek.regler && sek.regler.ingress, 'regler-title')
     ]));
     SB.fd.paragrafer.render(dom.$('.wrap', regler), guide);
