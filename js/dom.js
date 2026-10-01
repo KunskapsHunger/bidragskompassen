@@ -128,6 +128,12 @@
       }));
   }
 
+  /** Subtle "Fördjupning" marker for grants that have a deep-dive page (data/fordjupning/index.js). */
+  function fordjupningBadge(id) {
+    if (!core.hasFordjupning || !core.hasFordjupning(window.SB_FORDJUPNING_INDEX, id)) return null;
+    return h('span', { class: 'fd-badge' }, [h('span', { class: 'sr-only', text: ', har ' }), 'Fördjupning']);
+  }
+
   function grantLink(grant, attrs, children) {
     return h('a', Object.assign({ href: core.grantHash(grant.id), 'data-grant': grant.id }, attrs || {}), children);
   }
@@ -135,6 +141,6 @@
   SB.dom = {
     h: h, s: s, append: append, clear: clear, $: $, $$: $$, highlight: highlight, safeLink: safeLink,
     debounce: debounce, storage: storage, announce: announce, pad2: pad2, plural: plural,
-    statusTag: statusTag, eligList: eligList, grantLink: grantLink
+    statusTag: statusTag, eligList: eligList, grantLink: grantLink, fordjupningBadge: fordjupningBadge
   };
 })();

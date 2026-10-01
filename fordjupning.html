@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sv" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fördjupning – Bidragskompassen</title>
+  <meta name="description" content="Fördjupning i Bidragskompassen: reglerna på vanlig svenska, räknare, arbetsgång och underlag för ett statsbidrag.">
+  <meta name="theme-color" content="#1F2F45">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231F2F45%27/%3E%3Ctext x=%2716%27 y=%2724%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23FFFFFF%27%3EB%3C/text%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className = d.className.replace('no-js', 'js');
+      var pref = null;
+      try { pref = window.localStorage.getItem('sb.reduceMotion'); } catch (e) { pref = null; }
+      var sys = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (pref === '1' || (pref === null && sys)) d.classList.add('reduce-motion');
+      window.setTimeout(function () { if (!window.SB || !window.SB.booted) d.classList.remove('js'); }, 4000);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&amp;family=Inter:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/fordjupning.css">
+  <link rel="stylesheet" href="css/fordjupning-calc.css">
+  <link rel="stylesheet" href="css/fordjupning-print.css" media="print">
+</head>
+<body class="fd-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="bk-mark" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M33.9 14.1 L26.6 26.6 L21.4 21.4 Z" fill="currentColor"/><path d="M14.1 33.9 L21.4 21.4 L26.6 26.6 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">Hoppa till innehållet</a>
+
+  <header class="site-header fd-header on-dark">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__mark" aria-hidden="true"><use href="#bk-mark"/></svg>
+        <span class="brand__name"><span>Bidrags<em>kompassen</em></span></span>
+      </a>
+      <a class="fd-back" id="fd-back" href="index.html#alla-bidrag"><span aria-hidden="true">←</span> Alla bidrag</a>
+    </div>
+  </header>
+
+  <noscript>
+    <p class="sample-banner">Fördjupningen behöver JavaScript. Slå på JavaScript i webbläsaren, eller läs om bidraget på <a href="index.html">startsidan</a>.</p>
+  </noscript>
+
+  <main id="main" tabindex="-1">
+    <div class="wrap fd-loading" id="fd-root">
+      <p class="fd-loading__text">Laddar fördjupningen …</p>
+    </div>
+  </main>
+
+  <footer class="site-footer fd-footer on-dark">
+    <div class="wrap">
+      <div class="footer__bottom fd-footer__bottom">
+        <p class="footer__logo brand__name"><svg class="brand__mark" aria-hidden="true"><use href="#bk-mark"/></svg><span>Bidrags<em>kompassen</em></span></p>
+        <p class="footer__small">Bidragskompassen är en guide, inte en myndighet. Beslut om bidrag fattas av respektive myndighet. Beräkningarna görs i webbläsaren – inga värden skickas iväg eller sparas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <p class="sr-only" id="sr-announcer" aria-live="polite"></p>
+
+  <!-- Bidragsdata (grundfakta om bidraget) och registret över fördjupningar -->
+  <script src="data/grants-grundskola.js"></script>
+  <script src="data/grants-personal.js"></script>
+  <script src="data/grants-gymnasium-vux.js"></script>
+  <script src="data/grants-skolverket-ovriga.js"></script>
+  <script src="data/grants-ovriga.js"></script>
+  <script src="data/fordjupning/index.js"></script>
+
+  <script src="js/core.js"></script>
+  <script src="js/core-fordjupning.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/fd/paragrafer.js"></script>
+  <script src="js/fd/falt.js"></script>
+  <script src="js/fd/kalkylator.js"></script>
+  <script src="js/fd/praktik.js"></script>
+  <script src="js/fd/page.js"></script>
+  <script src="js/fd/loader.js"></script>
+</body>
+</html>

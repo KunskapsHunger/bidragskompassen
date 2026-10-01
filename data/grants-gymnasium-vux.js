@@ -25,14 +25,14 @@ window.SB_GRANTS.push(
       { typ: "ansokan", fran: "2027-10-01", till: "2027-11-01", text: "Ansökan för hösten 2027 (ansökan 2).", ungefar: false },
       { typ: "redovisning", fran: "2028-04-15", till: "2028-05-15", text: "Redovisning av bidragsåret 2027.", ungefar: false }
     ],
-    belopp: "Högst 18 750 kr per elev och termin till arbetsgivaren, plus högst 5 000 kr om handledaren har gått en godkänd handledarutbildning och högst 2 500 kr om eleven har en lärlingsanställning. Om fler söker än pengarna räcker till minskas alla belopp lika mycket. För 2026 finns 482 miljoner kr (241 miljoner per termin). Våren 2026 fick 150 huvudmän bidrag, men beloppen blev lägre än maxbeloppen.",
+    belopp: "Högst 18 750 kr per elev och termin till arbetsgivaren, plus högst 5 000 kr om handledaren har gått en godkänd handledarutbildning och högst 2 500 kr om eleven har en lärlingsanställning. Tillägget för lärlingsanställning kan inte sökas för elever på lärlingsliknande utbildning inom introduktionsprogram. Om fler söker än pengarna räcker till minskas alla belopp lika mycket. För 2026 finns 482 miljoner kr (241 miljoner per termin). Våren 2026 fick 150 huvudmän bidrag, men beloppen blev lägre än maxbeloppen.",
     villkor: [
       "Varje elev ska ha ett skriftligt utbildningskontrakt (avtal mellan elev, skola och arbetsplats) senast 15 februari för våren och 15 oktober för hösten.",
-      "Hela bidraget till arbetsgivare och för handledare ska betalas vidare till arbetsgivaren inom tre månader efter att skolan fått pengarna.",
+      "Hela bidraget – delen till arbetsgivaren, tillägget för utbildad handledare och tillägget för lärlingsanställning – ska betalas vidare till arbetsgivaren inom tre månader efter att skolan fått pengarna.",
       "Arbetsplatsen ska vara godkänd för F-skatt (utländska arbetsplatser visar motsvarande intyg).",
       "Handledarbidrag kan bara sökas om handledaren redan har slutfört en handledarutbildning som följer Skolverkets krav.",
       "Eleven ska ha rätt studievägskod (ett L eller A på sjunde plats) – samma kod som rapporteras till CSN.",
-      "Huvudmannen får inte ha skulder hos Kronofogden eller obetalda återkrav, och samma kostnad får inte få annat statsbidrag."
+      "Bidrag lämnas inte om huvudmannen är i likvidation eller konkurs, har skatte- eller avgiftsskulder eller andra skulder som handläggs som allmänt mål hos Kronofogden, eller inte har betalat ett återkrav från Skolverket i tid. Bidrag lämnas inte heller om Skolinspektionen har återkallat huvudmannens godkännande eller beslutat om verksamhetsförbud för verksamhet som bidraget gäller. Samma kostnad får inte få annat statsbidrag."
     ],
     hurDuGor: [
       "Se till att den som ska söka har behörighet i Skolverkets e-tjänst för statsbidrag.",
@@ -56,7 +56,7 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Skolverket – Statsbidrag för gymnasial lärlingsutbildning 2026", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-gymnasial-larlingsutbildning-2026" },
       { titel: "Skolverket – Statsbidrag för gymnasial lärlingsutbildning 2027", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-gymnasial-larlingsutbildning-2027" },
-      { titel: "Förordning (2011:947) om statsbidrag för gymnasial lärlingsutbildning", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2011947-om-statsbidrag-for-gymnasial_sfs-2011-947/" }
+      { titel: "Förordning (2011:947) om statsbidrag för gymnasial lärlingsutbildning och lärlingsliknande utbildning inom introduktionsprogram", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2011947-om-statsbidrag-for-gymnasial_sfs-2011-947/" }
     ],
     senastKontrollerad: "2026-09-25",
     osakerhet: "Skolverkets sida för 2027 anger ännu inte hur mycket pengar som finns för 2027 (den visar samma text som för 2026). Datum för beslut om höstens ansökan 2026 är inte publicerat. Skolverket nämner bara kommunala och fristående huvudmän – en region som driver gymnasieskola (t.ex. naturbruk) bör fråga Skolverket."
@@ -330,7 +330,7 @@ window.SB_GRANTS.push(
     kortnamn: "Lovskola",
     myndighet: "Skolverket",
     giltighet: "aktiv",
-    sammanfattning: "Bidrag för frivillig undervisning under jullov, sportlov, påsklov, sommarlov och läslov för elever som riskerar att inte få godkänt (E). Gäller grundskola och gymnasieskola, även introduktionsprogram.",
+    sammanfattning: "Bidrag för frivillig undervisning under jullov, sportlov, påsklov, sommarlov och läslov för elever som riskerar att inte få godkänt (E). Gäller grundskola, sameskola, specialskola och gymnasieskola, även introduktionsprogram.",
     syfte: "Elever som inte nått, eller riskerar att inte nå, betyget E ska få extra undervisning under lov och en chans att höja sina betyg.",
     omraden: ["utokad-tid", "likvardighet"],
     skolformer: ["grundskola", "sameskola", "specialskola", "gymnasieskola"],
@@ -343,9 +343,9 @@ window.SB_GRANTS.push(
       { typ: "beslut", fran: null, till: null, text: "Beslut om utbetalning för läslovet publiceras i december 2026.", ungefar: false },
       { typ: "ansokan", fran: "2027-01-15", till: "2027-02-15", text: "Ansökan för lov under 2027 väntas i januari–februari, som 2026 (15 januari–16 februari).", ungefar: true }
     ],
-    belopp: "Schablon 300 kr per elev och dag (elevdag). Extra ersättning kan ges vid särskilda skäl. Anslaget 2026 är 112 miljoner kr; 406 huvudmän beviljades delvis bidrag. Räcker inte pengarna sänks beloppet per elevdag för alla.",
+    belopp: "Skolverket använder en schablon på 300 kr per elev och dag (elevdag). Enligt förordningen är bidraget högst 1 500 kr per elev och vecka, om inte Skolverket beslutar om mer på grund av särskilda skäl. Extra ersättning kan ges vid särskilda skäl. Anslaget 2026 är 112 miljoner kr; 406 huvudmän beviljades delvis bidrag. Räcker inte pengarna sänks beloppet per elevdag för alla.",
     villkor: [
-      "Bara frivillig lovskola ger bidrag. I årskurs 8–9 måste den obligatoriska lovskolan (50 respektive 75 timmar) vara genomförd först.",
+      "Bara frivillig lovskola ger bidrag. Den lovskola som skollagen kräver ger inget bidrag, och inte heller frivillig lovskola under läsåret som huvudmannen räknar av från den obligatoriska. Elever i årskurs 8–9 som har rätt till obligatorisk lovskola (de som riskerar att inte bli behöriga till ett nationellt yrkesprogram) måste först ha genomfört den: 50 timmar i årskurs 8 och 75 timmar i årskurs 9, varav 50 timmar i juni efter årskurs 9.",
       "På gymnasiet: för elever som behöver nå E i ett eller flera ämnen, och för elever på introduktionsprogram som behöver lovskola för ämnen i sin studieplan.",
       "Vid sommarlovskola ska eleven ha gått i skolan det senaste läsåret – inte för elever som redan gått ut gymnasiet.",
       "Pengarna ska gå till merkostnader, t.ex. lön, mat, material, resor – inte till befintlig lokalhyra.",
@@ -362,7 +362,7 @@ window.SB_GRANTS.push(
     redovisning: "Ingen separat redovisning – i stället begär ni ut pengarna i efterhand utifrån genomförda elevdagar. Skolverket kan begära in elevlistor och scheman i efterhand.",
     fallgropar: [
       "Glömma begäran om utbetalning – beviljat bidrag betalas inte ut av sig självt.",
-      "Söka för obligatorisk lovskola i årskurs 8–9 eller innan den obligatoriska är klar.",
+      "Söka för obligatorisk eller avräkningsbar lovskola, eller för frivillig lovskola för en elev med rätt till obligatorisk lovskola innan den obligatoriska är genomförd.",
       "Elevlistor saknas vid kontroll, vilket kan leda till återkrav.",
       "Ta med elever som redan tagit gymnasieexamen i sommarlovskolan."
     ],

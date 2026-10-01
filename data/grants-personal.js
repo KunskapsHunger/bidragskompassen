@@ -28,7 +28,7 @@ window.SB_GRANTS.push(
     villkor: [
       "Löneökningen ska i genomsnitt vara mellan 2 500 och 3 500 kr per månad för alla lärare som huvudmannen begär ut pengar för.",
       "Pengarna ska ges utöver ordinarie lön och får inte påverka den vanliga lönerevisionen.",
-      "Läraren ska vara legitimerad (vissa undantag finns, t.ex. tillsvidareanställda modersmålslärare och yrkeslärare) och ägna minst 75 procent av arbetstiden åt undervisning eller annat pedagogiskt arbete.",
+      "Läraren ska vara legitimerad (vissa undantag finns, t.ex. tillsvidareanställda modersmålslärare och yrkeslärare) och till största delen arbeta med undervisning eller annat pedagogiskt arbete. Enligt Skolverkets föreskrifter (SKOLFS 2016:61, 7 §) betyder det minst 75 procent av arbetstiden.",
       "Läraren ska vara 'särskilt kvalificerad', till exempel ha tagit särskilt ansvar för att utveckla undervisningen eller för nya kollegor. Huvudmannen avgör vilka lärare som får del.",
       "Löneökningen får inte ges vid en nyanställning – först efter att första ordinarie månadslönen betalats ut.",
       "Upp till 10 procent av bidraget får gå till personal i förskola och fritidshem, om huvudmannen också har någon av de skolformer som omfattas."
@@ -52,10 +52,10 @@ window.SB_GRANTS.push(
     kallor: [
       { titel: "Statsbidrag för Lärarlönelyftet 2026/27 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lararlonelyftet-2026-27" },
       { titel: "Statsbidrag för Lärarlönelyftet 2025/26 – Skolverket", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/hitta-statsbidrag/statsbidrag-for-lararlonelyftet-2025-26" },
-      { titel: "Förordning (2016:100) om statsbidrag för höjda löner till lärare och vissa andra personalkategorier", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2016100-om-statsbidrag-for-hojda_sfs-2016-100/" }
+      { titel: "Förordning (2016:100) om statsbidrag för höjda löner till lärare och förskollärare", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/forordning-2016100-om-statsbidrag-for-hojda_sfs-2016-100/" }
     ],
     senastKontrollerad: "2026-09-25",
-    osakerhet: "Skolverkets sida anger sista dag för höstens begäran både som 2 november och 3 november 2026 – räkna med 2 november för säkerhets skull. Datum för 2027/28 är uppskattade utifrån tidigare år. Sidan nämner inte regioner uttryckligen som mottagare."
+    osakerhet: "Skolverkets sida anger sista dag för höstens begäran både som 2 november och 3 november 2026. Enligt föreskrifterna ska begäran vara inne senast 1 november, och eftersom 1 november 2026 är en söndag tolkar vi det som att sista dagen flyttas till måndag 2 november. Räkna med 2 november. Datum för 2027/28 är uppskattade utifrån tidigare år. Sidan nämner inte regioner uttryckligen som mottagare."
   },
 
   {
@@ -235,14 +235,14 @@ window.SB_GRANTS.push(
       { typ: "utbetalning", fran: null, till: null, text: "Beviljat bidrag betalas ut en gång per termin.", ungefar: false },
       { typ: "redovisning", fran: "2028-01-15", till: "2028-02-15", text: "Redovisning av bidraget för 2027.", ungefar: false }
     ],
-    belopp: "Bidraget är hälften av en schablonkostnad per heltidstjänst. Schablonen för 2026 var t.ex. 248 000 kr för lärarassistent, 302 000 kr för läraravlastande personal med relevant utbildning, 402 000 kr för speciallärare och 351 000 kr för kurator. För 2026 fick 723 huvudmän totalt 1 550 miljoner kr. Belopp för 2027 är inte beslutade.",
+    belopp: "Skolverket bestämmer ett fast belopp (schablonbelopp) per årsarbetskraft (heltidstjänst) för varje yrkeskategori. Bidraget är antalet nya och behållna årsarbetskrafter gånger det beloppet. Beloppet motsvarar redan ungefär halva lönekostnaden, så det ska inte halveras en gång till. För 2026 var bidraget t.ex. 248 000 kr per årsarbetskraft för lärarassistent, 302 000 kr för läraravlastande personal med relevant utbildning, 402 000 kr för speciallärare och 351 000 kr för kurator. Vid deltid blir bidraget lägre i samma proportion. För 2026 fick 723 huvudmän totalt 1 550 miljoner kr. Belopp för 2027 är inte beslutade.",
     villkor: [
       "Pengarna ska gå till fler årsarbetskrafter (heltidstjänster) än året innan, räknat för hela huvudmannen. Att flytta runt befintlig personal räknas inte.",
       "Anställningen eller uppdraget ska vara minst sex månader.",
       "Bara vissa yrken omfattas: skolläkare, skolsköterskor, kuratorer, psykologer, speciallärare, lärare som utbildar sig till speciallärare/specialpedagog, läraravlastande personal och lärarassistenter.",
       "Bidraget får inte betala den elevhälsa som skolan redan måste ha enligt skollagen.",
       "Huvudmannen ska ha haft verksamhet året före bidragsåret.",
-      "Tjänster som redan betalas av andra statsbidrag räknas inte."
+      "Ni kan inte få bidraget för arbetstid som redan betalas med ett annat statsbidrag, t.ex. bidraget för likvärdig skola. När ni räknar årsarbetskrafter ska ni ändå ta med all personal i yrkeskategorin, även den som betalas med andra bidrag."
     ],
     hurDuGor: [
       "Räkna ut hur många årsarbetskrafter per yrkeskategori ni hade 2026. Skolverket har ett beräkningsstöd i Excel.",
@@ -284,7 +284,7 @@ window.SB_GRANTS.push(
     sokandeNot: "Bidraget går inte längre att söka. Sök i stället Statsbidrag för personalförstärkning. Där kan kommunala, fristående, statliga och regionala huvudmän söka för lärarassistenter. Den som fick bidrag för lärarassistenter 2025 kunde söka för att behålla de tjänsterna inom personalförstärkning 2026.",
     typ: "ovrigt",
     perioder: [],
-    belopp: "Inom personalförstärkning 2026 var schablonen 248 000 kr per heltidstjänst för lärarassistenter. Bidraget är hälften av det, alltså ungefär halva kostnaden.",
+    belopp: "Inom personalförstärkning 2026 var bidraget 248 000 kr per årsarbetskraft (heltidstjänst) för lärarassistenter. Beloppet motsvarar ungefär halva lönekostnaden.",
     villkor: [
       "Förordningen om statsbidrag för lärarassistenter (2019:551) är upphävd.",
       "Inom personalförstärkning ska lärarassistenter avlasta lärare så att de kan ägna sig åt undervisning, och tjänsterna ska vara en ökning jämfört med året innan."

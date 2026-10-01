@@ -1,0 +1,41 @@
+/* Bidragskompassen – fördjupning: print / "spara som PDF". All paragraphs are opened by JS on
+ * beforeprint; interactive chrome is hidden; the dark panels keep their colours. */
+@page { margin: 16mm 14mm; }
+
+* { animation: none !important; transition: none !important; }
+html { scroll-padding: 0; }
+body { background: #FFFFFF; font-size: 10pt; color: #3C3C3B; }
+.wrap { width: 100%; max-width: none; }
+.skip-link, .fd-back, .fd-tabs, .fd-actions, .fd-search, .fd-search__label, .fd-search__bar, .fd-search__none,
+.fd-examples, .fd-calc__reset, .fd-range__slider, .para__icon, .para__links, .fd-basics__more, noscript { display: none !important; }
+[data-reveal], [data-split] .w__i { opacity: 1 !important; transform: none !important; }
+[hidden] { display: none !important; }
+
+.site-header { position: static; background: #FFFFFF; color: #1F2F45; border-bottom: 1px solid #C8C1B6; }
+.site-header .brand__mark, .site-header .brand__name, .site-header .brand__name em { color: #1F2F45; }
+.fd-hero { padding: 12mm 0 6mm; }
+.fd-hero__grid { grid-template-columns: 1.4fr 1fr; gap: 8mm; }
+.fd-title { font-size: 34pt; margin-bottom: 4mm; }
+.section { padding: 8mm 0; break-before: auto; }
+.section-head { margin-bottom: 4mm; }
+.section-head__title { font-size: 22pt; }
+.fd-read { display: block; }
+.fd-read__side { position: static; margin-bottom: 4mm; }
+.para { break-inside: avoid; }
+.para__btn { padding: 6px 0; min-height: 0; }
+.para__panel { padding: 0 0 8px; display: block !important; }
+.fd-calc { grid-template-columns: 1fr 1fr; break-inside: avoid; }
+.fd-range { grid-template-columns: 1fr; }
+.fd-facts, .fd-calc__result, .fd-bar, .fd-bar__part, .fd-seg__input:checked + span {
+  print-color-adjust: exact; -webkit-print-color-adjust: exact;
+}
+.fd-amount { font-size: 26pt; }
+.fd-process { grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+.fd-underlag, .fd-sources__grid { break-inside: avoid; }
+.fd-check__input { width: 12px; height: 12px; }
+.site-footer { background: #FFFFFF; color: #3C3C3B; padding: 4mm 0; }
+.site-footer .brand__name, .site-footer .brand__mark, .footer__small { color: #3C3C3B; }
+a { color: inherit; }
+.fd-source__link::after { content: " (" attr(href) ")"; font-weight: 400; font-size: 8pt; word-break: break-all; }
+h2, h3, .para__h { break-after: avoid; }
+.section--tint, .fd-page, .fd-sources, .fd-tabs { background: #FFFFFF !important; }

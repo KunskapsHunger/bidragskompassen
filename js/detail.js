@@ -52,6 +52,17 @@
     ]);
   }
 
+  /** Clear entry to the deep-dive page when the grant has one. */
+  function fordjupningLink(g) {
+    if (!core.hasFordjupning || !core.hasFordjupning(window.SB_FORDJUPNING_INDEX, g.id)) return null;
+    return h('a', { class: 'dfd', href: core.fordjupningUrl(g.id), 'aria-label': 'Fördjupning: regler och räknare för ' + g.kortnamn }, [
+      h('span', { class: 'label-caps dfd__kicker', text: 'Fördjupning' }),
+      h('span', { class: 'dfd__title', text: 'Regler och räknare' }),
+      h('span', { class: 'dfd__text small', text: 'Paragraferna i klartext, räkna på beloppet och se vilka underlag ni behöver.' }),
+      h('span', { class: 'dfd__arrow', 'aria-hidden': 'true', text: '→' })
+    ]);
+  }
+
   function render(g) {
     dom.clear(body);
     var org = app.get().organiser;
@@ -68,7 +79,8 @@
           GILTIGHET[g.giltighet] ? h('span', { class: 'card__badge', text: GILTIGHET[g.giltighet] }) : null]),
         h('h2', { class: 'dhead__title', id: 'detail-title', tabindex: '-1', text: g.kortnamn }),
         g.namn !== g.kortnamn ? h('p', { class: 'dhead__official small' }, [h('span', { class: 'soft', text: 'Officiellt namn: ' }), g.namn]) : null,
-        statusBlock(g)
+        statusBlock(g),
+        fordjupningLink(g)
       ]),
       para(g.sammanfattning, 'ingress dsum'),
       section('Varför finns bidraget?', [para(g.syfte)]),

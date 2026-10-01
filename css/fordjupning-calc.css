@@ -1,0 +1,88 @@
+/* Bidragskompassen – fördjupning: calculators (fields, result panel, examples, notes, table) */
+
+.fd-formelbox { padding: var(--sp-lg); background: var(--beige-200); margin-bottom: var(--sp-lg); font-size: var(--fs-ingress); max-width: 980px; }
+.fd-formelbox .label-caps { display: block; color: var(--text-soft); margin-bottom: 8px; }
+
+.fd-calc { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); border: 1px solid var(--hairline-strong); }
+.fd-calc__form { padding: clamp(20px, 3vw, 36px); background: var(--white); }
+.fd-calc__result { display: flex; flex-direction: column; padding: clamp(20px, 3vw, 36px); background: var(--blue-500); }
+@media (max-width: 860px) { .fd-calc { grid-template-columns: 1fr; } }
+
+/* Fields */
+.fd-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-lg) var(--gutter); }
+.fd-field { min-width: 0; margin: 0; padding: 0; border: 0; }
+.fd-field--wide { grid-column: 1 / -1; }
+@media (max-width: 420px) { .fd-fields { grid-template-columns: 1fr; } }
+.fd-field__label { display: block; margin-bottom: 8px; font-weight: 700; font-size: var(--fs-sm); padding: 0; }
+.fd-field__help { display: block; margin-top: 8px; font-size: 13px; color: var(--blue-500); }
+.fd-field__help:empty { display: none; }
+.fd-field__error { margin-top: 8px; padding: 8px 12px; border-left: 3px solid var(--blue-600); background: var(--blue-100); font-size: 13px; font-weight: 700; }
+.fd-input {
+  width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid var(--hairline-strong); border-radius: var(--r-sm);
+  background: var(--white); color: var(--ink); font-size: 1rem; font-variant-numeric: tabular-nums;
+}
+.fd-input[aria-invalid="true"] { border: 2px solid var(--blue-600); }
+.fd-unit { position: relative; }
+.fd-unit .fd-input { padding-right: 46px; }
+.fd-unit__text { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: var(--fs-sm); color: var(--blue-500); pointer-events: none; }
+.fd-range { display: grid; grid-template-columns: minmax(0, 1fr) 7rem; gap: var(--gutter); align-items: center; }
+.fd-range__slider { width: 100%; min-height: 36px; accent-color: var(--blue-600); cursor: pointer; }
+.fd-split { margin-top: 6px; color: var(--blue-500); }
+.fd-seg { display: flex; border: 1px solid var(--hairline-strong); border-radius: var(--r-sm); overflow: hidden; }
+.fd-seg__opt { position: relative; flex: 1; min-width: 0; cursor: pointer; }
+.fd-seg__opt + .fd-seg__opt { border-left: 1px solid var(--hairline-strong); }
+.fd-seg__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.fd-seg__opt span { display: flex; align-items: center; justify-content: center; gap: 4px; min-height: 46px; padding: 8px 6px; text-align: center; font-size: 13px; font-weight: 700; }
+.fd-seg__input:checked + span { background: var(--blue-600); color: var(--white); }
+.fd-seg__input:checked + span::before { content: "✓"; }
+/* Double inset ring: visible on both the white and the navy (checked) segment */
+.fd-seg__input:focus-visible + span { outline: none; box-shadow: inset 0 0 0 3px var(--violet), inset 0 0 0 5px var(--white); }
+.fd-calc__reset { margin-top: var(--sp-lg); }
+@media (max-width: 380px) { .fd-range { grid-template-columns: minmax(0, 1fr) 6rem; gap: 12px; } }
+
+/* Result panel */
+.fd-result__kicker { color: var(--blue-200); }
+.fd-amount {
+  margin: 20px 0 6px; font-family: var(--sans); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+  font-size: clamp(2.5rem, 1.6rem + 3vw, 4rem); font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+}
+.fd-amount__unit { font-size: 0.4em; font-weight: 400; letter-spacing: 0; }
+.fd-result__summary { color: var(--blue-200); font-size: var(--fs-sm); margin-bottom: var(--sp-md); }
+.fd-result__error { padding: 12px 16px; background: var(--blue-100); color: var(--blue-600); font-size: var(--fs-sm); font-weight: 700; }
+.fd-formula { padding: var(--sp-md) 0; margin-bottom: var(--sp-md); border-top: 1px solid rgba(173, 188, 215, 0.45); border-bottom: 1px solid rgba(173, 188, 215, 0.45); }
+.fd-formula__label { display: block; color: var(--blue-200); margin-bottom: 8px; }
+.fd-formula__text { font-size: 1.0625rem; line-height: 1.7; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.fd-formula__more { margin-top: 8px; color: var(--blue-100); }
+.fd-bar { display: flex; height: 10px; margin: var(--sp-sm) 0; background: rgba(173, 188, 215, 0.25); overflow: hidden; }
+.fd-bar__part { transition: width 0.4s var(--ease); }
+.fd-bar__part--0 { background: var(--blue-300); }
+.fd-bar__part--1 { background: var(--white); }
+.fd-bar__part--2 { background: var(--blue-200); }
+.fd-bar__legend { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; color: var(--blue-200); }
+.fd-rows { margin: var(--sp-md) 0; }
+.fd-rows > div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid rgba(173, 188, 215, 0.45); font-size: var(--fs-sm); }
+.fd-rows dt { color: var(--blue-100); }
+.fd-rows dd { margin: 0; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.fd-extra { margin-top: var(--sp-md); }
+.fd-extra__label { color: var(--blue-200); margin-bottom: 6px; }
+.fd-extra__value { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+.fd-extra .small { color: var(--blue-100); }
+.fd-warnings { display: grid; gap: 8px; margin-top: var(--sp-md); }
+.fd-warnings li { position: relative; padding-left: 30px; font-size: var(--fs-sm); color: var(--white); }
+.fd-warnings li::before {
+  content: "!"; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border: 1.5px solid currentColor; border-radius: 50%;
+  display: grid; place-items: center; font-size: 12px; font-weight: 700;
+}
+.fd-result__note { margin-top: auto; padding-top: var(--sp-lg); color: var(--blue-200); font-size: 13px; }
+
+/* Below the calculator */
+.fd-examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--sp-md); }
+.fd-example { min-height: 40px; background: var(--beige-100); }
+.fd-notes { max-width: 70ch; margin-top: var(--sp-lg); font-size: var(--fs-sm); display: grid; gap: 10px; }
+.fd-table { margin-top: var(--sp-lg); overflow-x: auto; }
+.fd-table table { width: 100%; border-collapse: collapse; text-align: left; font-size: var(--fs-sm); min-width: 520px; }
+.fd-table caption { text-align: left; font-family: var(--serif); font-size: 1.5rem; margin-bottom: 12px; }
+.fd-table th, .fd-table td { padding: 14px 16px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+.fd-table thead th { background: var(--beige-300); font-size: 12px; }
+.fd-table tbody th { font-weight: 700; }
+.fd-table__note { margin-top: 12px; }

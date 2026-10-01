@@ -32,7 +32,8 @@ window.SB_GRANTS.push(
       "Berörda fackliga organisationer ska ha fått yttra sig över planen innan den görs klar.",
       "Samma kostnad får inte betalas med något annat statsbidrag.",
       "Pengarna ska användas under bidragsåret (1 januari–31 december).",
-      "Huvudmannen får inte ha skatteskulder hos Kronofogden, vara i konkurs eller ha obetalda återkrav hos Skolverket."
+      "Bidrag ges inte till en huvudman som är i likvidation eller konkurs, har skatte- eller avgiftsskulder eller andra skulder som handläggs som allmänt mål hos Kronofogden, eller inte i tid har betalat ett återkrav från Skolverket.",
+      "Bidrag ges inte heller om Skolinspektionen har återkallat huvudmannens godkännande eller beslutat om verksamhetsförbud för verksamhet som bidraget gäller, om inte beslutet har upphävts."
     ],
     hurDuGor: [
       "Kontrollera i Skolverkets lista att ni har fått en bidragsram och hur stor den är.",
@@ -64,7 +65,7 @@ window.SB_GRANTS.push(
     kortnamn: "Likvärdig skola (har bytt namn)",
     myndighet: "Skolverket",
     giltighet: "upphort",
-    sammanfattning: "Bidraget för likvärdig skola finns inte längre under det namnet. Sedan 2025 heter det statsbidrag för stärkt kunskapsutveckling och bygger på samma förordning. Sista omgången med det gamla namnet var 2024.",
+    sammanfattning: "Bidraget för likvärdig skola finns inte längre under det namnet. Förordningen bytte namn 1 september 2024, och från omgången 2025 heter bidraget statsbidrag för stärkt kunskapsutveckling. Sista omgången med det gamla namnet var 2024.",
     syfte: "Bidraget skulle stärka likvärdigheten och kunskapsutvecklingen för elever i förskoleklass, grundskola och fritidshem. Samma idé lever vidare i statsbidraget för stärkt kunskapsutveckling.",
     omraden: ["likvardighet"],
     skolformer: ["forskoleklass", "grundskola", "fritidshem"],
@@ -202,8 +203,8 @@ window.SB_GRANTS.push(
     syfte: "Läxhjälpen ska ge alla elever bättre möjligheter att lära sig så mycket som möjligt och bidra till att alla elever får lika förutsättningar, oavsett hjälp hemifrån.",
     omraden: ["utokad-tid", "likvardighet"],
     skolformer: ["grundskola", "gymnasieskola"],
-    sokande: { fristaende: "ja", kommun: "ja", region: "nej", stat: "nej", ovriga: "nej" },
-    sokandeNot: "Kommunala och fristående huvudmän för grundskolans lågstadium och gymnasieskolan kan söka. Ideella föreningar och stiftelser kan inte söka själva, men en skola kan söka extra pengar för att samarbeta med en sådan organisation.",
+    sokande: { fristaende: "ja", kommun: "ja", region: "ja", stat: "nej", ovriga: "nej" },
+    sokandeNot: "Den som är huvudman (driver skolan) för grundskolans lågstadium eller för gymnasieskolan kan söka – kommuner, fristående huvudmän och regioner som driver gymnasieskola. Ideella föreningar och stiftelser kan inte söka själva, men huvudmannen kan söka extra pengar för att samarbeta med en sådan organisation.",
     typ: "ansokan",
     perioder: [
       { typ: "ansokan", fran: "2026-01-15", till: "2026-02-16", text: "Ansökan för 2026 (stängd).", ungefar: false },
@@ -218,7 +219,9 @@ window.SB_GRANTS.push(
       "Huvudmannen ska sätta upp mål för läxhjälpen och följa upp dem.",
       "Den som hjälper eleverna behöver inte vara behörig lärare.",
       "Läxhjälp får bara ges digitalt till en mindre del av tiden.",
-      "En samarbetsorganisation måste vara ideell, demokratisk, ha haft läxhjälp i minst två år och ha betalat sina skatter och avgifter.",
+      "En samarbetsorganisation måste vara ideell (utan vinstsyfte), demokratiskt uppbyggd och ge insyn, ha avslutat minst två verksamhetsår och bedriva sin verksamhet långsiktigt. Den ska också ha betalat sina skatter och avgifter.",
+      "Samarbetsorganisationen måste uppfylla demokrativillkoren (4 a–4 b §§): den, eller någon som företräder den, får inte till exempel använda våld, hot eller tvång, diskriminera eller motarbeta demokratin. Annars ges inget bidrag, om det inte finns särskilda skäl.",
+      "Vid samarbete ska en revisor granska organisationens redovisning. Om bidraget är minst fem prisbasbelopp (296 000 kr för 2026) ska revisorn vara auktoriserad eller godkänd.",
       "Samma kostnad får inte betalas med något annat statsbidrag."
     ],
     hurDuGor: [
@@ -244,7 +247,7 @@ window.SB_GRANTS.push(
       { titel: "Skolverket: Statsbidragskalendern", url: "https://www.skolverket.se/styrning-och-ansvar/statsbidrag/statsbidragskalendern" }
     ],
     senastKontrollerad: "2026-09-25",
-    osakerhet: "Någon sida för läxhjälp 2027 finns ännu inte. Ansökningsperioden för 2027 är uppskattad utifrån 2025 (15 januari–21 februari) och 2026 (15 januari–16 februari)."
+    osakerhet: "Någon sida för läxhjälp 2027 finns ännu inte. Ansökningsperioden för 2027 är uppskattad utifrån 2025 (15 januari–21 februari) och 2026 (15 januari–16 februari). Skolverkets sida för 2026 skriver att beslut om redovisningen kommer i ”augusti 2026”. Det är troligen ett skrivfel för augusti 2027, eftersom redovisningen görs i april–maj 2027."
   },
   {
     id: "lovskola",
@@ -267,25 +270,25 @@ window.SB_GRANTS.push(
       { typ: "beslut", fran: "2026-12-01", till: "2026-12-31", text: "Beslut om utbetalning för läslovet publiceras i december 2026.", ungefar: false },
       { typ: "ansokan", fran: "2027-01-15", till: "2027-02-15", text: "Ansökan för 2027 väntas vara öppen från mitten av januari till mitten av februari, som tidigare år.", ungefar: true }
     ],
-    belopp: "300 kr per elev och dag (elevdag). Extra ersättning kan ges vid särskilda skäl. Totalt 112 miljoner kr för 2026. Räcker inte pengarna sänks beloppet per dag lika för alla.",
+    belopp: "Skolverket räknar med en schablon på 300 kr per elev och dag (elevdag). Enligt förordningen är bidraget högst 1 500 kr per elev och vecka, om inte Skolverket beslutar om mer på grund av särskilda skäl. Extra ersättning kan ges vid särskilda skäl. Totalt 112 miljoner kr för 2026. Räcker inte pengarna sänks beloppet per dag lika för alla.",
     villkor: [
-      "Bidraget gäller bara frivillig lovskola, inte den obligatoriska lovskolan för åk 8–9.",
-      "För elever i åk 8 och 9 måste den obligatoriska lovskolan (50 timmar i åk 8, 75 timmar i åk 9) vara genomförd först.",
+      "Bidraget gäller bara frivillig lovskola. Den lovskola som skollagen kräver i åk 8–9 ger inget bidrag, och inte heller frivillig lovskola under läsåret som huvudmannen räknar av från den obligatoriska.",
+      "Obligatorisk lovskola gäller bara elever i åk 8–9 som riskerar att inte bli behöriga till ett nationellt yrkesprogram. För dem måste den vara genomförd innan frivillig lovskola ger bidrag: 50 timmar i åk 8 och 75 timmar i åk 9, varav 50 timmar i juni efter åk 9.",
       "Pengarna ska gå till merkostnader, till exempel lön, extra lokaler, material, mat och resor – inte hyra för lokaler ni redan har.",
       "Skolan ska föra elevlistor per lov med namn, skola, årskurs, dagar och ämnen.",
       "Samma elev kan inte få lovskola och språkstärkande insatser betalda för samma period.",
-      "Lärarlegitimation är inte alltid ett krav för att undervisa i lovskolan."
+      "Huvudregeln är att lärarna ska vara sådana som får anställas utan tidsbegränsning, alltså i regel legitimerade och behöriga lärare. Enligt Skolverket kan lärare utan legitimation undervisa i lovskolan bara i undantagsfall."
     ],
     hurDuGor: [
       "Planera vilka elever som behöver lovskola och under vilka lov.",
       "Ansök i Skolverkets e-tjänst i januari–februari.",
-      "Genomför först den obligatoriska lovskolan för åk 8–9.",
+      "Genomför först den obligatoriska lovskolan för de elever i åk 8–9 som har rätt till den.",
       "Genomför den frivilliga lovskolan och för elevlistor.",
       "Räkna ihop elevdagar (antal elever × antal dagar) och begär ut pengarna efter loven."
     ],
     redovisning: "Man redovisar genom begäran om utbetalning, där man anger antal elevdagar och antal elever per lov. Skolverket kan begära elevlistor och scheman.",
     fallgropar: [
-      "Att begära pengar för obligatorisk lovskola, eller för frivillig lovskola innan den obligatoriska är klar.",
+      "Att begära pengar för obligatorisk eller avräkningsbar lovskola, eller för frivillig lovskola för en elev med rätt till obligatorisk lovskola innan den obligatoriska är genomförd.",
       "Att inte ha ansökt i januari–februari – då kan man inte begära ut pengar senare.",
       "Att sakna elevlistor om Skolverket kontrollerar.",
       "Att räkna med kostnader som skolan redan hade."
@@ -634,6 +637,8 @@ window.SB_GRANTS.push(
     villkor: [
       "Pengarna ska gå till åtgärder som höjer säkerheten och förebygger brott, till exempel staket, belysning, lås, larm, passersystem, kameror, väktare eller personalutbildning.",
       "Åtgärderna ska både genomföras och betalas under 2026.",
+      "För större inköp som skrivs av (fördelas på flera år) räknas bara avskrivningen för 2026.",
+      "På sidan för 2025 skrev Skolverket att åtgärder som i stället ska förhindra brand eller olycka inte omfattas. Sidan för 2026 upprepar inte det, men åtgärderna ska fortfarande höja säkerheten och förebygga brott.",
       "Huvudmannen ska ta in flera offerter eller på annat sätt se till att det finns konkurrens mellan leverantörer.",
       "Den som utför arbetet ska ha F-skatt.",
       "Samma kostnad får inte betalas med något annat statsbidrag."

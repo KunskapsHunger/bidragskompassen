@@ -42,3 +42,20 @@
 .hero__counters.is-zero .counter__num { color: var(--blue-300); }
 .hero__cue { border-radius: var(--r-pill); transition: background-color 0.3s, color 0.3s, padding 0.3s; }
 .hero__cue.is-emphasised { padding-inline: 20px; background: var(--white); color: var(--blue-600); }
+
+/* Fördjupning – marker on cards/Kompassen results and the link block in the drawer */
+.fd-badge {
+  display: inline-block; margin-left: 8px; padding: 2px 6px; border-radius: var(--r-sm);
+  background: var(--blue-600); color: var(--white); font-size: 10px; letter-spacing: var(--track-caps); text-transform: uppercase; font-weight: 700;
+}
+.dfd {
+  position: relative; display: grid; gap: 4px; margin-top: var(--sp-md); padding: var(--sp-md) 56px var(--sp-md) var(--sp-md);
+  background: var(--blue-600); color: var(--white); text-decoration: none; transition: background-color 0.2s;
+}
+.dfd:hover { background: var(--blue-500); }
+.dfd:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+.dfd__kicker { color: var(--blue-200); }
+.dfd__title { font-family: var(--serif); font-size: 1.5rem; line-height: 1.15; }
+.dfd__text { color: var(--blue-100); }
+.dfd__arrow { position: absolute; right: var(--sp-md); top: 50%; transform: translateY(-50%); font-size: 1.5rem; transition: transform 0.25s var(--ease); }
+.dfd:hover .dfd__arrow { transform: translate(4px, -50%); }

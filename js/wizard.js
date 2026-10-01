@@ -132,7 +132,7 @@
           return h('li', { class: 'wstack__item', style: { '--i': String(i) } }, [
             h('span', { class: 'wstack__num', 'aria-hidden': 'true', text: dom.pad2(i + 1) }),
             h('div', { class: 'wstack__body' }, [
-              h('p', { class: 'label-caps wstack__meta', text: it.grant.myndighet + ' · ' + core.labelOf(core.TYPER, it.grant.typ) }),
+              h('p', { class: 'label-caps wstack__meta' }, [it.grant.myndighet + ' · ' + core.labelOf(core.TYPER, it.grant.typ), dom.fordjupningBadge(it.grant.id)]),
               h('h4', { class: 'wstack__name' }, dom.grantLink(it.grant, null, it.grant.kortnamn)),
               h('p', { class: 'wstack__sum', text: it.grant.sammanfattning }),
               reasonsLine(it.reasons)

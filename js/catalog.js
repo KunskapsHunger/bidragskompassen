@@ -80,7 +80,8 @@
       h('div', { class: 'card__body' }, [
         h('p', { class: 'card__meta label-caps' }, [
           h('span', { text: g.myndighet }), h('span', { 'aria-hidden': 'true', text: ' · ' }), h('span', { text: typ }),
-          badge ? h('span', { class: 'card__badge', text: badge }) : null
+          badge ? h('span', { class: 'card__badge', text: badge }) : null,
+          dom.fordjupningBadge(g.id)
         ]),
         h('h3', { class: 'card__title' }, dom.grantLink(g, { class: 'card__link' }, dom.highlight(g.kortnamn, q))),
         h('p', { class: 'card__sum' }, dom.highlight(g.sammanfattning, q)),
